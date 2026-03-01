@@ -31,9 +31,9 @@ graph TB
 
 | # | Topic | Key Concepts | Difficulty | Est. Time |
 |---|-------|-------------|------------|-----------|
-| 01 | [Node.js & V8 Internals](./01-nodejs-v8-internals/concepts.md) | V8 pipeline (Ignition + TurboFan), hidden classes, inline caches, libuv thread pool, event loop phases, streams & backpressure, Buffer/ArrayBuffer | Hard | 4-5 hrs |
-| 02 | [TypeScript Advanced](./02-typescript-advanced/concepts.md) | Conditional types, `infer` keyword, covariance/contravariance, mapped types, template literal types, type narrowing, declaration merging, `satisfies`, `as const` | Medium-Hard | 3-4 hrs |
-| 03 | [Python Internals (CPython)](./03-python-internals/concepts.md) | GIL, reference counting, generational GC, asyncio event loop, PyMalloc, decorators, generators/coroutines, multiprocessing vs threading | Hard | 4-5 hrs |
+| 01 | [Node.js & V8 Internals](./01-nodejs-v8-internals.md) | V8 pipeline (Ignition + TurboFan), hidden classes, inline caches, libuv thread pool, event loop phases, streams & backpressure, Buffer/ArrayBuffer | Hard | 4-5 hrs |
+| 02 | [TypeScript Advanced](./02-typescript-advanced.md) | Conditional types, `infer` keyword, covariance/contravariance, mapped types, template literal types, type narrowing, declaration merging, `satisfies`, `as const` | Medium-Hard | 3-4 hrs |
+| 03 | [Python Internals (CPython)](./03-python-internals.md) | GIL, reference counting, generational GC, asyncio event loop, PyMalloc, decorators, generators/coroutines, multiprocessing vs threading | Hard | 4-5 hrs |
 
 ## Recommended Study Order
 

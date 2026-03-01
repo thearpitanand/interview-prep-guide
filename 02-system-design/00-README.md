@@ -69,24 +69,24 @@ graph LR
 
 | # | Topic | Link | Difficulty | Key Concepts |
 |---|-------|------|:----------:|--------------|
-| 01 | Networking Basics | [concepts.md](./fundamentals/01-networking-basics/concepts.md) | `Easy` | TCP/UDP, HTTP/HTTPS, DNS, WebSockets, OSI model |
-| 02 | API Design | [concepts.md](./fundamentals/02-api-design/concepts.md) | `Easy` | REST, GraphQL, gRPC, API versioning, pagination |
-| 03 | Load Balancing | [concepts.md](./fundamentals/03-load-balancing/concepts.md) | `Medium` | L4 vs L7, round robin, least connections, health checks |
-| 04 | Caching | [concepts.md](./fundamentals/04-caching/concepts.md) | `Medium` | Cache-aside, write-through, write-back, eviction policies, Redis |
-| 05 | Databases | [concepts.md](./fundamentals/05-databases/concepts.md) | `Medium` | SQL vs NoSQL, ACID, indexing, normalization, query optimization |
-| 06 | Database Scaling | [concepts.md](./fundamentals/06-database-scaling/concepts.md) | `Hard` | Sharding, replication, partitioning, read replicas, master-slave |
-| 07 | Message Queues | [concepts.md](./fundamentals/07-message-queues/concepts.md) | `Medium` | Kafka, RabbitMQ, pub/sub, exactly-once delivery, dead letter queues |
-| 08 | Consistent Hashing | [concepts.md](./fundamentals/08-consistent-hashing/concepts.md) | `Hard` | Hash rings, virtual nodes, data distribution, rebalancing |
-| 09 | CAP Theorem | [concepts.md](./fundamentals/09-cap-theorem/concepts.md) | `Medium` | Consistency, availability, partition tolerance, PACELC |
-| 10 | Rate Limiting | [concepts.md](./fundamentals/10-rate-limiting/concepts.md) | `Medium` | Token bucket, leaky bucket, sliding window, distributed rate limiting |
-| 11 | Proxies & CDN | [concepts.md](./fundamentals/11-proxies-and-cdn/concepts.md) | `Easy` | Forward/reverse proxy, CDN edge nodes, cache invalidation |
-| 12 | Storage & File Systems | [concepts.md](./fundamentals/12-storage-and-file-systems/concepts.md) | `Medium` | Block vs object storage, HDFS, S3, replication strategies |
-| 13 | Distributed Systems Fundamentals | [concepts.md](./fundamentals/13-distributed-systems-fundamentals/concepts.md) | `Hard` | Consensus (Paxos, Raft), leader election, clock synchronization |
-| 14 | Microservices Architecture | [concepts.md](./fundamentals/14-microservices-architecture/concepts.md) | `Medium` | Service discovery, API gateway, circuit breaker, saga pattern |
-| 15 | Event-Driven Architecture | [concepts.md](./fundamentals/15-event-driven-architecture/concepts.md) | `Medium` | Event sourcing, CQRS, event bus, choreography vs orchestration |
-| 16 | Security & Auth | [concepts.md](./fundamentals/16-security-and-auth/concepts.md) | `Medium` | OAuth 2.0, JWT, SSO, encryption at rest/transit, RBAC |
-| 17 | Monitoring & Observability | [concepts.md](./fundamentals/17-monitoring-and-observability/concepts.md) | `Easy` | Metrics, logging, tracing, alerting, SLIs/SLOs/SLAs |
-| 18 | Estimation & Math | [concepts.md](./fundamentals/18-estimation-and-math/concepts.md) | `Medium` | Back-of-envelope calculations, QPS, storage, bandwidth estimation |
+| 01 | Networking Basics | [concepts.md](./fundamentals/01-networking-basics.md) | `Easy` | TCP/UDP, HTTP/HTTPS, DNS, WebSockets, OSI model |
+| 02 | API Design | [concepts.md](./fundamentals/02-api-design.md) | `Easy` | REST, GraphQL, gRPC, API versioning, pagination |
+| 03 | Load Balancing | [concepts.md](./fundamentals/03-load-balancing.md) | `Medium` | L4 vs L7, round robin, least connections, health checks |
+| 04 | Caching | [concepts.md](./fundamentals/04-caching.md) | `Medium` | Cache-aside, write-through, write-back, eviction policies, Redis |
+| 05 | Databases | [concepts.md](./fundamentals/05-databases.md) | `Medium` | SQL vs NoSQL, ACID, indexing, normalization, query optimization |
+| 06 | Database Scaling | [concepts.md](./fundamentals/06-database-scaling.md) | `Hard` | Sharding, replication, partitioning, read replicas, master-slave |
+| 07 | Message Queues | [concepts.md](./fundamentals/07-message-queues.md) | `Medium` | Kafka, RabbitMQ, pub/sub, exactly-once delivery, dead letter queues |
+| 08 | Consistent Hashing | [concepts.md](./fundamentals/08-consistent-hashing.md) | `Hard` | Hash rings, virtual nodes, data distribution, rebalancing |
+| 09 | CAP Theorem | [concepts.md](./fundamentals/09-cap-theorem.md) | `Medium` | Consistency, availability, partition tolerance, PACELC |
+| 10 | Rate Limiting | [concepts.md](./fundamentals/10-rate-limiting.md) | `Medium` | Token bucket, leaky bucket, sliding window, distributed rate limiting |
+| 11 | Proxies & CDN | [concepts.md](./fundamentals/11-proxies-and-cdn.md) | `Easy` | Forward/reverse proxy, CDN edge nodes, cache invalidation |
+| 12 | Storage & File Systems | [concepts.md](./fundamentals/12-storage-and-file-systems.md) | `Medium` | Block vs object storage, HDFS, S3, replication strategies |
+| 13 | Distributed Systems Fundamentals | [concepts.md](./fundamentals/13-distributed-systems-fundamentals.md) | `Hard` | Consensus (Paxos, Raft), leader election, clock synchronization |
+| 14 | Microservices Architecture | [concepts.md](./fundamentals/14-microservices-architecture.md) | `Medium` | Service discovery, API gateway, circuit breaker, saga pattern |
+| 15 | Event-Driven Architecture | [concepts.md](./fundamentals/15-event-driven-architecture.md) | `Medium` | Event sourcing, CQRS, event bus, choreography vs orchestration |
+| 16 | Security & Auth | [concepts.md](./fundamentals/16-security-and-auth.md) | `Medium` | OAuth 2.0, JWT, SSO, encryption at rest/transit, RBAC |
+| 17 | Monitoring & Observability | [concepts.md](./fundamentals/17-monitoring-and-observability.md) | `Easy` | Metrics, logging, tracing, alerting, SLIs/SLOs/SLAs |
+| 18 | Estimation & Math | [concepts.md](./fundamentals/18-estimation-and-math.md) | `Medium` | Back-of-envelope calculations, QPS, storage, bandwidth estimation |
 
 ---
 
@@ -162,31 +162,31 @@ graph TB
 
 | # | System | Link | Difficulty | Key Concepts |
 |---|--------|------|:----------:|--------------|
-| 01 | URL Shortener | [design.md](./hld/01-url-shortener/design.md) | `Easy` | Hashing, base62 encoding, redirection, analytics |
-| 02 | Pastebin | [design.md](./hld/02-pastebin/design.md) | `Easy` | Object storage, TTL expiration, content addressing |
-| 03 | Rate Limiter | [design.md](./hld/03-rate-limiter/design.md) | `Easy` | Token bucket, sliding window, distributed counters |
-| 04 | Key-Value Store | [design.md](./hld/04-key-value-store/design.md) | `Medium` | Consistent hashing, replication, conflict resolution, gossip protocol |
-| 05 | Unique ID Generator | [design.md](./hld/05-unique-id-generator/design.md) | `Easy` | Snowflake ID, UUID, clock synchronization, ordering |
-| 06 | News Feed | [design.md](./hld/06-news-feed/design.md) | `Medium` | Fan-out on write vs read, ranking algorithm, caching |
-| 07 | Twitter | [design.md](./hld/07-twitter/design.md) | `Medium` | Timeline generation, fan-out, celebrity problem, search |
-| 08 | Instagram | [design.md](./hld/08-instagram/design.md) | `Medium` | Image storage, CDN, news feed, stories, explore ranking |
-| 09 | Chat Messenger | [design.md](./hld/09-chat-messenger/design.md) | `Medium` | WebSockets, message ordering, read receipts, presence |
-| 10 | YouTube / Netflix | [design.md](./hld/10-youtube-netflix/design.md) | `Hard` | Video transcoding, adaptive bitrate, CDN, recommendation engine |
-| 11 | Notification System | [design.md](./hld/11-notification-system/design.md) | `Medium` | Push/SMS/email, prioritization, rate limiting, templating |
-| 12 | Search Autocomplete | [design.md](./hld/12-search-autocomplete/design.md) | `Medium` | Trie, top-K, data collection, real-time updates |
-| 13 | Web Crawler | [design.md](./hld/13-web-crawler/design.md) | `Medium` | BFS/DFS, URL frontier, politeness, deduplication, robots.txt |
-| 14 | Uber / Lyft | [design.md](./hld/14-uber-lyft/design.md) | `Hard` | Geospatial indexing, matching algorithm, ETA, surge pricing |
-| 15 | Dropbox / Google Drive | [design.md](./hld/15-dropbox-google-drive/design.md) | `Hard` | Chunked uploads, deduplication, sync conflict resolution, metadata |
-| 16 | Ticketmaster | [design.md](./hld/16-ticketmaster/design.md) | `Hard` | Seat reservation, distributed locking, handling flash sales |
-| 17 | Google Maps | [design.md](./hld/17-google-maps/design.md) | `Hard` | Graph algorithms (Dijkstra, A*), tile rendering, ETA calculation |
-| 18 | Zoom (Video Conferencing) | [design.md](./hld/18-zoom-video-conferencing/design.md) | `Hard` | WebRTC, SFU vs MCU, SRTP, bandwidth adaptation |
-| 19 | Amazon E-Commerce | [design.md](./hld/19-amazon-ecommerce/design.md) | `Hard` | Product catalog, cart, inventory management, order pipeline |
-| 20 | Payment System | [design.md](./hld/20-payment-system/design.md) | `Hard` | Idempotency, double-entry ledger, reconciliation, PCI compliance |
-| 21 | Google Docs | [design.md](./hld/21-google-docs/design.md) | `Hard` | OT/CRDT, real-time collaboration, conflict resolution, versioning |
-| 22 | Google Search | [design.md](./hld/22-google-search/design.md) | `Hard` | Inverted index, PageRank, web crawling, query processing |
-| 23 | Stock Exchange | [design.md](./hld/23-stock-exchange/design.md) | `Hard` | Order matching engine, order book, low latency, sequencer |
-| 24 | Hotel Booking | [design.md](./hld/24-hotel-booking/design.md) | `Medium` | Inventory management, double booking prevention, search ranking |
-| 25 | Food Delivery | [design.md](./hld/25-food-delivery/design.md) | `Hard` | Order dispatch, real-time tracking, delivery ETA, fleet management |
+| 01 | URL Shortener | [design.md](./hld/01-url-shortener.md) | `Easy` | Hashing, base62 encoding, redirection, analytics |
+| 02 | Pastebin | [design.md](./hld/02-pastebin.md) | `Easy` | Object storage, TTL expiration, content addressing |
+| 03 | Rate Limiter | [design.md](./hld/03-rate-limiter.md) | `Easy` | Token bucket, sliding window, distributed counters |
+| 04 | Key-Value Store | [design.md](./hld/04-key-value-store.md) | `Medium` | Consistent hashing, replication, conflict resolution, gossip protocol |
+| 05 | Unique ID Generator | [design.md](./hld/05-unique-id-generator.md) | `Easy` | Snowflake ID, UUID, clock synchronization, ordering |
+| 06 | News Feed | [design.md](./hld/06-news-feed.md) | `Medium` | Fan-out on write vs read, ranking algorithm, caching |
+| 07 | Twitter | [design.md](./hld/07-twitter.md) | `Medium` | Timeline generation, fan-out, celebrity problem, search |
+| 08 | Instagram | [design.md](./hld/08-instagram.md) | `Medium` | Image storage, CDN, news feed, stories, explore ranking |
+| 09 | Chat Messenger | [design.md](./hld/09-chat-messenger.md) | `Medium` | WebSockets, message ordering, read receipts, presence |
+| 10 | YouTube / Netflix | [design.md](./hld/10-youtube-netflix.md) | `Hard` | Video transcoding, adaptive bitrate, CDN, recommendation engine |
+| 11 | Notification System | [design.md](./hld/11-notification-system.md) | `Medium` | Push/SMS/email, prioritization, rate limiting, templating |
+| 12 | Search Autocomplete | [design.md](./hld/12-search-autocomplete.md) | `Medium` | Trie, top-K, data collection, real-time updates |
+| 13 | Web Crawler | [design.md](./hld/13-web-crawler.md) | `Medium` | BFS/DFS, URL frontier, politeness, deduplication, robots.txt |
+| 14 | Uber / Lyft | [design.md](./hld/14-uber-lyft.md) | `Hard` | Geospatial indexing, matching algorithm, ETA, surge pricing |
+| 15 | Dropbox / Google Drive | [design.md](./hld/15-dropbox-google-drive.md) | `Hard` | Chunked uploads, deduplication, sync conflict resolution, metadata |
+| 16 | Ticketmaster | [design.md](./hld/16-ticketmaster.md) | `Hard` | Seat reservation, distributed locking, handling flash sales |
+| 17 | Google Maps | [design.md](./hld/17-google-maps.md) | `Hard` | Graph algorithms (Dijkstra, A*), tile rendering, ETA calculation |
+| 18 | Zoom (Video Conferencing) | [design.md](./hld/18-zoom-video-conferencing.md) | `Hard` | WebRTC, SFU vs MCU, SRTP, bandwidth adaptation |
+| 19 | Amazon E-Commerce | [design.md](./hld/19-amazon-ecommerce.md) | `Hard` | Product catalog, cart, inventory management, order pipeline |
+| 20 | Payment System | [design.md](./hld/20-payment-system.md) | `Hard` | Idempotency, double-entry ledger, reconciliation, PCI compliance |
+| 21 | Google Docs | [design.md](./hld/21-google-docs.md) | `Hard` | OT/CRDT, real-time collaboration, conflict resolution, versioning |
+| 22 | Google Search | [design.md](./hld/22-google-search.md) | `Hard` | Inverted index, PageRank, web crawling, query processing |
+| 23 | Stock Exchange | [design.md](./hld/23-stock-exchange.md) | `Hard` | Order matching engine, order book, low latency, sequencer |
+| 24 | Hotel Booking | [design.md](./hld/24-hotel-booking.md) | `Medium` | Inventory management, double booking prevention, search ranking |
+| 25 | Food Delivery | [design.md](./hld/25-food-delivery.md) | `Hard` | Order dispatch, real-time tracking, delivery ETA, fleet management |
 
 ---
 
@@ -215,21 +215,21 @@ graph LR
 
 | # | Problem | Link | Difficulty | Key Concepts |
 |---|---------|------|:----------:|--------------|
-| 01 | Parking Lot | [design.md](./lld/01-parking-lot/design.md) | `Easy` | Strategy pattern, enum types, slot allocation |
-| 02 | Elevator System | [design.md](./lld/02-elevator-system/design.md) | `Medium` | State machine, scheduling algorithms (SCAN, LOOK) |
-| 03 | Library Management | [design.md](./lld/03-library-management/design.md) | `Easy` | CRUD operations, search, fine calculation, observer |
-| 04 | Movie Ticket Booking | [design.md](./lld/04-movie-ticket-booking/design.md) | `Medium` | Seat locking, concurrency, payment integration |
-| 05 | Chess Game | [design.md](./lld/05-chess-game/design.md) | `Medium` | Polymorphism, move validation, game state management |
-| 06 | Hotel Management | [design.md](./lld/06-hotel-management/design.md) | `Medium` | Reservation system, room types, billing, observer pattern |
-| 07 | Tic-Tac-Toe | [design.md](./lld/07-tic-tac-toe/design.md) | `Easy` | Board representation, win detection, turn management |
-| 08 | ATM Machine | [design.md](./lld/08-atm-machine/design.md) | `Medium` | State pattern, chain of responsibility, transaction handling |
-| 09 | Snake and Ladder | [design.md](./lld/09-snake-and-ladder/design.md) | `Easy` | Board modeling, random number generation, game loop |
-| 10 | Splitwise | [design.md](./lld/10-splitwise/design.md) | `Medium` | Graph-based debt simplification, expense splitting strategies |
-| 11 | Vending Machine | [design.md](./lld/11-vending-machine/design.md) | `Easy` | State pattern, inventory management, coin handling |
-| 12 | Online Shopping Cart | [design.md](./lld/12-online-shopping-cart/design.md) | `Medium` | Cart management, pricing strategies, discount engine |
-| 13 | Stack Overflow | [design.md](./lld/13-stack-overflow/design.md) | `Hard` | Reputation system, voting, tagging, search, moderation |
-| 14 | Ride Sharing | [design.md](./lld/14-ride-sharing-lld/design.md) | `Hard` | Matching algorithm, fare calculation, trip state machine |
-| 15 | Food Ordering | [design.md](./lld/15-food-ordering-lld/design.md) | `Hard` | Order state machine, restaurant management, delivery assignment |
+| 01 | Parking Lot | [design.md](./lld/01-parking-lot.md) | `Easy` | Strategy pattern, enum types, slot allocation |
+| 02 | Elevator System | [design.md](./lld/02-elevator-system.md) | `Medium` | State machine, scheduling algorithms (SCAN, LOOK) |
+| 03 | Library Management | [design.md](./lld/03-library-management.md) | `Easy` | CRUD operations, search, fine calculation, observer |
+| 04 | Movie Ticket Booking | [design.md](./lld/04-movie-ticket-booking.md) | `Medium` | Seat locking, concurrency, payment integration |
+| 05 | Chess Game | [design.md](./lld/05-chess-game.md) | `Medium` | Polymorphism, move validation, game state management |
+| 06 | Hotel Management | [design.md](./lld/06-hotel-management.md) | `Medium` | Reservation system, room types, billing, observer pattern |
+| 07 | Tic-Tac-Toe | [design.md](./lld/07-tic-tac-toe.md) | `Easy` | Board representation, win detection, turn management |
+| 08 | ATM Machine | [design.md](./lld/08-atm-machine.md) | `Medium` | State pattern, chain of responsibility, transaction handling |
+| 09 | Snake and Ladder | [design.md](./lld/09-snake-and-ladder.md) | `Easy` | Board modeling, random number generation, game loop |
+| 10 | Splitwise | [design.md](./lld/10-splitwise.md) | `Medium` | Graph-based debt simplification, expense splitting strategies |
+| 11 | Vending Machine | [design.md](./lld/11-vending-machine.md) | `Easy` | State pattern, inventory management, coin handling |
+| 12 | Online Shopping Cart | [design.md](./lld/12-online-shopping-cart.md) | `Medium` | Cart management, pricing strategies, discount engine |
+| 13 | Stack Overflow | [design.md](./lld/13-stack-overflow.md) | `Hard` | Reputation system, voting, tagging, search, moderation |
+| 14 | Ride Sharing | [design.md](./lld/14-ride-sharing-lld.md) | `Hard` | Matching algorithm, fare calculation, trip state machine |
+| 15 | Food Ordering | [design.md](./lld/15-food-ordering-lld.md) | `Hard` | Order state machine, restaurant management, delivery assignment |
 
 ---
 

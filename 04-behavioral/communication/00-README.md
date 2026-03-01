@@ -2,7 +2,7 @@
 
 ## Overview
 
-This module covers the complete spectrum of behavioral interview preparation for senior and staff-level engineering roles. From structuring stories using the STAR method to negotiating compensation, each topic builds on the previous to create a comprehensive communication toolkit.
+This module covers the complete spectrum of behavioral interview preparation for senior and staff-level engineering roles. From structuring stories using the STAR method to preparing for common questions, each topic builds on the previous to create a comprehensive communication toolkit.
 
 ```mermaid
 mindmap
@@ -16,7 +16,6 @@ mindmap
       Leadership Stories
     Research & Strategy
       Company Research
-      Salary Negotiation
     Interview Readiness
       Common Questions
       Answer Frameworks
@@ -30,12 +29,11 @@ graph LR
     A --> C[03 Conflict<br/>Resolution]
     A --> D[04 Failure<br/>Stories]
     A --> E[05 Leadership<br/>Without Authority]
-    F[06 Company<br/>Research] --> G[07 Salary<br/>Negotiation]
-    A --> H[08 Common<br/>Questions]
-    C --> H
-    D --> H
-    E --> H
-    F --> H
+    F[06 Company<br/>Research] --> G[07 Common<br/>Questions]
+    A --> G
+    C --> G
+    D --> G
+    E --> G
 
     style A fill:#4CAF50,color:#fff
     style B fill:#2196F3,color:#fff
@@ -43,8 +41,7 @@ graph LR
     style D fill:#f44336,color:#fff
     style E fill:#9C27B0,color:#fff
     style F fill:#00BCD4,color:#fff
-    style G fill:#FF5722,color:#fff
-    style H fill:#607D8B,color:#fff
+    style G fill:#607D8B,color:#fff
 ```
 
 ## Study Order
@@ -67,14 +64,10 @@ graph TD
     end
 
     subgraph Phase4["Phase 4: Integration (Days 8-9)"]
-        S7[08 Common Questions]
+        S7[07 Common Questions]
     end
 
-    subgraph Phase5["Phase 5: Negotiation (Day 10)"]
-        S8[07 Salary Negotiation]
-    end
-
-    Phase1 --> Phase2 --> Phase3 --> Phase4 --> Phase5
+    Phase1 --> Phase2 --> Phase3 --> Phase4
 ```
 
 | Phase | Days | Topics | Focus |
@@ -83,7 +76,6 @@ graph TD
 | **Phase 2: Story Building** | 3-5 | Conflict, Failure, Leadership stories | Build your personal story bank |
 | **Phase 3: Presentation** | 6-7 | System Design Presentation | Practice presenting technical ideas |
 | **Phase 4: Integration** | 8-9 | Common Questions | Apply stories to real questions |
-| **Phase 5: Negotiation** | 10 | Salary Negotiation | Prepare for offer stage |
 
 ## Topic Reference Table
 
@@ -95,8 +87,7 @@ graph TD
 | 04 | Failure Stories | Failure Arc, Recovery Framework | 4 story templates | 3-4 hours |
 | 05 | Leadership Without Authority | Influence Model, Credibility Loop | 3-4 story templates | 3-4 hours |
 | 06 | Company Research | Research Checklist, Value Mapping | "Why this company?" script | 2-3 hours per company |
-| 07 | Salary Negotiation | BATNA, CTC Decoder, Counter-offer scripts | Negotiation role-play | 3-4 hours |
-| 08 | Common Questions | 25-30 questions with frameworks | Rehearse top 15 | 5-6 hours |
+| 07 | Common Questions | 25-30 questions with frameworks | Rehearse top 15 | 5-6 hours |
 
 ## Progress Tracker
 
@@ -108,8 +99,7 @@ graph TD
 | 04 | Failure Stories | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 05 | Leadership Without Authority | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 06 | Company Research | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 07 | Salary Negotiation | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 08 | Common Questions | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 07 | Common Questions | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 ## How to Use This Module
 

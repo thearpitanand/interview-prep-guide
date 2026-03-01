@@ -41,22 +41,22 @@ SRP does not mean "a class should do one thing." It means a class should have **
 ```typescript
 // BAD: This class has THREE reasons to change:
 // 1. Report format changes (presentation)
-// 2. Salary calculation rules change (business logic)
+// 2. Pay calculation rules change (business logic)
 // 3. Database schema changes (persistence)
 
 class Employee {
   constructor(
     private name: string,
-    private salary: number,
+    private basePay: number,
     private department: string
   ) {}
 
   // Business logic — owned by HR
   calculateAnnualBonus(): number {
     if (this.department === "engineering") {
-      return this.salary * 0.15;
+      return this.basePay * 0.15;
     }
-    return this.salary * 0.1;
+    return this.basePay * 0.1;
   }
 
   // Presentation — owned by reporting team
@@ -66,7 +66,7 @@ class Employee {
         <body>
           <h1>Performance Report for ${this.name}</h1>
           <p>Department: ${this.department}</p>
-          <p>Salary: $${this.salary}</p>
+          <p>Base Pay: $${this.basePay}</p>
           <p>Bonus: $${this.calculateAnnualBonus()}</p>
         </body>
       </html>
@@ -75,8 +75,8 @@ class Employee {
 
   // Persistence — owned by DBA team
   saveToDatabase(): void {
-    const query = `INSERT INTO employees (name, salary, department)
-                   VALUES ('${this.name}', ${this.salary}, '${this.department}')`;
+    const query = `INSERT INTO employees (name, base_pay, department)
+                   VALUES ('${this.name}', ${this.basePay}, '${this.department}')`;
     // execute query...
   }
 }
@@ -91,7 +91,7 @@ class Employee {
 class Employee {
   constructor(
     public readonly name: string,
-    public readonly salary: number,
+    public readonly basePay: number,
     public readonly department: string
   ) {}
 }
@@ -105,7 +105,7 @@ class BonusCalculator {
       default: 0.1,
     };
     const rate = rates[employee.department] ?? rates.default;
-    return employee.salary * rate;
+    return employee.basePay * rate;
   }
 }
 
@@ -120,7 +120,7 @@ class PerformanceReportGenerator {
         <body>
           <h1>Performance Report for ${employee.name}</h1>
           <p>Department: ${employee.department}</p>
-          <p>Salary: $${employee.salary}</p>
+          <p>Base Pay: $${employee.basePay}</p>
           <p>Bonus: $${bonus}</p>
         </body>
       </html>
@@ -132,8 +132,8 @@ class PerformanceReportGenerator {
 class EmployeeRepository {
   async save(employee: Employee): Promise<void> {
     await this.db.query(
-      "INSERT INTO employees (name, salary, department) VALUES ($1, $2, $3)",
-      [employee.name, employee.salary, employee.department]
+      "INSERT INTO employees (name, base_pay, department) VALUES ($1, $2, $3)",
+      [employee.name, employee.basePay, employee.department]
     );
   }
 
@@ -142,7 +142,7 @@ class EmployeeRepository {
       "SELECT * FROM employees WHERE name = $1",
       [name]
     );
-    return row ? new Employee(row.name, row.salary, row.department) : null;
+    return row ? new Employee(row.name, row.base_pay, row.department) : null;
   }
 }
 ```

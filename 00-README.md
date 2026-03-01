@@ -1,6 +1,10 @@
 # Interview Preparation Guide
 
-A structured, comprehensive interview preparation covering 5 core pillars: Data Structures & Algorithms, System Design, Engineering Core, Behavioral, and AI/ML. This guide provides a clear path from fundamentals to interview readiness.
+A structured, end-to-end guide for senior engineers preparing for top-tier tech interviews. Covers five pillars — DSA, System Design, Engineering Core, Behavioral, and AI/ML — with clear study order, concept breakdowns, and progress tracking.
+
+**Who this is for:** Engineers with 4+ years of experience targeting senior/staff roles at FAANG, top startups, and high-growth companies.
+
+**How to use it:** Each section has its own `00-README.md` with a visual roadmap, topic table, study order, and progress tracker. Start with the roadmap below, then dive into individual sections.
 
 ---
 
@@ -8,12 +12,12 @@ A structured, comprehensive interview preparation covering 5 core pillars: Data 
 
 ```mermaid
 graph TB
-    ROOT["Interview Preparation Guide<br/>138 Topics | ~245 Problems"]
+    ROOT["Interview Preparation Guide<br/>137 Topics | ~245 Problems"]
 
     ROOT --> DSA["01-dsa/<br/>15 Topics | ~245 Problems"]
     ROOT --> SD["02-system-design/<br/>58 Topics"]
     ROOT --> EC["03-engineering-core/<br/>35 Topics"]
-    ROOT --> BH["04-behavioral/<br/>21 Topics"]
+    ROOT --> BH["04-behavioral/<br/>20 Topics"]
     ROOT --> AI["05-ai-ml/<br/>9 Topics"]
 
     DSA --> DSA1["Arrays, Strings, Searching,<br/>Matrix, Linked Lists"]
@@ -30,7 +34,7 @@ graph TB
     EC --> EC4["Debugging<br/>7 Topics"]
     EC --> EC5["Language Internals<br/>3 Topics"]
 
-    BH --> BH1["Communication<br/>8 Topics"]
+    BH --> BH1["Communication<br/>7 Topics"]
     BH --> BH2["Senior Mindset<br/>8 Topics"]
     BH --> BH3["Mock Interviews<br/>5 Topics"]
 
@@ -65,16 +69,37 @@ graph TB
 
 ---
 
-## Quick Stats
+## The Five Pillars
 
-| # | Pillar | Topics | Problems / Items | Est. Study Time | Section README |
-|---|--------|:------:|:----------------:|:---------------:|----------------|
-| 01 | DSA | 15 | ~245 problems | 40 days (4-5 hrs/day) | [01-dsa/00-README.md](./01-dsa/00-README.md) |
-| 02 | System Design | 58 | 18 fundamentals + 25 HLD + 15 LLD | 8 weeks | [02-system-design/00-README.md](./02-system-design/00-README.md) |
-| 03 | Engineering Core | 35 | 5 sub-sections | 6-8 weeks | [03-engineering-core/00-README.md](./03-engineering-core/00-README.md) |
-| 04 | Behavioral | 21 | 3 sub-sections | 3-4 weeks | [04-behavioral/00-README.md](./04-behavioral/00-README.md) |
-| 05 | AI/ML | 9 | 9 concept files | ~6 hours | [05-ai-ml/00-README.md](./05-ai-ml/00-README.md) |
-| | **Total** | **138** | | **~16-20 weeks** | |
+### 01 — Data Structures & Algorithms
+
+The daily practice pillar. 15 topics covering ~245 problems across easy, medium, and hard tiers. Each topic includes a curated problem set, pattern breakdowns, and solution templates. DSA is the one pillar you practice every single day from Day 1 until the interview.
+
+**[Go to DSA →](./01-dsa/00-README.md)**
+
+### 02 — System Design
+
+58 topics split into three sections: 18 fundamentals (networking, caching, databases, distributed systems), 25 high-level design case studies (URL shortener to stock exchange), and 15 low-level design problems (parking lot to food ordering). Fundamentals first, then HLD, then LLD.
+
+**[Go to System Design →](./02-system-design/00-README.md)**
+
+### 03 — Engineering Core
+
+35 topics across 5 sub-sections: backend internals (concurrency, DB internals, networking), codebase design (SOLID, patterns, clean architecture), production engineering (SLOs, incidents, deployments), debugging (root cause analysis, distributed tracing), and language internals (V8, TypeScript, Python). This is what separates senior engineers from mid-level.
+
+**[Go to Engineering Core →](./03-engineering-core/00-README.md)**
+
+### 04 — Behavioral
+
+20 topics across communication (STAR method, conflict resolution, leadership), senior mindset (ownership, prioritization, tech debt), and mock interview formats. Builds the narrative layer that ties your technical skills into a compelling story.
+
+**[Go to Behavioral →](./04-behavioral/00-README.md)**
+
+### 05 — AI/ML
+
+9 topics covering ML fundamentals, classical algorithms, deep learning, NLP & LLMs, computer vision, ML system design, math foundations, practical coding, and behavioral scenarios. Essential for ML-adjacent roles and increasingly relevant for all senior engineers.
+
+**[Go to AI/ML →](./05-ai-ml/00-README.md)**
 
 ---
 
@@ -95,7 +120,7 @@ flowchart TD
         S2["02-system-design/hld/<br/>25 case studies"]
         E2["03-engineering-core/codebase-design/<br/>7 topics"]
         E3["03-engineering-core/production-engineering/<br/>8 topics"]
-        B1["04-behavioral/communication/<br/>8 topics"]
+        B1["04-behavioral/communication/<br/>7 topics"]
     end
 
     subgraph Phase3["Phase 3: Advanced (Weeks 8-14)"]
@@ -132,17 +157,70 @@ flowchart TD
 
 ### Key Principles
 
-1. **DSA is a daily habit** -- start on Day 1 and practice every day until the interview.
-2. **System Design Fundamentals before HLD** -- never attempt designing systems without knowing the building blocks.
-3. **Engineering Core runs in parallel** -- these topics reinforce system design understanding.
-4. **Behavioral prep starts mid-way** -- you need enough engineering stories to tell before starting behavioral prep.
-5. **Mock interviews come last** -- only after you have material across all pillars.
+1. **DSA is a daily habit** — start on Day 1 and practice every day until the interview.
+2. **System Design Fundamentals before HLD** — never attempt designing systems without knowing the building blocks.
+3. **Engineering Core runs in parallel** — these topics reinforce system design understanding.
+4. **Behavioral prep starts mid-way** — you need enough engineering stories to tell before starting behavioral prep.
+5. **Mock interviews come last** — only after you have material across all pillars.
+
+---
+
+## Repository Structure
+
+```
+job-prep/
+├── 00-README.md                          ← you are here
+├── 01-dsa/                               ← 15 topics, ~245 problems
+│   ├── 00-README.md
+│   ├── 00-python-basics/
+│   │   ├── easy/
+│   │   └── medium/
+│   ├── 01-arrays-and-bits/
+│   │   ├── easy/
+│   │   ├── medium/
+│   │   └── hard/
+│   └── ...
+├── 02-system-design/                     ← 58 topics (flat files)
+│   ├── 00-README.md
+│   ├── fundamentals/
+│   │   ├── 01-networking-basics.md
+│   │   ├── 02-api-design.md
+│   │   └── ...
+│   ├── hld/
+│   │   ├── 01-url-shortener.md
+│   │   └── ...
+│   └── lld/
+│       ├── 01-parking-lot.md
+│       └── ...
+├── 03-engineering-core/                  ← 35 topics (flat files)
+│   ├── 00-README.md
+│   ├── backend-internals/
+│   │   ├── 00-README.md
+│   │   ├── 01-concurrency-models.md
+│   │   └── ...
+│   ├── codebase-design/
+│   ├── production-engineering/
+│   ├── debugging/
+│   └── language-internals/
+├── 04-behavioral/                        ← 20 topics (flat files)
+│   ├── 00-README.md
+│   ├── communication/
+│   │   ├── 00-README.md
+│   │   ├── 01-star-method.md
+│   │   └── ...
+│   ├── senior-mindset/
+│   └── mock-interviews/
+└── 05-ai-ml/                             ← 9 topics (flat files)
+    ├── 00-README.md
+    ├── 01-ml-fundamentals.md
+    └── ...
+```
 
 ---
 
 ## Master Progress Tracker
 
-### 01-dsa/ -- Data Structures & Algorithms
+### 01-dsa/ — Data Structures & Algorithms
 
 | # | Topic | Status |
 |---|-------|:------:|
@@ -162,7 +240,7 @@ flowchart TD
 | 13 | Dynamic Programming | [ ] |
 | 14 | Trie | [ ] |
 
-### 02-system-design/ -- System Design
+### 02-system-design/ — System Design
 
 | Sub-section | Topics | Status |
 |-------------|:------:|:------:|
@@ -170,7 +248,7 @@ flowchart TD
 | HLD Case Studies | 25 | [ ] |
 | LLD Problems | 15 | [ ] |
 
-### 03-engineering-core/ -- Engineering Core
+### 03-engineering-core/ — Engineering Core
 
 | Sub-section | Topics | Status |
 |-------------|:------:|:------:|
@@ -180,15 +258,15 @@ flowchart TD
 | Debugging | 7 | [ ] |
 | Language Internals | 3 | [ ] |
 
-### 04-behavioral/ -- Behavioral
+### 04-behavioral/ — Behavioral
 
 | Sub-section | Topics | Status |
 |-------------|:------:|:------:|
-| Communication | 8 | [ ] |
+| Communication | 7 | [ ] |
 | Senior Mindset | 8 | [ ] |
 | Mock Interviews | 5 | [ ] |
 
-### 05-ai-ml/ -- AI/ML
+### 05-ai-ml/ — AI/ML
 
 | # | Topic | Status |
 |---|-------|:------:|
@@ -204,37 +282,13 @@ flowchart TD
 
 ---
 
-## Repository Structure
+## Quick Stats
 
-```
-job-prep/
-├── 00-README.md                    ← you are here
-├── 01-dsa/                         ← 15 topics, ~245 problems
-│   ├── 00-README.md
-│   ├── 00-python-basics/
-│   ├── 01-arrays-and-bits/
-│   ├── ...
-│   └── 14-trie/
-├── 02-system-design/               ← 58 topics
-│   ├── 00-README.md
-│   ├── fundamentals/  (18 topics)
-│   ├── hld/           (25 systems)
-│   └── lld/           (15 problems)
-├── 03-engineering-core/            ← 35 topics across 5 sub-sections
-│   ├── 00-README.md
-│   ├── backend-internals/    (10)
-│   ├── codebase-design/      (7)
-│   ├── production-engineering/ (8)
-│   ├── debugging/            (7)
-│   └── language-internals/   (3)
-├── 04-behavioral/                  ← 21 topics across 3 sub-sections
-│   ├── 00-README.md
-│   ├── communication/   (8)
-│   ├── senior-mindset/  (8)
-│   └── mock-interviews/ (5)
-└── 05-ai-ml/                       ← 9 topics
-    ├── 00-README.md
-    ├── 01-ml-fundamentals/
-    ├── ...
-    └── 09-behavioral-scenarios/
-```
+| # | Pillar | Topics | Content | Section README |
+|---|--------|:------:|---------|----------------|
+| 01 | DSA | 15 | ~245 problems across easy/medium/hard | [01-dsa/00-README.md](./01-dsa/00-README.md) |
+| 02 | System Design | 58 | 18 fundamentals + 25 HLD + 15 LLD | [02-system-design/00-README.md](./02-system-design/00-README.md) |
+| 03 | Engineering Core | 35 | 5 sub-sections | [03-engineering-core/00-README.md](./03-engineering-core/00-README.md) |
+| 04 | Behavioral | 20 | 3 sub-sections | [04-behavioral/00-README.md](./04-behavioral/00-README.md) |
+| 05 | AI/ML | 9 | 9 concept files | [05-ai-ml/00-README.md](./05-ai-ml/00-README.md) |
+| | **Total** | **137** | | |

@@ -81,16 +81,16 @@ flowchart LR
 
 | # | Topic | Link | Difficulty | Est. Time |
 |---|-------|------|:----------:|:---------:|
-| 01 | Concurrency Models | [concepts.md](./backend-internals/01-concurrency-models/concepts.md) | Medium | 3-4 hrs |
-| 02 | Thread Safety | [concepts.md](./backend-internals/02-thread-safety/concepts.md) | Medium-Hard | 2-3 hrs |
-| 03 | Connection Pooling | [concepts.md](./backend-internals/03-connection-pooling/concepts.md) | Medium | 2 hrs |
-| 04 | Database Internals | [concepts.md](./backend-internals/04-database-internals/concepts.md) | Hard | 4-5 hrs |
-| 05 | Memory Management | [concepts.md](./backend-internals/05-memory-management/concepts.md) | Medium-Hard | 3 hrs |
-| 06 | OS Fundamentals | [concepts.md](./backend-internals/06-os-fundamentals/concepts.md) | Hard | 3-4 hrs |
-| 07 | Networking Deep Dive | [concepts.md](./backend-internals/07-networking-deep-dive/concepts.md) | Hard | 4 hrs |
-| 08 | Caching Deep Dive | [concepts.md](./backend-internals/08-caching-deep-dive/concepts.md) | Medium-Hard | 3 hrs |
-| 09 | Message Queues Deep Dive | [concepts.md](./backend-internals/09-message-queues-deep-dive/concepts.md) | Hard | 4 hrs |
-| 10 | Load Balancing Internals | [concepts.md](./backend-internals/10-load-balancing-internals/concepts.md) | Medium-Hard | 3 hrs |
+| 01 | Concurrency Models | [concepts.md](./backend-internals/01-concurrency-models.md) | Medium | 3-4 hrs |
+| 02 | Thread Safety | [concepts.md](./backend-internals/02-thread-safety.md) | Medium-Hard | 2-3 hrs |
+| 03 | Connection Pooling | [concepts.md](./backend-internals/03-connection-pooling.md) | Medium | 2 hrs |
+| 04 | Database Internals | [concepts.md](./backend-internals/04-database-internals.md) | Hard | 4-5 hrs |
+| 05 | Memory Management | [concepts.md](./backend-internals/05-memory-management.md) | Medium-Hard | 3 hrs |
+| 06 | OS Fundamentals | [concepts.md](./backend-internals/06-os-fundamentals.md) | Hard | 3-4 hrs |
+| 07 | Networking Deep Dive | [concepts.md](./backend-internals/07-networking-deep-dive.md) | Hard | 4 hrs |
+| 08 | Caching Deep Dive | [concepts.md](./backend-internals/08-caching-deep-dive.md) | Medium-Hard | 3 hrs |
+| 09 | Message Queues Deep Dive | [concepts.md](./backend-internals/09-message-queues-deep-dive.md) | Hard | 4 hrs |
+| 10 | Load Balancing Internals | [concepts.md](./backend-internals/10-load-balancing-internals.md) | Medium-Hard | 3 hrs |
 
 **Sub-section README:** [backend-internals/00-README.md](./backend-internals/00-README.md)
 
@@ -102,13 +102,13 @@ flowchart LR
 
 | # | Topic | Link | Difficulty | Est. Time |
 |---|-------|------|:----------:|:---------:|
-| 01 | SOLID Principles | [concepts.md](./codebase-design/01-solid-principles/concepts.md) | Medium | 3-4 hrs |
-| 02 | Design Patterns | [concepts.md](./codebase-design/02-design-patterns/concepts.md) | Hard | 6-8 hrs |
-| 03 | Code Review Skills | [concepts.md](./codebase-design/03-code-review-skills/concepts.md) | Medium | 2-3 hrs |
-| 04 | API Design Maturity | [concepts.md](./codebase-design/04-api-design-maturity/concepts.md) | Medium-Hard | 4-5 hrs |
-| 05 | Clean Architecture | [concepts.md](./codebase-design/05-clean-architecture/concepts.md) | Hard | 5-6 hrs |
-| 06 | Dependency Injection | [concepts.md](./codebase-design/06-dependency-injection/concepts.md) | Medium | 3-4 hrs |
-| 07 | TypeScript Patterns | [concepts.md](./codebase-design/07-typescript-patterns/concepts.md) | Hard | 5-6 hrs |
+| 01 | SOLID Principles | [concepts.md](./codebase-design/01-solid-principles.md) | Medium | 3-4 hrs |
+| 02 | Design Patterns | [concepts.md](./codebase-design/02-design-patterns.md) | Hard | 6-8 hrs |
+| 03 | Code Review Skills | [concepts.md](./codebase-design/03-code-review-skills.md) | Medium | 2-3 hrs |
+| 04 | API Design Maturity | [concepts.md](./codebase-design/04-api-design-maturity.md) | Medium-Hard | 4-5 hrs |
+| 05 | Clean Architecture | [concepts.md](./codebase-design/05-clean-architecture.md) | Hard | 5-6 hrs |
+| 06 | Dependency Injection | [concepts.md](./codebase-design/06-dependency-injection.md) | Medium | 3-4 hrs |
+| 07 | TypeScript Patterns | [concepts.md](./codebase-design/07-typescript-patterns.md) | Hard | 5-6 hrs |
 
 **Sub-section README:** [codebase-design/00-README.md](./codebase-design/00-README.md)
 
@@ -120,14 +120,14 @@ flowchart LR
 
 | # | Topic | Link | Difficulty | Est. Time |
 |---|-------|------|:----------:|:---------:|
-| 01 | SLO / SLA / SLI | [concepts.md](./production-engineering/01-slo-sla-sli/concepts.md) | Medium | 2-3 hrs |
-| 02 | Incident Handling | [concepts.md](./production-engineering/02-incident-handling/concepts.md) | Medium | 2-3 hrs |
-| 03 | Rollback Strategies | [concepts.md](./production-engineering/03-rollback-strategies/concepts.md) | Medium-Hard | 3-4 hrs |
-| 04 | Disaster Recovery | [concepts.md](./production-engineering/04-disaster-recovery/concepts.md) | Hard | 3-4 hrs |
-| 05 | Capacity Planning | [concepts.md](./production-engineering/05-capacity-planning/concepts.md) | Medium | 2-3 hrs |
-| 06 | Deployment Pipelines | [concepts.md](./production-engineering/06-deployment-pipelines/concepts.md) | Medium | 2-3 hrs |
-| 07 | Alerting Practices | [concepts.md](./production-engineering/07-alerting-practices/concepts.md) | Medium | 2 hrs |
-| 08 | Chaos Engineering | [concepts.md](./production-engineering/08-chaos-engineering/concepts.md) | Medium-Hard | 2-3 hrs |
+| 01 | SLO / SLA / SLI | [concepts.md](./production-engineering/01-slo-sla-sli.md) | Medium | 2-3 hrs |
+| 02 | Incident Handling | [concepts.md](./production-engineering/02-incident-handling.md) | Medium | 2-3 hrs |
+| 03 | Rollback Strategies | [concepts.md](./production-engineering/03-rollback-strategies.md) | Medium-Hard | 3-4 hrs |
+| 04 | Disaster Recovery | [concepts.md](./production-engineering/04-disaster-recovery.md) | Hard | 3-4 hrs |
+| 05 | Capacity Planning | [concepts.md](./production-engineering/05-capacity-planning.md) | Medium | 2-3 hrs |
+| 06 | Deployment Pipelines | [concepts.md](./production-engineering/06-deployment-pipelines.md) | Medium | 2-3 hrs |
+| 07 | Alerting Practices | [concepts.md](./production-engineering/07-alerting-practices.md) | Medium | 2 hrs |
+| 08 | Chaos Engineering | [concepts.md](./production-engineering/08-chaos-engineering.md) | Medium-Hard | 2-3 hrs |
 
 **Sub-section README:** [production-engineering/00-README.md](./production-engineering/00-README.md)
 
@@ -139,13 +139,13 @@ flowchart LR
 
 | # | Topic | Link | Difficulty | Est. Time |
 |---|-------|------|:----------:|:---------:|
-| 01 | Root Cause Analysis | [concepts.md](./debugging/01-root-cause-analysis/concepts.md) | Medium | 2 hrs |
-| 02 | Log Analysis | [concepts.md](./debugging/02-log-analysis/concepts.md) | Medium | 2.5 hrs |
-| 03 | Hypothesis-Driven Debugging | [concepts.md](./debugging/03-hypothesis-driven-debugging/concepts.md) | Medium | 2 hrs |
-| 04 | Performance Profiling | [concepts.md](./debugging/04-performance-profiling/concepts.md) | Hard | 3 hrs |
-| 05 | Distributed Tracing | [concepts.md](./debugging/05-distributed-tracing/concepts.md) | Hard | 3 hrs |
-| 06 | Failure Patterns | [concepts.md](./debugging/06-failure-patterns/concepts.md) | Hard | 3 hrs |
-| 07 | Debugging Scenarios | [concepts.md](./debugging/07-debugging-scenarios/concepts.md) | Hard | 4 hrs |
+| 01 | Root Cause Analysis | [concepts.md](./debugging/01-root-cause-analysis.md) | Medium | 2 hrs |
+| 02 | Log Analysis | [concepts.md](./debugging/02-log-analysis.md) | Medium | 2.5 hrs |
+| 03 | Hypothesis-Driven Debugging | [concepts.md](./debugging/03-hypothesis-driven-debugging.md) | Medium | 2 hrs |
+| 04 | Performance Profiling | [concepts.md](./debugging/04-performance-profiling.md) | Hard | 3 hrs |
+| 05 | Distributed Tracing | [concepts.md](./debugging/05-distributed-tracing.md) | Hard | 3 hrs |
+| 06 | Failure Patterns | [concepts.md](./debugging/06-failure-patterns.md) | Hard | 3 hrs |
+| 07 | Debugging Scenarios | [concepts.md](./debugging/07-debugging-scenarios.md) | Hard | 4 hrs |
 
 **Sub-section README:** [debugging/00-README.md](./debugging/00-README.md)
 
@@ -157,9 +157,9 @@ flowchart LR
 
 | # | Topic | Link | Difficulty | Est. Time |
 |---|-------|------|:----------:|:---------:|
-| 01 | Node.js V8 Internals | [concepts.md](./language-internals/01-nodejs-v8-internals/concepts.md) | Hard | 4-5 hrs |
-| 02 | TypeScript Advanced | [concepts.md](./language-internals/02-typescript-advanced/concepts.md) | Hard | 3-4 hrs |
-| 03 | Python Internals | [concepts.md](./language-internals/03-python-internals/concepts.md) | Hard | 3-4 hrs |
+| 01 | Node.js V8 Internals | [concepts.md](./language-internals/01-nodejs-v8-internals.md) | Hard | 4-5 hrs |
+| 02 | TypeScript Advanced | [concepts.md](./language-internals/02-typescript-advanced.md) | Hard | 3-4 hrs |
+| 03 | Python Internals | [concepts.md](./language-internals/03-python-internals.md) | Hard | 3-4 hrs |
 
 ---
 

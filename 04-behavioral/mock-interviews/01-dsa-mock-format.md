@@ -137,7 +137,7 @@ This is the core of the interview, broken into 5 sub-phases:
 
 **Questions to avoid:**
 - Anything easily found on the company website
-- Salary/benefits (save for recruiter)
+- Benefits or logistics (save for recruiter)
 - "Did I pass?" or "How did I do?"
 
 ---

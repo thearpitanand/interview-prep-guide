@@ -35,13 +35,13 @@ graph TD
 
 | # | Topic | Key Focus Areas | Difficulty | Est. Time |
 |---|-------|----------------|------------|-----------|
-| 01 | [SOLID Principles](./01-solid-principles/concepts.md) | SRP, OCP, LSP, ISP, DIP — violation detection & refactoring | Medium | 3-4 hrs |
-| 02 | [Design Patterns](./02-design-patterns/concepts.md) | GoF Creational, Structural, Behavioral — when to use AND when NOT to use | Hard | 6-8 hrs |
-| 03 | [Code Review Skills](./03-code-review-skills/concepts.md) | Review checklists, code smells, security review, feedback patterns | Medium | 2-3 hrs |
-| 04 | [API Design Maturity](./04-api-design-maturity/concepts.md) | REST maturity, idempotency, pagination, error standards, versioning | Medium-Hard | 4-5 hrs |
-| 05 | [Clean Architecture](./05-clean-architecture/concepts.md) | Hexagonal, Onion, DDD basics, dependency rule, folder structures | Hard | 5-6 hrs |
-| 06 | [Dependency Injection](./06-dependency-injection/concepts.md) | Constructor injection, DI containers, testing with mocks, anti-patterns | Medium | 3-4 hrs |
-| 07 | [TypeScript Patterns](./07-typescript-patterns/concepts.md) | Branded types, Result/Either, Zod, type-safe builders, conditional types | Hard | 5-6 hrs |
+| 01 | [SOLID Principles](./01-solid-principles.md) | SRP, OCP, LSP, ISP, DIP — violation detection & refactoring | Medium | 3-4 hrs |
+| 02 | [Design Patterns](./02-design-patterns.md) | GoF Creational, Structural, Behavioral — when to use AND when NOT to use | Hard | 6-8 hrs |
+| 03 | [Code Review Skills](./03-code-review-skills.md) | Review checklists, code smells, security review, feedback patterns | Medium | 2-3 hrs |
+| 04 | [API Design Maturity](./04-api-design-maturity.md) | REST maturity, idempotency, pagination, error standards, versioning | Medium-Hard | 4-5 hrs |
+| 05 | [Clean Architecture](./05-clean-architecture.md) | Hexagonal, Onion, DDD basics, dependency rule, folder structures | Hard | 5-6 hrs |
+| 06 | [Dependency Injection](./06-dependency-injection.md) | Constructor injection, DI containers, testing with mocks, anti-patterns | Medium | 3-4 hrs |
+| 07 | [TypeScript Patterns](./07-typescript-patterns.md) | Branded types, Result/Either, Zod, type-safe builders, conditional types | Hard | 5-6 hrs |
 
 ## Recommended Study Order
 

@@ -308,7 +308,7 @@ flowchart TD
 | "How do you make decisions when there's no clear answer?" | Judgment |
 | "What does high performance mean to you?" | Context over control |
 | "Tell me about a time you took a bold risk" | Courage |
-| "How do you handle being paid top of market?" | Market-based compensation understanding |
+
 
 ---
 

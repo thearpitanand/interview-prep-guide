@@ -4,15 +4,15 @@
 
 | #                                   | Topic                    | Time   | Priority |
 | ----------------------------------- | ------------------------ | ------ | -------- |
-| [01](./01-ml-fundamentals/concepts.md)         | ML Fundamentals          | 45 min | HIGH     |
-| [02](./02-classical-algorithms/concepts.md)    | Classical ML Algorithms  | 50 min | HIGH     |
-| [03](./03-deep-learning/concepts.md)           | Deep Learning            | 60 min | HIGH     |
-| [04](./04-nlp-and-llms/concepts.md)            | NLP & LLMs               | 40 min | HIGH     |
-| [05](./05-computer-vision/concepts.md)         | Computer Vision          | 30 min | MEDIUM   |
-| [06](./06-ml-system-design/concepts.md)        | ML System Design & MLOps | 45 min | HIGH     |
-| [07](./07-math-and-statistics/concepts.md)     | Math & Statistics        | 30 min | MEDIUM   |
-| [08](./08-practical-coding/concepts.md)        | Practical Coding         | 40 min | HIGH     |
-| [09](./09-behavioral-scenarios/concepts.md)    | Behavioral & Scenarios   | 20 min | MEDIUM   |
+| [01](./01-ml-fundamentals.md)         | ML Fundamentals          | 45 min | HIGH     |
+| [02](./02-classical-algorithms.md)    | Classical ML Algorithms  | 50 min | HIGH     |
+| [03](./03-deep-learning.md)           | Deep Learning            | 60 min | HIGH     |
+| [04](./04-nlp-and-llms.md)            | NLP & LLMs               | 40 min | HIGH     |
+| [05](./05-computer-vision.md)         | Computer Vision          | 30 min | MEDIUM   |
+| [06](./06-ml-system-design.md)        | ML System Design & MLOps | 45 min | HIGH     |
+| [07](./07-math-and-statistics.md)     | Math & Statistics        | 30 min | MEDIUM   |
+| [08](./08-practical-coding.md)        | Practical Coding         | 40 min | HIGH     |
+| [09](./09-behavioral-scenarios.md)    | Behavioral & Scenarios   | 20 min | MEDIUM   |
 
 ---
 
@@ -40,15 +40,15 @@ gantt
 
 | Block | Time        | File                                                           | Focus                                          |
 | ----- | ----------- | -------------------------------------------------------------- | ---------------------------------------------- |
-| 1     | 0:00 - 0:45 | [concepts.md](./01-ml-fundamentals/concepts.md)                 | Bias-variance, metrics, cross-validation       |
-| 2     | 0:45 - 1:35 | [concepts.md](./02-classical-algorithms/concepts.md)            | All classical algorithms + selection flowchart |
-| 3     | 1:35 - 2:35 | [concepts.md](./03-deep-learning/concepts.md)                   | Neural nets, CNNs, RNNs, **Transformers**      |
-| 4     | 2:35 - 3:15 | [concepts.md](./04-nlp-and-llms/concepts.md)                    | BERT, GPT, RAG, embeddings                     |
-| 5     | 3:15 - 3:45 | [concepts.md](./05-computer-vision/concepts.md)                 | Detection, segmentation, ViT                   |
-| 6     | 3:45 - 4:30 | [concepts.md](./06-ml-system-design/concepts.md)                | ML pipelines, MLOps, monitoring                |
-| 7     | 4:30 - 5:00 | [concepts.md](./07-math-and-statistics/concepts.md)             | Probability, linear algebra, stats             |
-| 8     | 5:00 - 5:40 | [concepts.md](./08-practical-coding/concepts.md)                | From-scratch implementations                   |
-| 9     | 5:40 - 6:00 | [concepts.md](./09-behavioral-scenarios/concepts.md)            | STAR method, project walkthroughs              |
+| 1     | 0:00 - 0:45 | [concepts.md](./01-ml-fundamentals.md)                 | Bias-variance, metrics, cross-validation       |
+| 2     | 0:45 - 1:35 | [concepts.md](./02-classical-algorithms.md)            | All classical algorithms + selection flowchart |
+| 3     | 1:35 - 2:35 | [concepts.md](./03-deep-learning.md)                   | Neural nets, CNNs, RNNs, **Transformers**      |
+| 4     | 2:35 - 3:15 | [concepts.md](./04-nlp-and-llms.md)                    | BERT, GPT, RAG, embeddings                     |
+| 5     | 3:15 - 3:45 | [concepts.md](./05-computer-vision.md)                 | Detection, segmentation, ViT                   |
+| 6     | 3:45 - 4:30 | [concepts.md](./06-ml-system-design.md)                | ML pipelines, MLOps, monitoring                |
+| 7     | 4:30 - 5:00 | [concepts.md](./07-math-and-statistics.md)             | Probability, linear algebra, stats             |
+| 8     | 5:00 - 5:40 | [concepts.md](./08-practical-coding.md)                | From-scratch implementations                   |
+| 9     | 5:40 - 6:00 | [concepts.md](./09-behavioral-scenarios.md)            | STAR method, project walkthroughs              |
 
 > **Tip:** If short on time, focus only on HIGH priority files (blocks 1-4, 6, 8).
 

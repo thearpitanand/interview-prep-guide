@@ -260,7 +260,7 @@ graph TB
 
 ### 5.1 Web Crawling
 
-> For full crawler deep dive, see `../13-web-crawler/design.md`.
+> For full crawler deep dive, see `../13-web-crawler.md`.
 
 ```
 Crawl Scheduling & Freshness:

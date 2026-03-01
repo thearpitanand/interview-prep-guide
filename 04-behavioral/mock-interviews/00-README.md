@@ -67,12 +67,12 @@ flowchart LR
 
 | # | Topic | File | Key Concepts | Purpose | Priority |
 |---|-------|------|-------------|---------|----------|
-| 01 | DSA Mock Format | `01-dsa-mock-format/guide.md` | 45-min structure, timing, rubric, self-eval | Know exactly how DSA interviews are scored | High |
-| 02 | System Design Rubric | `02-system-design-rubric/guide.md` | 8 dimensions, green/red flags, scoring | Understand what interviewers look for in design rounds | High |
-| 03 | Self-Assessment | `03-self-assessment/checklist.md` | 5-pillar checklist, confidence levels, gaps | Identify weak spots across all preparation areas | High |
+| 01 | DSA Mock Format | `01-dsa-mock-format.md` | 45-min structure, timing, rubric, self-eval | Know exactly how DSA interviews are scored | High |
+| 02 | System Design Rubric | `02-system-design-rubric.md` | 8 dimensions, green/red flags, scoring | Understand what interviewers look for in design rounds | High |
+| 03 | Self-Assessment | `03-self-assessment.md` | 5-pillar checklist, confidence levels, gaps | Identify weak spots across all preparation areas | High |
 | 04a | FAANG Question Bank | `04-company-question-banks/faang.md` | Google, Amazon, Meta, Apple, Netflix, Microsoft | Company-specific patterns and question types | Medium |
 | 04b | Indian Unicorns Bank | `04-company-question-banks/indian-unicorns.md` | Flipkart, Razorpay, Swiggy, Zerodha, PhonePe, CRED, Meesho, Groww | Indian startup interview patterns and culture | Medium |
-| 05 | Weekly Schedule | `05-weekly-schedule/template.md` | 6-week plan, daily blocks, mock cadence | Structured execution plan for prep | High |
+| 05 | Weekly Schedule | `05-weekly-schedule.md` | 6-week plan, daily blocks, mock cadence | Structured execution plan for prep | High |
 
 ## Recommended Study Order
 

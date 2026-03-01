@@ -51,16 +51,16 @@ graph TB
 
 | # | Topic | Key Concepts | Difficulty | Est. Time |
 |---|-------|-------------|------------|-----------|
-| 01 | [Concurrency Models](./01-concurrency-models/concepts.md) | Event loop phases, libuv, worker threads, microtasks vs macrotasks | Medium | 3-4 hrs |
-| 02 | [Thread Safety](./02-thread-safety/concepts.md) | Mutexes, race conditions, deadlocks, optimistic/pessimistic locking | Medium-Hard | 2-3 hrs |
-| 03 | [Connection Pooling](./03-connection-pooling/concepts.md) | Pool lifecycle, Little's Law, leak detection, sizing | Medium | 2 hrs |
-| 04 | [Database Internals](./04-database-internals/concepts.md) | B+ trees, WAL, MVCC, query planners, EXPLAIN ANALYZE | Hard | 4-5 hrs |
-| 05 | [Memory Management](./05-memory-management/concepts.md) | V8 GC, leak patterns, heap snapshots, profiling | Medium-Hard | 3 hrs |
-| 06 | [OS Fundamentals](./06-os-fundamentals/concepts.md) | Processes vs threads, virtual memory, epoll/kqueue, syscalls | Hard | 3-4 hrs |
-| 07 | [Networking Deep Dive](./07-networking-deep-dive/concepts.md) | TCP internals, congestion control, HTTP/2-3, TLS 1.3, QUIC | Hard | 4 hrs |
-| 08 | [Caching Deep Dive](./08-caching-deep-dive/concepts.md) | Cache stampede, Redis internals, eviction, distributed cache | Medium-Hard | 3 hrs |
-| 09 | [Message Queues Deep Dive](./09-message-queues-deep-dive/concepts.md) | Kafka internals, consumer groups, exactly-once, partitions | Hard | 4 hrs |
-| 10 | [Load Balancing Internals](./10-load-balancing-internals/concepts.md) | Consistent hashing, L4 vs L7, health checks, connection draining | Medium-Hard | 3 hrs |
+| 01 | [Concurrency Models](./01-concurrency-models.md) | Event loop phases, libuv, worker threads, microtasks vs macrotasks | Medium | 3-4 hrs |
+| 02 | [Thread Safety](./02-thread-safety.md) | Mutexes, race conditions, deadlocks, optimistic/pessimistic locking | Medium-Hard | 2-3 hrs |
+| 03 | [Connection Pooling](./03-connection-pooling.md) | Pool lifecycle, Little's Law, leak detection, sizing | Medium | 2 hrs |
+| 04 | [Database Internals](./04-database-internals.md) | B+ trees, WAL, MVCC, query planners, EXPLAIN ANALYZE | Hard | 4-5 hrs |
+| 05 | [Memory Management](./05-memory-management.md) | V8 GC, leak patterns, heap snapshots, profiling | Medium-Hard | 3 hrs |
+| 06 | [OS Fundamentals](./06-os-fundamentals.md) | Processes vs threads, virtual memory, epoll/kqueue, syscalls | Hard | 3-4 hrs |
+| 07 | [Networking Deep Dive](./07-networking-deep-dive.md) | TCP internals, congestion control, HTTP/2-3, TLS 1.3, QUIC | Hard | 4 hrs |
+| 08 | [Caching Deep Dive](./08-caching-deep-dive.md) | Cache stampede, Redis internals, eviction, distributed cache | Medium-Hard | 3 hrs |
+| 09 | [Message Queues Deep Dive](./09-message-queues-deep-dive.md) | Kafka internals, consumer groups, exactly-once, partitions | Hard | 4 hrs |
+| 10 | [Load Balancing Internals](./10-load-balancing-internals.md) | Consistent hashing, L4 vs L7, health checks, connection draining | Medium-Hard | 3 hrs |
 
 ## Recommended Study Order
 

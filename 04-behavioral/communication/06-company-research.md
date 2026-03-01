@@ -154,7 +154,7 @@ Fill this in for each company you interview with:
 | **Engineering center role** | Is it a product team or support function? Own products or maintain? | LinkedIn, team descriptions, engineering blog |
 | **Tech stack maturity** | Using modern practices? CI/CD? Cloud-native? | Job descriptions, Glassdoor reviews, GitHub |
 | **Growth trajectory** | Headcount growth, new offices, new products | LinkedIn growth metrics, news articles |
-| **CTC structure** | Base vs variable, RSU vesting, joining bonus norms | Glassdoor salaries, Blind, Levels.fyi |
+| **Offer structure** | Base vs variable, RSU vesting, joining bonus norms | Glassdoor, Blind, Levels.fyi |
 | **Work culture** | Work-life balance, meeting culture, IC respect | Glassdoor, Blind, talking to current employees |
 | **Interview process** | Number of rounds, what's tested, who you'll meet | Glassdoor interview reviews, recruiter conversations |
 

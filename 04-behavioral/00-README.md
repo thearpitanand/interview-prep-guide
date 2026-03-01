@@ -1,6 +1,6 @@
 # Behavioral Interview Prep
 
-A structured guide to mastering the behavioral and soft-skills side of senior/staff engineering interviews. This section covers 21 topics across 3 sub-sections: how to communicate effectively, how to think like a senior engineer, and how to perform in mock interview settings.
+A structured guide to mastering the behavioral and soft-skills side of senior/staff engineering interviews. This section covers 20 topics across 3 sub-sections: how to communicate effectively, how to think like a senior engineer, and how to perform in mock interview settings.
 
 ---
 
@@ -8,9 +8,9 @@ A structured guide to mastering the behavioral and soft-skills side of senior/st
 
 ```mermaid
 graph TB
-    BH["Behavioral Interview Prep<br/>21 Topics | 3 Sub-sections"]
+    BH["Behavioral Interview Prep<br/>20 Topics | 3 Sub-sections"]
 
-    BH --> CM["communication/<br/>8 Topics"]
+    BH --> CM["communication/<br/>7 Topics"]
     BH --> SM["senior-mindset/<br/>8 Topics"]
     BH --> MI["mock-interviews/<br/>5 Topics"]
 
@@ -20,8 +20,7 @@ graph TB
     CM --> CM4["Failure Stories"]
     CM --> CM5["Leadership Without Authority"]
     CM --> CM6["Company Research"]
-    CM --> CM7["Salary Negotiation"]
-    CM --> CM8["Common Questions"]
+    CM --> CM7["Common Questions"]
 
     SM --> SM1["Ownership Thinking"]
     SM --> SM2["Prioritization Frameworks"]
@@ -49,7 +48,6 @@ graph TB
     style CM5 fill:#2980b9,stroke:#1f6dad,color:#fff
     style CM6 fill:#2980b9,stroke:#1f6dad,color:#fff
     style CM7 fill:#2980b9,stroke:#1f6dad,color:#fff
-    style CM8 fill:#2980b9,stroke:#1f6dad,color:#fff
     style SM1 fill:#27ae60,stroke:#1e8449,color:#fff
     style SM2 fill:#27ae60,stroke:#1e8449,color:#fff
     style SM3 fill:#27ae60,stroke:#1e8449,color:#fff
@@ -82,20 +80,19 @@ flowchart LR
 
 ---
 
-## Sub-section 1: Communication (8 Topics)
+## Sub-section 1: Communication (7 Topics)
 
 > Master the frameworks and techniques for articulating your experience, handling difficult conversations, and presenting yourself effectively in interviews.
 
 | # | Topic | Link | Focus Area |
 |---|-------|------|------------|
-| 01 | STAR Method | [01-star-method/](./communication/01-star-method/) | Structuring behavioral answers with Situation, Task, Action, Result |
-| 02 | System Design Presentation | [02-system-design-presentation/](./communication/02-system-design-presentation/) | How to walk through a design clearly and confidently |
-| 03 | Conflict Resolution | [03-conflict-resolution/](./communication/03-conflict-resolution/) | Handling disagreements with teammates, managers, and stakeholders |
-| 04 | Failure Stories | [04-failure-stories/](./communication/04-failure-stories/) | Framing mistakes as growth -- what you learned and changed |
-| 05 | Leadership Without Authority | [05-leadership-without-authority/](./communication/05-leadership-without-authority/) | Influencing outcomes without direct reports or formal power |
-| 06 | Company Research | [06-company-research/](./communication/06-company-research/) | Preparing company-specific answers and demonstrating genuine interest |
-| 07 | Salary Negotiation | [07-salary-negotiation/](./communication/07-salary-negotiation/) | Frameworks for negotiating compensation packages |
-| 08 | Common Questions | [08-common-questions/](./communication/08-common-questions/) | Answers for "tell me about yourself", "why this company", etc. |
+| 01 | STAR Method | [01-star-method.md](./communication/01-star-method.md) | Structuring behavioral answers with Situation, Task, Action, Result |
+| 02 | System Design Presentation | [02-system-design-presentation.md](./communication/02-system-design-presentation.md) | How to walk through a design clearly and confidently |
+| 03 | Conflict Resolution | [03-conflict-resolution.md](./communication/03-conflict-resolution.md) | Handling disagreements with teammates, managers, and stakeholders |
+| 04 | Failure Stories | [04-failure-stories.md](./communication/04-failure-stories.md) | Framing mistakes as growth -- what you learned and changed |
+| 05 | Leadership Without Authority | [05-leadership-without-authority.md](./communication/05-leadership-without-authority.md) | Influencing outcomes without direct reports or formal power |
+| 06 | Company Research | [06-company-research.md](./communication/06-company-research.md) | Preparing company-specific answers and demonstrating genuine interest |
+| 07 | Common Questions | [08-common-questions.md](./communication/08-common-questions.md) | Answers for "tell me about yourself", "why this company", etc. |
 
 ---
 
@@ -105,14 +102,14 @@ flowchart LR
 
 | # | Topic | Link | Focus Area | Priority |
 |---|-------|------|------------|----------|
-| 01 | Ownership Thinking | [concepts.md](./senior-mindset/01-ownership-thinking/concepts.md) | Scope progression, accountability, IC vs team ownership | High |
-| 02 | Prioritization Frameworks | [concepts.md](./senior-mindset/02-prioritization-frameworks/concepts.md) | ICE, RICE, Eisenhower, effort-impact matrix | High |
-| 03 | Technical Decisions | [concepts.md](./senior-mindset/03-technical-decisions/concepts.md) | ADRs, RFCs, one-way vs two-way doors | High |
-| 04 | Buy vs Build | [concepts.md](./senior-mindset/04-buy-vs-build/concepts.md) | TCO analysis, vendor lock-in, core vs commodity | Medium |
-| 05 | Cross-Team Collaboration | [concepts.md](./senior-mindset/05-cross-team-collaboration/concepts.md) | API contracts, async communication, dependencies | High |
-| 06 | Mentorship & Culture | [concepts.md](./senior-mindset/06-mentorship-culture/concepts.md) | Code review, onboarding, knowledge sharing | Medium |
-| 07 | Managing Tech Debt | [concepts.md](./senior-mindset/07-managing-tech-debt/concepts.md) | Debt quadrant, quantifying impact, refactoring strategies | High |
-| 08 | Saying No with Data | [concepts.md](./senior-mindset/08-saying-no-with-data/concepts.md) | Yes-and technique, negotiation, managing up | High |
+| 01 | Ownership Thinking | [concepts.md](./senior-mindset/01-ownership-thinking.md) | Scope progression, accountability, IC vs team ownership | High |
+| 02 | Prioritization Frameworks | [concepts.md](./senior-mindset/02-prioritization-frameworks.md) | ICE, RICE, Eisenhower, effort-impact matrix | High |
+| 03 | Technical Decisions | [concepts.md](./senior-mindset/03-technical-decisions.md) | ADRs, RFCs, one-way vs two-way doors | High |
+| 04 | Buy vs Build | [concepts.md](./senior-mindset/04-buy-vs-build.md) | TCO analysis, vendor lock-in, core vs commodity | Medium |
+| 05 | Cross-Team Collaboration | [concepts.md](./senior-mindset/05-cross-team-collaboration.md) | API contracts, async communication, dependencies | High |
+| 06 | Mentorship & Culture | [concepts.md](./senior-mindset/06-mentorship-culture.md) | Code review, onboarding, knowledge sharing | Medium |
+| 07 | Managing Tech Debt | [concepts.md](./senior-mindset/07-managing-tech-debt.md) | Debt quadrant, quantifying impact, refactoring strategies | High |
+| 08 | Saying No with Data | [concepts.md](./senior-mindset/08-saying-no-with-data.md) | Yes-and technique, negotiation, managing up | High |
 
 **Sub-section README:** [senior-mindset/00-README.md](./senior-mindset/00-README.md)
 
@@ -124,11 +121,11 @@ flowchart LR
 
 | # | Topic | Link | Focus Area |
 |---|-------|------|------------|
-| 01 | DSA Mock Format | [01-dsa-mock-format/](./mock-interviews/01-dsa-mock-format/) | Timed coding sessions with interviewer simulation |
-| 02 | System Design Rubric | [02-system-design-rubric/](./mock-interviews/02-system-design-rubric/) | Evaluation criteria for system design practice |
-| 03 | Self-Assessment | [03-self-assessment/](./mock-interviews/03-self-assessment/) | Identifying strengths, weaknesses, and improvement areas |
+| 01 | DSA Mock Format | [01-dsa-mock-format.md](./mock-interviews/01-dsa-mock-format.md) | Timed coding sessions with interviewer simulation |
+| 02 | System Design Rubric | [02-system-design-rubric.md](./mock-interviews/02-system-design-rubric.md) | Evaluation criteria for system design practice |
+| 03 | Self-Assessment | [03-self-assessment.md](./mock-interviews/03-self-assessment.md) | Identifying strengths, weaknesses, and improvement areas |
 | 04 | Company Question Banks | [04-company-question-banks/](./mock-interviews/04-company-question-banks/) | Company-specific question collections and patterns |
-| 05 | Weekly Schedule | [05-weekly-schedule/](./mock-interviews/05-weekly-schedule/) | Structured weekly mock interview rotation plan |
+| 05 | Weekly Schedule | [05-weekly-schedule.md](./mock-interviews/05-weekly-schedule.md) | Structured weekly mock interview rotation plan |
 
 ---
 
@@ -149,7 +146,6 @@ flowchart TD
         C5["05 Leadership Without Authority"]
         C6["02 System Design Presentation"]
         C7["06 Company Research"]
-        C8["07 Salary Negotiation"]
     end
 
     subgraph Phase3["Phase 3: Senior Mindset (Week 3-5)"]
@@ -185,7 +181,7 @@ flowchart TD
 2. **Common Questions and Failure Stories early** -- these are asked in every single interview. Have polished answers ready.
 3. **Conflict Resolution and Leadership** -- frequently asked at senior level and require practiced delivery.
 4. **System Design Presentation** -- bridges communication and technical skills.
-5. **Company Research and Salary Negotiation** -- practical skills best prepared closer to actual interviews.
+5. **Company Research** -- practical skills best prepared closer to actual interviews.
 6. **Senior Mindset topics** -- these are the substance behind your stories. Study them after you know how to structure answers.
 7. **Mock Interviews last** -- only valuable once you have communication skills and mindset content to practice with.
 
@@ -203,8 +199,7 @@ flowchart TD
 | 04 | Failure Stories | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 05 | Leadership Without Authority | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 06 | Company Research | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 07 | Salary Negotiation | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 08 | Common Questions | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 07 | Common Questions | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 ### Senior Mindset
 
@@ -235,7 +230,7 @@ flowchart TD
 
 | Sub-section | Topics | Est. Study Time |
 |-------------|:------:|:---------------:|
-| Communication | 8 | ~2 weeks |
+| Communication | 7 | ~2 weeks |
 | Senior Mindset | 8 | ~2 weeks |
 | Mock Interviews | 5 | ~2 weeks (ongoing) |
-| **Total** | **21** | **~6 weeks** |
+| **Total** | **20** | **~6 weeks** |

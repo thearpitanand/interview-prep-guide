@@ -58,14 +58,14 @@ flowchart LR
 
 | # | Topic | Key Concepts | Difficulty | Est. Time |
 |---|-------|-------------|------------|-----------|
-| 01 | [SLO / SLA / SLI](./01-slo-sla-sli/concepts.md) | Error budgets, burn rates, reliability targets | Medium | 2-3 hrs |
-| 02 | [Incident Handling](./02-incident-handling/concepts.md) | Severity levels, MTTR, postmortems, on-call | Medium | 2-3 hrs |
-| 03 | [Rollback Strategies](./03-rollback-strategies/concepts.md) | Blue-green, canary, feature flags, DB rollbacks | Medium-Hard | 3-4 hrs |
-| 04 | [Disaster Recovery](./04-disaster-recovery/concepts.md) | RPO/RTO, multi-region failover, DR tiers | Hard | 3-4 hrs |
-| 05 | [Capacity Planning](./05-capacity-planning/concepts.md) | Traffic modeling, load testing, auto-scaling | Medium | 2-3 hrs |
-| 06 | [Deployment Pipelines](./06-deployment-pipelines/concepts.md) | CI/CD, progressive delivery, IaC, GitOps | Medium | 2-3 hrs |
-| 07 | [Alerting Practices](./07-alerting-practices/concepts.md) | Alert fatigue, symptom-based alerts, runbooks | Medium | 2 hrs |
-| 08 | [Chaos Engineering](./08-chaos-engineering/concepts.md) | Failure injection, game days, blast radius | Medium-Hard | 2-3 hrs |
+| 01 | [SLO / SLA / SLI](./01-slo-sla-sli.md) | Error budgets, burn rates, reliability targets | Medium | 2-3 hrs |
+| 02 | [Incident Handling](./02-incident-handling.md) | Severity levels, MTTR, postmortems, on-call | Medium | 2-3 hrs |
+| 03 | [Rollback Strategies](./03-rollback-strategies.md) | Blue-green, canary, feature flags, DB rollbacks | Medium-Hard | 3-4 hrs |
+| 04 | [Disaster Recovery](./04-disaster-recovery.md) | RPO/RTO, multi-region failover, DR tiers | Hard | 3-4 hrs |
+| 05 | [Capacity Planning](./05-capacity-planning.md) | Traffic modeling, load testing, auto-scaling | Medium | 2-3 hrs |
+| 06 | [Deployment Pipelines](./06-deployment-pipelines.md) | CI/CD, progressive delivery, IaC, GitOps | Medium | 2-3 hrs |
+| 07 | [Alerting Practices](./07-alerting-practices.md) | Alert fatigue, symptom-based alerts, runbooks | Medium | 2 hrs |
+| 08 | [Chaos Engineering](./08-chaos-engineering.md) | Failure injection, game days, blast radius | Medium-Hard | 2-3 hrs |
 
 ## Recommended Study Order
 
