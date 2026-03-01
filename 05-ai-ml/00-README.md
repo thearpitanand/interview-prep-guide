@@ -1,113 +1,72 @@
-# AI/ML Interview Prep - Complete Study Guide
+# AI/ML Interview Prep
 
-## Quick Navigation
-
-| #                                   | Topic                    | Time   | Priority |
-| ----------------------------------- | ------------------------ | ------ | -------- |
-| [01](./01-ml-fundamentals.md)         | ML Fundamentals          | 45 min | HIGH     |
-| [02](./02-classical-algorithms.md)    | Classical ML Algorithms  | 50 min | HIGH     |
-| [03](./03-deep-learning.md)           | Deep Learning            | 60 min | HIGH     |
-| [04](./04-nlp-and-llms.md)            | NLP & LLMs               | 40 min | HIGH     |
-| [05](./05-computer-vision.md)         | Computer Vision          | 30 min | MEDIUM   |
-| [06](./06-ml-system-design.md)        | ML System Design & MLOps | 45 min | HIGH     |
-| [07](./07-math-and-statistics.md)     | Math & Statistics        | 30 min | MEDIUM   |
-| [08](./08-practical-coding.md)        | Practical Coding         | 40 min | HIGH     |
-| [09](./09-behavioral-scenarios.md)    | Behavioral & Scenarios   | 20 min | MEDIUM   |
+Two paths to the same destination. Pick the one that fits your timeline.
 
 ---
 
-## 5-Hour Study Schedule
+## Choose Your Path
 
-```mermaid
-gantt
-    title Study Schedule Timeline
-    dateFormat HH:mm
-    axisFormat %H:%M
-
-    section HIGH Priority
-    ML Fundamentals           :a1, 00:00, 45m
-    Classical ML Algorithms   :a2, after a1, 50m
-    Deep Learning             :a3, after a2, 60m
-    NLP & LLMs               :a4, after a3, 40m
-    ML System Design          :a6, after a5, 45m
-    Practical Coding          :a8, after a7, 40m
-
-    section MEDIUM Priority
-    Computer Vision           :a5, after a4, 30m
-    Math & Statistics         :a7, after a6, 30m
-    Behavioral Scenarios      :a9, after a8, 20m
-```
-
-| Block | Time        | File                                                           | Focus                                          |
-| ----- | ----------- | -------------------------------------------------------------- | ---------------------------------------------- |
-| 1     | 0:00 - 0:45 | [concepts.md](./01-ml-fundamentals.md)                 | Bias-variance, metrics, cross-validation       |
-| 2     | 0:45 - 1:35 | [concepts.md](./02-classical-algorithms.md)            | All classical algorithms + selection flowchart |
-| 3     | 1:35 - 2:35 | [concepts.md](./03-deep-learning.md)                   | Neural nets, CNNs, RNNs, **Transformers**      |
-| 4     | 2:35 - 3:15 | [concepts.md](./04-nlp-and-llms.md)                    | BERT, GPT, RAG, embeddings                     |
-| 5     | 3:15 - 3:45 | [concepts.md](./05-computer-vision.md)                 | Detection, segmentation, ViT                   |
-| 6     | 3:45 - 4:30 | [concepts.md](./06-ml-system-design.md)                | ML pipelines, MLOps, monitoring                |
-| 7     | 4:30 - 5:00 | [concepts.md](./07-math-and-statistics.md)             | Probability, linear algebra, stats             |
-| 8     | 5:00 - 5:40 | [concepts.md](./08-practical-coding.md)                | From-scratch implementations                   |
-| 9     | 5:40 - 6:00 | [concepts.md](./09-behavioral-scenarios.md)            | STAR method, project walkthroughs              |
-
-> **Tip:** If short on time, focus only on HIGH priority files (blocks 1-4, 6, 8).
+| Path | Time | Best For | Start Here |
+|------|------|----------|------------|
+| **[Crash Course](./crash-course/01-the-complete-guide.md)** | 5 hours | Visual learners, time-constrained, SWEs new to ML | [Start Crash Course ->](./crash-course/00-README.md) |
+| **[Deep Dive](./deep-dive/00-README.md)** | 6+ hours | Comprehensive coverage, reference material, detailed theory | [Start Deep Dive ->](./deep-dive/00-README.md) |
 
 ---
 
-## Last 30 Minutes Before Interview - Cheat Sheet
+## Crash Course (Recommended for Interview Prep)
 
-### The Big 5 Concepts You MUST Know
+One consolidated guide. Visual-first with mermaid diagrams, ASCII art, SWE analogies, and worked examples. Everything interconnects.
 
-1. **Bias-Variance Tradeoff** → High bias = underfitting, High variance = overfitting. Balance via regularization, ensemble methods, more data.
+| Hour | Topic | Key Concepts |
+|------|-------|-------------|
+| 1 | Foundations | ML types, pipeline, metrics, bias-variance |
+| 2 | Classical Algorithms | 9 algorithms with visuals, selection flowchart |
+| 3 | Modern AI | CNNs, Transformers, BERT, GPT, RAG, RLHF |
+| 4 | ML in Production | System design framework, MLOps, gotchas |
+| 5 | Interview Mastery | Top 25 questions, answer framework, cheat sheet |
+| + | [Implementation Stories](./crash-course/02-implementation-stories.md) | 2 showcase projects: Churn Predictor & RAG Q&A System |
 
-2. **Transformer Architecture** → Self-attention computes Q·K^T/√d_k then softmax, multiply by V. Multi-head = parallel attention. Positional encoding adds sequence info. BERT = encoder-only (bidirectional), GPT = decoder-only (autoregressive).
-
-3. **Evaluation Metrics** → Precision = TP/(TP+FP) "of predicted positives, how many correct?". Recall = TP/(TP+FN) "of actual positives, how many found?". F1 = harmonic mean. AUC-ROC = threshold-independent.
-
-4. **Gradient Descent & Backprop** → Forward pass computes loss, backward pass computes gradients via chain rule, optimizer updates weights. Adam = momentum + RMSprop.
-
-5. **ML System Design Framework** → Requirements → Data → Features → Model → Evaluation → Deployment → Monitoring
-
-### Quick Formula Reference
-
-| Formula         | Expression                    |
-| --------------- | ----------------------------- |
-| Precision       | TP / (TP + FP)                |
-| Recall          | TP / (TP + FN)                |
-| F1 Score        | 2 × (P × R) / (P + R)         |
-| Accuracy        | (TP + TN) / Total             |
-| Bayes Theorem   | P(A\|B) = P(B\|A)·P(A) / P(B) |
-| Cross-Entropy   | -Σ y·log(ŷ)                   |
-| Softmax         | e^zi / Σe^zj                  |
-| Attention       | softmax(QK^T/√d_k)V           |
-| Gradient Update | θ = θ - α·∇L                  |
-
-### Key Comparisons to Remember
-
-| vs                       | Left                       | Right                       |
-| ------------------------ | -------------------------- | --------------------------- |
-| Bias vs Variance         | Underfitting, simple model | Overfitting, complex model  |
-| L1 vs L2                 | Sparse, feature selection  | Small weights, no zeros     |
-| Bagging vs Boosting      | Parallel, reduce variance  | Sequential, reduce bias     |
-| Batch vs Stochastic GD   | Stable, slow               | Noisy, fast                 |
-| BERT vs GPT              | Bidirectional, encoder     | Autoregressive, decoder     |
-| Precision vs Recall      | Minimize false positives   | Minimize false negatives    |
-| BatchNorm vs LayerNorm   | Across batch dim           | Across feature dim          |
-| Random Forest vs XGBoost | Easy tuning, parallel      | Better accuracy, sequential |
-
-### Interview Response Framework
-
-```mermaid
-flowchart LR
-    A[Hear Question] --> B[Clarify Scope]
-    B --> C[State High-Level Answer]
-    C --> D[Explain with Diagram/Example]
-    D --> E[Discuss Tradeoffs]
-    E --> F[Connect to Real World]
-```
-
-> **Remember:** Think out loud. Interviewers want to see your thought process, not just the answer.
+**[Open the Complete Guide ->](./crash-course/01-the-complete-guide.md)**
 
 ---
 
-_Good luck with your interview! You've got this._ 🚀
+## Deep Dive (Comprehensive Reference)
+
+Nine detailed topic files covering every area in depth. Use as reference material or for thorough study.
+
+| # | Topic | Time | Priority |
+|---|-------|------|----------|
+| -- | [Beginner Start Here](./deep-dive/BEGINNER-START-HERE.md) | 30 min | START |
+| 01 | [ML Fundamentals](./deep-dive/01-ml-fundamentals.md) | 45 min | HIGH |
+| 02 | [Classical ML Algorithms](./deep-dive/02-classical-algorithms.md) | 50 min | HIGH |
+| 03 | [Deep Learning](./deep-dive/03-deep-learning.md) | 60 min | HIGH |
+| 04 | [NLP & LLMs](./deep-dive/04-nlp-and-llms.md) | 40 min | HIGH |
+| 05 | [Computer Vision](./deep-dive/05-computer-vision.md) | 30 min | MEDIUM |
+| 06 | [ML System Design & MLOps](./deep-dive/06-ml-system-design.md) | 45 min | HIGH |
+| 07 | [Math & Statistics](./deep-dive/07-math-and-statistics.md) | 30 min | MEDIUM |
+| 08 | [Practical Coding](./deep-dive/08-practical-coding.md) | 40 min | HIGH |
+| 09 | [Behavioral & Scenarios](./deep-dive/09-behavioral-scenarios.md) | 20 min | MEDIUM |
+
+**[Open Deep Dive Guide ->](./deep-dive/00-README.md)**
+
+---
+
+## Quick Reference
+
+### The Big 5 Concepts
+
+1. **Bias-Variance Tradeoff** -- High bias = underfitting, High variance = overfitting
+2. **Transformer Architecture** -- Self-attention: softmax(QK^T/sqrt(d_k))V
+3. **Evaluation Metrics** -- Precision (FP costly) vs Recall (FN costly)
+4. **Gradient Descent & Backprop** -- Forward pass -> loss -> backward pass -> update
+5. **ML System Design** -- Requirements -> Data -> Features -> Model -> Eval -> Deploy -> Monitor
+
+### Key Formulas
+
+| Formula | Expression |
+|---------|-----------|
+| Precision | TP / (TP + FP) |
+| Recall | TP / (TP + FN) |
+| F1 Score | 2 * (P * R) / (P + R) |
+| Attention | softmax(QK^T / sqrt(d_k)) * V |
+| Gradient Update | theta = theta - alpha * grad(L) |
