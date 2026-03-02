@@ -33,6 +33,16 @@ walk through in interviews.
 
 ---
 
+## AI Engineer Interview Prep
+
+JD-specific prep covering LLMs, advanced RAG, vector databases, LangChain/LlamaIndex/LangGraph,
+multi-agent AI, fine-tuning, LLM security, conversational AI, and FastAPI deployment.
+Every section has ready-to-use interview answers.
+
+[AI Engineer Interview Prep →](./03-interview-prep-ai-engineer.md)
+
+---
+
 For deeper coverage of individual topics:
 
 [Deep Dive Guides →](../deep-dive/00-README.md)
