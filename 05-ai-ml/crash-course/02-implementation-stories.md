@@ -4,175 +4,76 @@
 
 ---
 
-## Story 1: Customer Churn Predictor
+## Story 1: "Related Items" Recommendations for Cart
 
-### How It Started
+### The Problem
 
-I was on the platform team at a B2B SaaS company — about 50K active accounts, mid-market segment. Every quarter, ~5% of accounts would cancel, and the retention team's approach was basically "email everyone." They had a list of 2,000 accounts they'd manually reach out to every month. Most of those accounts were perfectly happy. The ones actually about to leave? Nobody saw them coming.
+E-commerce company, ~2M monthly orders (electronics & accessories). Our cart page had zero cross-sell — user adds a phone, checks out, never sees "you might also need a case." PM asked me to build a "frequently bought together" widget.
 
-My manager pulled me into a meeting with the Head of Retention and said: "Can we predict who's going to churn before they actually cancel?" I said probably, if we have the data. We had three years of CRM records, usage logs, and support tickets. So I took it on as a side project — just me, no ML team, no fancy infra.
+We had 18 months of order history. Success metric: does average order value go up in an A/B test?
 
-### What I Was Trying to Solve
+### What I Built
 
-The goal was specific: flag at-risk accounts **30 days before cancellation** so the retention team could intervene with targeted outreach — not blanket emails, but actual personalized conversations. The tricky part was that only 5% of accounts churn in any given quarter. That means a model that just predicts "not churning" for everyone is 95% accurate and completely useless. So from day one, I knew accuracy was the wrong metric. I needed to optimize for **PR-AUC** (Precision-Recall AUC) — it tells you how well the model ranks the actual churners above the non-churners, even when the classes are this imbalanced.
+The idea is simple: look at past orders, find items that people consistently buy together, and show those as suggestions.
 
-### Architecture
+**Step 1 — Count item pairs from order history.**
+Go through every past order. If someone bought a phone AND a case in the same order, that's one co-occurrence for that pair. Do this across all orders and you get a count for every item pair.
+
+**Step 2 — Score the pairs (not just raw counts).**
+Raw counts had a huge problem: USB cables appeared in 40% of all orders, so "USB cable" was the #1 recommendation for _everything_. Technically true — people buy cables with everything — but useless.
+
+The fix was to ask: "Do these two items appear together **more than you'd expect by chance**?" If phones are in 10% of orders and cases are in 12%, you'd expect them together in ~1.2% of orders just by coincidence. But they actually appear together in 8% — that's ~7x higher than chance. That's a strong signal. USB cables, despite high raw counts, don't beat their "expected by chance" baseline for any specific item, so they stop dominating. This technique is called **PMI (Pointwise Mutual Information)** — it's just one division that normalizes for popularity.
+
+**Step 3 — Pre-compute and cache.**
+Every night, a batch job computes the top 20 related items for each product and stores them in **Redis**. When a user loads the cart page, the API just does a cache lookup (~1ms), filters out anything out-of-stock, and returns the top 4 items. No model inference at serving time.
 
 ```mermaid
 graph LR
-    subgraph Data Layer
-        CRM[(CRM Database)]
-        USAGE[(Usage Logs)]
-        SUPPORT[(Support Tickets)]
-    end
+    ORDERS[(Order History)] --> SCORE[Score Item Pairs\nnightly batch]
+    SCORE --> CACHE[(Redis\nitem → top recs)]
+    CART[Cart Page] --> API[Recs API]
+    API --> CACHE
+    API --> FILTER[Filter & Return\ntop 4 items]
 
-    subgraph Feature Engineering
-        CRM --> FE[Feature Pipeline]
-        USAGE --> FE
-        SUPPORT --> FE
-        FE --> RFM[RFM Features]
-        FE --> BEHAV[Behavioral Features]
-        FE --> ENGAGE[Engagement Features]
-    end
-
-    subgraph Model Training
-        RFM --> SPLIT[Temporal Split]
-        BEHAV --> SPLIT
-        ENGAGE --> SPLIT
-        SPLIT --> LR[Logistic Regression<br/>Baseline]
-        SPLIT --> XGB[XGBoost<br/>Production Model]
-    end
-
-    subgraph Evaluation
-        LR --> EVAL[PR-AUC / F1 /<br/>Confusion Matrix]
-        XGB --> EVAL
-    end
-
-    subgraph Serving
-        XGB --> API[REST API]
-        API --> DASH[Retention Dashboard]
-        API --> MON[Monitoring:<br/>Drift Detection]
-    end
-
-    style FE fill:#2ecc71,stroke:#333,color:#fff
-    style XGB fill:#4a90d9,stroke:#333,color:#fff
-    style EVAL fill:#f39c12,stroke:#333,color:#fff
+    style SCORE fill:#4a90d9,stroke:#333,color:#fff
     style API fill:#e74c3c,stroke:#333,color:#fff
+    style FILTER fill:#f39c12,stroke:#333,color:#fff
 ```
 
-| Component           | Role                                         | Tech Choice       |
-| ------------------- | -------------------------------------------- | ----------------- |
-| Feature Pipeline    | Transforms raw data into ML-ready features   | Python / pandas   |
-| Temporal Split      | Prevents data leakage by splitting on time   | Custom logic      |
-| Logistic Regression | Interpretable baseline model                 | From scratch      |
-| XGBoost             | Production model with higher recall          | sklearn API       |
-| Evaluation          | Compares models on business-relevant metrics | sklearn metrics   |
-| Serving API         | Scores accounts on a nightly batch           | Flask / FastAPI   |
-| Monitoring          | Tracks feature drift and prediction drift    | Statistical tests |
+### Problems I Hit
 
-### Concepts & Approach
+**Popularity bias** — Already described. Raw counts = "USB cable for everything." PMI fixed it by normalizing for how popular each item is individually.
 
-I started the way most ML projects should start — not with a model, but with the data. I pulled three months of CRM records, usage logs, and support tickets into a single table and started looking for patterns.
+**New items had no data** — A product launched yesterday has zero order history, so it never shows up in recs. Fix: fall back to top recommendations for that item's _category_ until it has enough orders of its own. Simple, shipped in a day.
 
-#### Feature Engineering — RFM Features
+**Cross-brand noise** — Sometimes a laptop charger for Brand A got recommended alongside Brand B's laptop, just because people bought both in the same order (two separate setups). Fix: a small category-compatibility filter (~50 lines of business rules) to remove obviously wrong pairings.
 
-The first thing I did was build **RFM features** (Recency, Frequency, Monetary). This is old-school customer analytics — nothing fancy — but it captures the signals that actually matter:
+### Results
 
-| Feature       | What It Captures               | Why It Matters for Churn         |
-| ------------- | ------------------------------ | -------------------------------- |
-| **Recency**   | Days since last activity       | High recency = going cold        |
-| **Frequency** | Total interactions in a window | Dropping frequency = disengaging |
-| **Monetary**  | Total spend / usage volume     | Low spenders churn easier        |
+| Metric              | Before | After |
+| ------------------- | ------ | ----- |
+| Widget click rate   | N/A    | 6.2%  |
+| Avg order value     | $47    | $52   |
+| Monthly rec revenue | $0     | ~$180K |
 
-On top of raw RFM, I derived two additional features: **engagement rate** (frequency relative to account tenure — a 2-year account with 10 logins is different from a 2-month account with 10 logins) and **recency-frequency ratio** (high recency + low frequency = danger signal). These derived features ended up being more predictive than the raw ones because they normalized for account age.
+A/B test ran 3 weeks → **11% lift in average order value**. Rolled out to 100%.
 
-#### Baseline Model — Logistic Regression
+### How to Tell This in an Interview (~2 min)
 
-My first instinct was to throw XGBoost at it and call it a day. But I forced myself to start with **logistic regression** for two reasons:
+> "Our cart page had no cross-sell. I built a 'frequently bought together' feature using order history.
+>
+> First attempt — just count how often items appear in the same order. Problem was, USB cables showed up as the top rec for everything because they're in 40% of orders. So I switched to PMI, which asks 'do these items appear together more than chance?' That one change made recs actually useful.
+>
+> I pre-computed scores nightly and cached them in Redis — no ML model at serving time, just a cache lookup under 10ms.
+>
+> Two edge cases: new items with no history got category-level fallback recs, and I added a small filter to remove cross-brand noise.
+>
+> A/B tested for 3 weeks — 11% lift in average order value, about $180K/month in incremental revenue."
 
-1. **Interpretability**: The retention team needed to understand _why_ an account was flagged. Logistic regression gives you a weight per feature — you can literally say "this account is high-risk because their recency score is 3x the average." XGBoost is a black box by comparison.
-2. **Baseline discipline**: You need a simple model to benchmark against. If XGBoost only beats logistic regression by 2%, maybe the complexity isn't worth it. If it beats it by 20%, now you know the non-linear interactions matter.
-
-Under the hood, logistic regression is straightforward: apply a **sigmoid function** to a weighted sum of features to get a probability, then use **gradient descent** to learn the weights that minimize the log loss. The key insight is that it draws a linear decision boundary — it can't capture interactions like "low usage AND high tenure = churn" unless you manually engineer that cross-feature. That limitation is exactly what told me I'd eventually need a tree-based model.
-
-#### Production Model — XGBoost
-
-I moved to **XGBoost** (gradient-boosted decision trees) for the production model because it solved the problems logistic regression couldn't:
-
-- **Non-linear interactions**: XGBoost automatically discovers that "low frequency + high tenure" is different from "low frequency + low tenure" without me engineering cross-features
-- **Feature importance**: Built-in feature importance ranking — which became critical for the business insight I describe below
-- **Robustness**: Less sensitive to feature scaling and outliers than logistic regression
-
-The tradeoff was interpretability. I kept both models: logistic regression for "explain why" conversations with the retention team, XGBoost for the actual prediction scores.
-
-#### Evaluation — Why PR-AUC, Not Accuracy
-
-With only 5% churners, I needed metrics designed for imbalanced classification:
-
-- **Precision**: Of the accounts we flag, how many actually churn? (False alarms waste the retention team's time)
-- **Recall**: Of the accounts that actually churn, how many did we catch? (Missed churners = lost revenue)
-- **F1**: Harmonic mean of precision and recall — a single number that balances both
-- **PR-AUC**: Area under the precision-recall curve — measures ranking quality across all thresholds, not just one
-
-I also used the **confusion matrix** religiously. Not just the numbers, but sitting with the retention team and asking: "Would you rather we flag 50 extra happy accounts (more false positives) or miss 10 churners (more false negatives)?" That conversation is what led us to set the classification threshold at 0.3 instead of the default 0.5 — we accepted more false alarms to catch more churners.
-
-#### Temporal Split — Preventing Data Leakage
-
-Instead of random 80/20 train/test split, I split strictly by time: train on months 1-9, test on months 10-12. The model only ever trains on past data and gets tested on future data — exactly how it would work in production. This is the fix for the data leakage bug I describe below.
-
-```
-Random split (WRONG):
-  Train: [Jan, Mar, May, Jul, Sep, Nov]  ← future data leaks in
-  Test:  [Feb, Apr, Jun, Aug, Oct, Dec]
-
-Temporal split (CORRECT):
-  Train: [Jan → Sep]   ← only past data
-  Test:  [Oct → Dec]   ← only future data
-```
-
-### Where Things Went Wrong (and How I Fixed Them)
-
-**The "95% accurate" model that was completely useless**
-
-My first iteration, I trained logistic regression with default settings, ran it on a random 80/20 split, and got 95% accuracy. I was thrilled for about five minutes — then I looked at the confusion matrix. The model was predicting "not churning" for every single account. 95% accuracy because 95% of accounts don't churn. Classic rookie mistake.
-
-That's when I threw out accuracy entirely and switched to PR-AUC and F1 as the metrics that actually mattered. I also added class weights (`{0: 1.0, 1: 19.0}`) to the logistic regression — basically telling the model "missing a churner costs you 19x more than a false alarm." It's simpler than SMOTE (which generates synthetic samples that can introduce noise), and it worked better in practice.
-
-**The suspiciously good model**
-
-After adding XGBoost and tuning hyperparameters, I was getting a 0.92 PR-AUC on the test set. That felt _too_ good. I've seen enough Kaggle disaster stories to know that when a model looks too good, something is leaking.
-
-I dug in and found the problem: my random train/test split was allowing future behavioral signals to bleed into the training set. A customer's March usage patterns were in the training set while the model was being asked to predict their January churn label. That's not how the model would work in production — it would never have future data.
-
-I replaced the random split with a temporal split (train on months 1-9, test on months 10-12). PR-AUC dropped to 0.74. That hurt to see, but it was the _real_ number — and it held up when we deployed.
-
-**The feature that changed the whole project**
-
-After deploying XGBoost, I looked at feature importance — partly out of curiosity, partly because the retention team kept asking "but _why_ is this account flagged?" The top feature wasn't usage decline or billing issues. It was "days since last support ticket."
-
-That made no sense to me at first. Then the Head of Retention said something that stuck: "Customers who stop complaining aren't happy — they've given up." People who are engaged with your product file bugs and ask questions. When they go silent, they've already mentally moved on. That insight led us to build an "engagement silence" alert that flagged accounts that had gone quiet, even if their usage metrics looked fine.
-
-### What Came Out of It
-
-| Metric                 | Logistic Regression | XGBoost |
-| ---------------------- | ------------------- | ------- |
-| PR-AUC                 | 0.61                | 0.74    |
-| F1 (threshold=0.3)     | 0.52                | 0.67    |
-| Precision @ 50% Recall | 0.58                | 0.71    |
-
-The retention team went from emailing 2,000 accounts a month to focusing on the top 200 flagged by the model. Quarterly churn dropped from 5.0% to 3.8% in the first quarter — roughly $240K/quarter in retained revenue.
-
-If I did it again, I'd add a calibration step (Platt scaling) to convert XGBoost's raw scores into actual probabilities. The retention team wanted to say "this account has a 73% chance of churning" rather than just "this account is #47 on the risk list." That's a better conversation to have with a customer success manager.
-
-### Interview Talking Points
-
-- **Lead with the metric mismatch**: "My first model was 95% accurate and completely useless — switching to PR-AUC was the real unlock." This shows you think about evaluation critically, not just chase numbers. _(Review: [1.3 Evaluation Metrics](./01-the-complete-guide.md#13-evaluation-metrics-that-actually-matter))_
-
-- **Tell the data leakage story**: "Temporal split dropped our PR-AUC from 0.92 to 0.74, but that 0.74 was real." Every interviewer has seen data leakage burn a project. Catching it yourself shows maturity. _(Review: [1.2 The ML Pipeline](./01-the-complete-guide.md#12-the-ml-pipeline))_
-
-- **Explain why two models**: "Logistic regression was interpretable and helped the retention team trust the system. XGBoost captured non-linear interactions I couldn't engineer by hand. We ran both." _(Review: [2.1 Classical ML Greatest Hits](./01-the-complete-guide.md#21-the-classical-ml-greatest-hits))_
-
-- **End with the business number**: "$240K/quarter saved by narrowing outreach from 2,000 to 200 accounts." Technical work only matters if it moves a real metric. _(Review: [4.1 ML System Design Framework](./01-the-complete-guide.md#41-ml-system-design-framework-20-min))_
+**If interviewer digs deeper**, talk about:
+- PMI formula (one sentence: "it's co-occurrence probability divided by what you'd expect if the items were independent")
+- Why not collaborative filtering or embeddings ("PMI got us to production in 2 weeks — embeddings were the planned V2 for capturing subtler relationships")
+- Cold start tradeoffs
 
 ---
 
