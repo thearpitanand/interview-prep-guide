@@ -13,33 +13,35 @@ def get_type_name(value) -> str:
     """Return the type name of the value as a string.
     Example: get_type_name(42) -> 'int'
     """
-    pass
+    return type(value).__name__
 
 
 def swap_values(a, b) -> tuple:
     """Return a tuple with values swapped.
     Example: swap_values(1, 2) -> (2, 1)
     """
-    pass
+    a, b = b, a
+    return a, b
 
 
 def celsius_to_fahrenheit(celsius: float) -> float:
     """Convert Celsius to Fahrenheit.
     Formula: F = C * 9/5 + 32
     """
-    pass
+    fahrenheit = celsius * (9 / 5) + 32
+    return fahrenheit
 
 
 def is_even(n: int) -> bool:
     """Return True if n is even, False otherwise."""
-    pass
+    return n % 2 == 0
 
 
 def string_to_int_sum(a: str, b: str) -> int:
     """Convert two string numbers and return their sum.
     Example: string_to_int_sum("3", "4") -> 7
     """
-    pass
+    return int(a) + int(b)
 
 
 # --- Tests ---

@@ -99,21 +99,21 @@ chr(65)            # 'A'
 
 ### Time Complexity Table
 
-| Operation | Time Complexity | Notes |
-|-----------|:-:|-------|
-| `s[i]` (index) | O(1) | Direct access |
-| `s[i:j]` (slice) | O(j - i) | Creates new string |
-| `len(s)` | O(1) | Stored as attribute |
-| `s + t` (concatenation) | O(len(s) + len(t)) | Creates new string |
-| `s.find(t)` / `s.index(t)` | O(n * m) | n = len(s), m = len(t) |
-| `s.replace(old, new)` | O(n) | Scans entire string |
-| `s.split()` | O(n) | Scans entire string |
-| `"".join(list)` | O(total chars) | Efficient concatenation |
-| `s in t` (substring check) | O(n * m) | Worst case |
-| `s == t` | O(n) | Character-by-character |
-| `sorted(s)` | O(n log n) | Returns list of chars |
-| `s.count(c)` | O(n) | Scans entire string |
-| `s[::-1]` (reverse) | O(n) | Creates new string |
+| Operation                  |  Time Complexity   | Notes                   |
+| -------------------------- | :----------------: | ----------------------- |
+| `s[i]` (index)             |        O(1)        | Direct access           |
+| `s[i:j]` (slice)           |      O(j - i)      | Creates new string      |
+| `len(s)`                   |        O(1)        | Stored as attribute     |
+| `s + t` (concatenation)    | O(len(s) + len(t)) | Creates new string      |
+| `s.find(t)` / `s.index(t)` |     O(n \* m)      | n = len(s), m = len(t)  |
+| `s.replace(old, new)`      |        O(n)        | Scans entire string     |
+| `s.split()`                |        O(n)        | Scans entire string     |
+| `"".join(list)`            |   O(total chars)   | Efficient concatenation |
+| `s in t` (substring check) |     O(n \* m)      | Worst case              |
+| `s == t`                   |        O(n)        | Character-by-character  |
+| `sorted(s)`                |     O(n log n)     | Returns list of chars   |
+| `s.count(c)`               |        O(n)        | Scans entire string     |
+| `s[::-1]` (reverse)        |        O(n)        | Creates new string      |
 
 > **Key insight**: Use `"".join(list)` instead of repeated `+=` in loops. Repeated concatenation in a loop is O(n^2) because each `+=` creates a new string.
 
@@ -157,6 +157,7 @@ graph LR
 Used for substring problems where you need to find an optimal window. Two variants:
 
 #### Fixed-Size Window
+
 The window size is known. Slide it across the string.
 
 ```python
@@ -171,6 +172,7 @@ def fixed_window(s, k):
 ```
 
 #### Variable-Size Window
+
 Expand the right pointer; shrink the left pointer when a condition is violated.
 
 ```python
@@ -382,7 +384,7 @@ stateDiagram-v2
 
 ### Pattern 6: Rabin-Karp (Hard)
 
-Uses a **rolling hash** to find pattern matches. Average case O(n + m), worst case O(n * m).
+Uses a **rolling hash** to find pattern matches. Average case O(n + m), worst case O(n \* m).
 
 #### Rolling Hash Concept
 
@@ -565,14 +567,14 @@ Always be clear about whether your window boundaries are **inclusive** or **excl
 
 ### Day 9 - Easy + Introduction
 
-| # | Problem | Pattern | Time |
-|---|---------|---------|------|
-| 1 | Valid Palindrome (LC 125) | Two Pointers | 15 min |
-| 2 | Valid Anagram (LC 242) | Hash Map | 15 min |
-| 3 | Reverse Words in a String (LC 151) | String Manipulation | 15 min |
-| 4 | First Unique Character (LC 387) | Hash Map | 15 min |
-| 5 | Isomorphic Strings (LC 205) | Hash Map | 15 min |
-| 6 | Longest Common Prefix (LC 14) | String Comparison | 15 min |
+| #   | Problem                            | Pattern             | Time   |
+| --- | ---------------------------------- | ------------------- | ------ |
+| 1   | Valid Palindrome (LC 125)          | Two Pointers        | 15 min |
+| 2   | Valid Anagram (LC 242)             | Hash Map            | 15 min |
+| 3   | Reverse Words in a String (LC 151) | String Manipulation | 15 min |
+| 4   | First Unique Character (LC 387)    | Hash Map            | 15 min |
+| 5   | Isomorphic Strings (LC 205)        | Hash Map            | 15 min |
+| 6   | Longest Common Prefix (LC 14)      | String Comparison   | 15 min |
 
 **Goal**: Get comfortable with basic string operations, two pointers, and frequency counting. Read the concepts guide before starting.
 
@@ -580,14 +582,14 @@ Always be clear about whether your window boundaries are **inclusive** or **excl
 
 ### Day 10 - Medium Problems
 
-| # | Problem | Pattern | Time |
-|---|---------|---------|------|
-| 1 | Longest Substring Without Repeating Characters (LC 3) | Sliding Window | 25 min |
-| 2 | Group Anagrams (LC 49) | Hash Map | 20 min |
-| 3 | Longest Palindromic Substring (LC 5) | Expand Around Center | 25 min |
-| 4 | String to Integer (LC 8) | String Parsing | 20 min |
-| 5 | Count and Say (LC 38) | Simulation | 15 min |
-| 6 | Repeated Substring Pattern (LC 459) | String Pattern | 20 min |
+| #   | Problem                                               | Pattern              | Time   |
+| --- | ----------------------------------------------------- | -------------------- | ------ |
+| 1   | Longest Substring Without Repeating Characters (LC 3) | Sliding Window       | 25 min |
+| 2   | Group Anagrams (LC 49)                                | Hash Map             | 20 min |
+| 3   | Longest Palindromic Substring (LC 5)                  | Expand Around Center | 25 min |
+| 4   | String to Integer (LC 8)                              | String Parsing       | 20 min |
+| 5   | Count and Say (LC 38)                                 | Simulation           | 15 min |
+| 6   | Repeated Substring Pattern (LC 459)                   | String Pattern       | 20 min |
 
 **Goal**: Master sliding window and hash map patterns. These are the most frequently asked string problems.
 
@@ -595,14 +597,14 @@ Always be clear about whether your window boundaries are **inclusive** or **excl
 
 ### Day 11 - Hard + Mixed Review
 
-| # | Problem | Pattern | Time |
-|---|---------|---------|------|
-| 1 | Zigzag Conversion (LC 6) | Simulation | 20 min |
-| 2 | Multiply Strings (LC 43) | Math/String | 25 min |
-| 3 | Minimum Window Substring (LC 76) | Sliding Window | 30 min |
-| 4 | Edit Distance (LC 72) | DP | 30 min |
-| 5 | Palindrome Pairs (LC 336) | Trie/Hash | 35 min |
-| 6 | Wildcard Matching (LC 44) | DP | 30 min |
+| #   | Problem                          | Pattern        | Time   |
+| --- | -------------------------------- | -------------- | ------ |
+| 1   | Zigzag Conversion (LC 6)         | Simulation     | 20 min |
+| 2   | Multiply Strings (LC 43)         | Math/String    | 25 min |
+| 3   | Minimum Window Substring (LC 76) | Sliding Window | 30 min |
+| 4   | Edit Distance (LC 72)            | DP             | 30 min |
+| 5   | Palindrome Pairs (LC 336)        | Trie/Hash      | 35 min |
+| 6   | Wildcard Matching (LC 44)        | DP             | 30 min |
 
 **Goal**: Tackle hard problems. Focus on understanding the DP table construction for edit distance and wildcard matching. The minimum window substring is a must-know sliding window problem.
 

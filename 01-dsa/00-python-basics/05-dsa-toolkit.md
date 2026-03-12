@@ -454,6 +454,7 @@ def dfs(node, graph, visited):
 ```
 
 **When to use it:**
+
 - DFS on large graphs (up to 10^5 nodes)
 - Deep recursive DP solutions
 - Tree traversals on skewed trees
