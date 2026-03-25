@@ -1,346 +1,10 @@
-# Day 3: OOP & DSA Prerequisites
+# Day 5: The DSA Toolkit
 
-Master Python's object-oriented programming and the essential standard library modules used constantly in DSA problem solving.
-
----
-
-## 1. Classes and Objects
-
-A **class** is a blueprint for creating objects. An **object** is an instance of a class with its own data.
-
-```mermaid
-classDiagram
-    class TreeNode {
-        -int val
-        -TreeNode left
-        -TreeNode right
-        +__init__(val, left, right)
-        +__str__() str
-        +is_leaf() bool
-    }
-
-    class ListNode {
-        -int val
-        -ListNode next
-        +__init__(val, next)
-        +__str__() str
-    }
-
-    class Stack {
-        -list items
-        +push(val)
-        +pop() any
-        +peek() any
-        +is_empty() bool
-        +size() int
-    }
-
-    note for TreeNode "Instance attributes:\nSet via self.x in __init__"
-    note for Stack "Encapsulates a list\nto enforce LIFO order"
-```
-
-### The `__init__` Method and `self`
-
-`__init__` is the **constructor** -- it runs automatically when you create an object. `self` refers to the specific instance being created.
-
-```python
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val      # instance attribute
-        self.next = next    # instance attribute
-
-# Creating objects
-node1 = ListNode(1)
-node2 = ListNode(2, node1)
-print(node2.val)   # 2
-print(node2.next)  # <ListNode object>
-```
-
-### Instance vs Class Attributes
-
-```python
-class Counter:
-    count = 0              # class attribute (shared by ALL instances)
-
-    def __init__(self, name):
-        self.name = name   # instance attribute (unique to each instance)
-        Counter.count += 1 # modify the shared class attribute
-
-a = Counter("alpha")
-b = Counter("beta")
-print(Counter.count)  # 2  (shared)
-print(a.name)         # "alpha" (unique)
-print(b.name)         # "beta"  (unique)
-```
-
-**Rule of thumb for DSA:** Almost always use **instance attributes** (set via `self.x` in `__init__`). Class attributes are rare in competitive coding.
+> Master the Python standard library modules you'll use in every DSA problem.
 
 ---
 
-## 2. Magic Methods (Dunder Methods)
-
-Magic methods let your objects work with Python's built-in operators and functions.
-
-```mermaid
-flowchart LR
-    subgraph "Magic Methods"
-        A["__str__<br>print(obj)"]
-        B["__repr__<br>repr(obj)"]
-        C["__eq__<br>obj1 == obj2"]
-        D["__lt__<br>obj1 < obj2"]
-        E["__len__<br>len(obj)"]
-        F["__getitem__<br>obj[i]"]
-    end
-
-    subgraph "What Triggers Them"
-        G["print() / str()"] --> A
-        H["debugger / repr()"] --> B
-        I["== operator"] --> C
-        J["< operator / sort()"] --> D
-        K["len()"] --> E
-        L["indexing []"] --> F
-    end
-```
-
-### `__str__` and `__repr__`
-
-```python
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
-
-    def __str__(self):
-        """Human-readable: used by print()"""
-        parts = []
-        curr = self
-        while curr:
-            parts.append(str(curr.val))
-            curr = curr.next
-        return " -> ".join(parts) + " -> None"
-
-    def __repr__(self):
-        """Developer-readable: used in debugger/REPL"""
-        return f"ListNode({self.val})"
-
-node = ListNode(1, ListNode(2, ListNode(3)))
-print(node)       # 1 -> 2 -> 3 -> None
-print(repr(node)) # ListNode(1)
-```
-
-### `__eq__` and `__lt__` (Comparison)
-
-```python
-class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def __eq__(self, other):
-        """Allows: point1 == point2"""
-        return self.x == other.x and self.y == other.y
-
-    def __lt__(self, other):
-        """Allows: point1 < point2, and also sorting!"""
-        return (self.x, self.y) < (other.x, other.y)
-
-points = [Point(3, 1), Point(1, 5), Point(1, 2)]
-points.sort()  # uses __lt__ -> sorted by x, then y
-# Result: Point(1,2), Point(1,5), Point(3,1)
-```
-
-**DSA tip:** Defining `__lt__` lets you use your objects in `heapq` and `sorted()` directly.
-
-### `__len__` and `__getitem__`
-
-```python
-class MyList:
-    def __init__(self, data):
-        self._data = data
-
-    def __len__(self):
-        return len(self._data)
-
-    def __getitem__(self, index):
-        return self._data[index]
-
-ml = MyList([10, 20, 30])
-print(len(ml))   # 3
-print(ml[1])     # 20
-```
-
----
-
-## 3. Inheritance
-
-Inheritance lets a class **reuse** code from a parent class and optionally **override** behavior.
-
-```mermaid
-classDiagram
-    class Animal {
-        +str name
-        +speak() str
-    }
-
-    class Dog {
-        +str breed
-        +speak() str
-        +fetch() str
-    }
-
-    class Cat {
-        +speak() str
-    }
-
-    Animal <|-- Dog : inherits
-    Animal <|-- Cat : inherits
-
-    note for Dog "Overrides speak()\nAdds fetch()"
-    note for Cat "Overrides speak()"
-```
-
-### Single Inheritance and `super()`
-
-```python
-class Animal:
-    def __init__(self, name):
-        self.name = name
-
-    def speak(self):
-        return f"{self.name} makes a sound"
-
-class Dog(Animal):
-    def __init__(self, name, breed):
-        super().__init__(name)  # call parent's __init__
-        self.breed = breed      # add new attribute
-
-    def speak(self):            # override parent method
-        return f"{self.name} barks"
-
-dog = Dog("Rex", "Labrador")
-print(dog.speak())   # Rex barks
-print(dog.name)      # Rex  (inherited from Animal)
-print(dog.breed)     # Labrador
-```
-
-### Practical DSA Example: Extending a Node
-
-```python
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-class AnnotatedTreeNode(TreeNode):
-    """Adds extra metadata to a tree node."""
-    def __init__(self, val=0, left=None, right=None, depth=0):
-        super().__init__(val, left, right)
-        self.depth = depth
-```
-
----
-
-## 4. List Comprehensions
-
-List comprehensions provide a concise way to create lists. They are **faster** than equivalent for-loops and very common in DSA code.
-
-```mermaid
-flowchart LR
-    subgraph "Syntax"
-        A["[expression for item in iterable if condition]"]
-    end
-
-    subgraph "Equivalent Loop"
-        B["result = []"] --> C["for item in iterable:"]
-        C --> D["if condition:"]
-        D --> E["result.append(expression)"]
-    end
-
-    A -- "compiles to" --> B
-```
-
-### Basic Comprehension
-
-```python
-# Squares of 1 to 5
-squares = [x**2 for x in range(1, 6)]
-# [1, 4, 9, 16, 25]
-
-# With filtering: only even squares
-even_squares = [x**2 for x in range(1, 11) if x % 2 == 0]
-# [4, 16, 36, 64, 100]
-```
-
-### Nested Comprehensions
-
-```python
-# Flatten a 2D matrix
-matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-flat = [val for row in matrix for val in row]
-# [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-# Reading order: outer loop first, inner loop second
-# Equivalent to:
-# for row in matrix:
-#     for val in row:
-#         flat.append(val)
-
-# Transpose a matrix
-transposed = [[row[i] for row in matrix] for i in range(3)]
-# [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
-```
-
-### Dict and Set Comprehensions
-
-```python
-# Dict comprehension: character frequency
-s = "abracadabra"
-freq = {ch: s.count(ch) for ch in set(s)}
-# {'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1}
-
-# Set comprehension: unique lengths
-words = ["hello", "world", "hi", "hey"]
-lengths = {len(w) for w in words}
-# {2, 3, 5}
-```
-
----
-
-## 5. Generator Expressions
-
-Generators produce values **lazily** -- one at a time, on demand. They use almost **no memory** regardless of size.
-
-```python
-# List comprehension: creates entire list in memory
-sum_list = sum([x**2 for x in range(1_000_000)])  # ~8 MB in memory
-
-# Generator expression: creates values one at a time
-sum_gen = sum(x**2 for x in range(1_000_000))     # ~0 MB extra memory
-
-# Both produce the same result, but the generator is memory efficient
-```
-
-### When to Use Generators
-
-```python
-# Use generator when you only need to iterate once
-any(x > 100 for x in nums)          # stops at first True
-all(x > 0 for x in nums)            # stops at first False
-sum(len(word) for word in words)     # no intermediate list needed
-max(abs(x) for x in nums)           # no intermediate list needed
-
-# Use list comprehension when you need to:
-# - Access by index
-# - Iterate multiple times
-# - Know the length
-```
-
-**Rule of thumb:** If you are passing the result directly into `sum()`, `any()`, `all()`, `min()`, `max()`, or `"".join()`, use a generator expression (no square brackets).
-
----
-
-## 6. The `collections` Module
+## 1. The `collections` Module
 
 ```mermaid
 flowchart TB
@@ -499,7 +163,7 @@ class LRUCache:
 
 ---
 
-## 7. The `heapq` Module
+## 2. The `heapq` Module
 
 Python's `heapq` implements a **min-heap** using a regular list. The smallest element is always at index 0.
 
@@ -577,7 +241,7 @@ priority, task = heapq.heappop(tasks)
 
 ---
 
-## 8. The `bisect` Module
+## 3. The `bisect` Module
 
 `bisect` performs **binary search** on sorted lists in O(log n).
 
@@ -586,8 +250,8 @@ flowchart LR
     subgraph "bisect_left vs bisect_right on [1, 3, 3, 3, 5]"
         direction TB
         A["target = 3"]
-        B["bisect_left → index 1<br>(insert BEFORE existing 3s)"]
-        C["bisect_right → index 4<br>(insert AFTER existing 3s)"]
+        B["bisect_left -> index 1<br>(insert BEFORE existing 3s)"]
+        C["bisect_right -> index 4<br>(insert AFTER existing 3s)"]
         A --> B
         A --> C
     end
@@ -652,7 +316,7 @@ def binary_search(arr, target):
 
 ---
 
-## 9. `functools.lru_cache` (Memoization)
+## 4. `functools.lru_cache` (Memoization)
 
 `lru_cache` automatically caches function results, turning recursive solutions from exponential to polynomial time.
 
@@ -722,7 +386,7 @@ def unique_paths(m, n):
 
 ---
 
-## 10. The `itertools` Module
+## 5. The `itertools` Module
 
 `itertools` provides efficient looping utilities that are extremely handy in DSA.
 
@@ -773,7 +437,7 @@ for key, group in groupby(data, key=lambda x: x[0]):
 
 ---
 
-## 11. `sys.setrecursionlimit`
+## 6. `sys.setrecursionlimit`
 
 Python's default recursion limit is **1000**. Many DSA problems have inputs up to 10^5, which means deep recursion will crash.
 
@@ -798,83 +462,9 @@ def dfs(node, graph, visited):
 
 ---
 
-## 12. Big O Notation
-
-Big O describes how an algorithm's runtime or space grows as input size `n` increases.
-
-```mermaid
----
-config:
-    xyChart:
-        xAxis:
-            label: "Input Size (n)"
-        yAxis:
-            label: "Operations"
----
-xychart-beta
-    x-axis "Input Size" [1, 2, 4, 8, 16, 32]
-    y-axis "Operations" 0 --> 1024
-    line "O(1)" [1, 1, 1, 1, 1, 1]
-    line "O(log n)" [0, 1, 2, 3, 4, 5]
-    line "O(n)" [1, 2, 4, 8, 16, 32]
-    line "O(n log n)" [0, 2, 8, 24, 64, 160]
-    line "O(n^2)" [1, 4, 16, 64, 256, 1024]
-```
-
-### Growth Rates (Slowest to Fastest Growing)
-
-| Big O | Name | Example | n=1000 |
-|-------|------|---------|--------|
-| O(1) | Constant | Hash lookup, array access | 1 |
-| O(log n) | Logarithmic | Binary search, bisect | ~10 |
-| O(n) | Linear | Single loop, linear scan | 1,000 |
-| O(n log n) | Linearithmic | Merge sort, Tim sort | ~10,000 |
-| O(n^2) | Quadratic | Nested loops, bubble sort | 1,000,000 |
-| O(2^n) | Exponential | All subsets, naive recursion | ~10^301 |
-| O(n!) | Factorial | All permutations | Way too many |
-
-### Common Operations Complexity
-
-| Operation | list | dict/set | deque | heapq | bisect (sorted list) |
-|-----------|------|----------|-------|-------|---------------------|
-| Access by index | O(1) | -- | O(n) | -- | O(1) |
-| Search | O(n) | O(1) | O(n) | O(n) | O(log n) |
-| Insert at end | O(1)* | O(1)* | O(1) | O(log n) | O(n) |
-| Insert at front | O(n) | -- | O(1) | -- | -- |
-| Delete by value | O(n) | O(1) | O(n) | O(n) | O(n) |
-| Min/Max | O(n) | O(n) | O(n) | O(1)/O(n) | O(1) |
-| Sort | O(n log n) | -- | -- | O(n log n) | already sorted |
-
-*amortized
-
-### Quick Rules for Interviews
-
-```
-n <= 10       -> O(n!) or O(2^n) is fine     (brute force)
-n <= 20       -> O(2^n) is fine              (bitmask DP)
-n <= 500      -> O(n^3) is fine              (triple loop)
-n <= 5,000    -> O(n^2) is fine              (double loop)
-n <= 100,000  -> O(n log n) is needed        (sorting, heap)
-n <= 10^6     -> O(n) is needed              (single pass)
-n <= 10^18    -> O(log n) is needed          (binary search, math)
-```
-
----
-
 ## Quick Reference Cheat Sheet
 
 ```python
-# --- Classes ---
-class Node:
-    def __init__(self, val):
-        self.val = val
-
-# --- List Comprehension ---
-[x**2 for x in range(10) if x % 2 == 0]
-
-# --- Generator ---
-sum(x**2 for x in range(10))
-
 # --- Counter ---
 from collections import Counter
 Counter("aabbc").most_common(2)

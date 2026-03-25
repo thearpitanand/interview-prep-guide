@@ -1,5 +1,5 @@
 """
-Exercise: List Comprehensions | Day 3
+Exercise: List Comprehensions | Day 4
 Topic: Python Comprehensions
 
 Practice list, dict, and set comprehensions.
