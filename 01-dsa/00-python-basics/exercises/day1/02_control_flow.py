@@ -57,17 +57,13 @@ def grade(score: int) -> str:
 
 def absolute_value(n: int) -> int:
     """Return absolute value without using abs()."""
-    result = 0
     if n < 0:
-        result = n - (2 * n)
+        return n - (2 * n)
         # -5 - (2 * -5)
         # -5 - (-10)
         # -5 + 10
         # 5
-    else:
-        result = n
-
-    return result
+    return n
 
 
 def max_of_three(a: int, b: int, c: int) -> int:

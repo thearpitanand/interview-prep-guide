@@ -70,7 +70,8 @@ def remove_duplicates(s: str) -> str:
     """
     result = ""
     for i in range(len(s)):
-        if result.find(s[i]) == -1:
+        # if result.find(s[i]) == -1:
+        if s[i] not in result:
             result += s[i]
 
     return result
