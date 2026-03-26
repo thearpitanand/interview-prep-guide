@@ -16,26 +16,30 @@ class Stack:
     """
 
     def __init__(self):
-        pass
+        self.data = []
 
     def push(self, val):
-        pass
+        self.data.append(val)
 
     def pop(self):
-        pass
+        if len(self.data) == 0:
+            return None
+        return self.data.pop()
 
     def peek(self):
-        pass
+        if len(self.data) == 0:
+            return None
+        return self.data[-1]
 
     def is_empty(self) -> bool:
-        pass
+        return len(self.data) == 0
 
     def size(self) -> int:
-        pass
+        return len(self.data)
 
     def __str__(self) -> str:
         """Return string representation: 'Stack([1, 2, 3])'"""
-        pass
+        return f"Stack({self.data})"
 
 
 class Queue:
@@ -46,33 +50,49 @@ class Queue:
     """
 
     def __init__(self):
-        pass
+        self.data = []
 
     def enqueue(self, val):
-        pass
+        self.data.append(val)
 
     def dequeue(self):
-        pass
+        if len(self.data) == 0:
+            return None
+        return self.data.pop(0)
 
     def front(self):
-        pass
+        if len(self.data) == 0:
+            return None
+        return self.data[0]
 
     def is_empty(self) -> bool:
-        pass
+        return len(self.data) == 0
 
     def size(self) -> int:
-        pass
+        return len(self.data)
+
+    def __str__(self) -> str:
+        """Return string representation: 'Queue([1, 2, 3])'"""
+        return f"Queue({self.data})"
 
 
 class ListNode:
     """A node in a singly linked list."""
 
     def __init__(self, val=0, next=None):
-        pass
+        self.val = val
+        self.next = next
 
     def __str__(self) -> str:
         """Return string like '1 -> 2 -> 3 -> None'"""
-        pass
+        curr = self
+        result = []
+
+        while curr:
+            result.append(str(curr.val))
+            curr = curr.next
+
+        return " -> ".join(result) + " -> None"
 
 
 # --- Tests ---
@@ -94,5 +114,6 @@ if __name__ == "__main__":
     assert q.size() == 1
 
     node = ListNode(1, ListNode(2, ListNode(3)))
+    # print(node)
     assert str(node) == "1 -> 2 -> 3 -> None"
     print("All tests passed!")
