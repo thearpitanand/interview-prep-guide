@@ -20,16 +20,18 @@ class TreeNode:
     """
 
     def __init__(self, val=0, left=None, right=None):
-        pass
+        self.val = val
+        self.left = left
+        self.right = right
 
     def __str__(self) -> str:
-        pass
+        return str(self.val)
 
     def __repr__(self) -> str:
-        pass
+        return f"TreeNode({self.val})"
 
     def is_leaf(self) -> bool:
-        pass
+        return self.left is None and self.right is None
 
 
 def insert_left(node: TreeNode, val: int) -> TreeNode:
@@ -40,14 +42,18 @@ def insert_left(node: TreeNode, val: int) -> TreeNode:
         left = insert_left(root, 2)
         # root.left is now TreeNode(2)
     """
-    pass
+    new_node = TreeNode(val)
+    node.left = new_node
+    return new_node
 
 
 def insert_right(node: TreeNode, val: int) -> TreeNode:
     """Create a new TreeNode with given val and attach as node's right child.
     Return the newly created node.
     """
-    pass
+    new_node = TreeNode(val)
+    node.right = new_node
+    return new_node
 
 
 def build_simple_tree() -> TreeNode:
@@ -61,7 +67,10 @@ def build_simple_tree() -> TreeNode:
 
     Do NOT use any algorithm. Just create nodes and link them.
     """
-    pass
+    left_nodes = TreeNode(2, TreeNode(4), TreeNode(5))
+    right_nodes = TreeNode(3)
+    root_node = TreeNode(1, left_nodes, right_nodes)
+    return root_node
 
 
 def count_leaves(root: TreeNode) -> int:
@@ -71,7 +80,13 @@ def count_leaves(root: TreeNode) -> int:
     Hint: A leaf is a node where is_leaf() returns True.
     Use simple recursion: if leaf, return 1; else recurse on children.
     """
-    pass
+    if root is None:
+        return 0
+
+    if root.is_leaf():
+        return 1
+
+    return count_leaves(root.left) + count_leaves(root.right)
 
 
 # --- Tests ---

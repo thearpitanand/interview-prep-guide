@@ -17,7 +17,7 @@ def nested_loop_complexity() -> str:
 
     Return: "O(n^2)", "O(n)", "O(n log n)", or "O(1)"
     """
-    pass
+    return "O(n^2)"
 
 
 def two_sequential_loops_complexity() -> str:
@@ -31,7 +31,7 @@ def two_sequential_loops_complexity() -> str:
     Return: "O(n^2)", "O(n)", "O(2n)", or "O(1)"
     Hint: O(n) + O(n) = ?
     """
-    pass
+    return "O(n)"
 
 
 def dict_lookup_complexity() -> str:
@@ -46,7 +46,7 @@ def dict_lookup_complexity() -> str:
     Return: "O(n^2)", "O(n)", "O(n log n)", or "O(1)"
     Hint: set lookup is O(1), inside a loop of n iterations.
     """
-    pass
+    return "O(n)"
 
 
 def sorted_then_scan_complexity() -> str:
@@ -60,7 +60,7 @@ def sorted_then_scan_complexity() -> str:
     Return: "O(n^2)", "O(n)", "O(n log n)", or "O(log n)"
     Hint: sort is O(n log n), scan is O(n). Total = ?
     """
-    pass
+    return "O(n log n)"
 
 
 def binary_search_complexity() -> str:
@@ -78,7 +78,7 @@ def binary_search_complexity() -> str:
 
     Return: "O(n)", "O(log n)", "O(n log n)", or "O(1)"
     """
-    pass
+    return "O(log n)"
 
 
 def max_n_for_quadratic() -> int:
@@ -94,7 +94,7 @@ def max_n_for_quadratic() -> int:
 
     Return: 500, 5000, 50000, or 100000
     """
-    pass
+    return 5000
 
 
 def operations_lookup() -> dict:
@@ -108,7 +108,13 @@ def operations_lookup() -> dict:
     - "list_append" -> the complexity
     - "list_insert_front" -> the complexity
     """
-    pass
+    return {
+        "list_access_by_index": "O(1)",
+        "list_search": "O(n)",
+        "dict_search": "O(1)",
+        "list_append": "O(1)",
+        "list_insert_front": "O(n)",
+    }
 
 
 # --- Tests ---

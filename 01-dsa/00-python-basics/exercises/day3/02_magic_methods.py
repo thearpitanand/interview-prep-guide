@@ -20,19 +20,20 @@ class Point:
     """
 
     def __init__(self, x: int, y: int):
-        pass
+        self.x = x
+        self.y = y
 
     def __eq__(self, other) -> bool:
-        pass
+        return self.x == other.x and self.y == other.y
 
     def __lt__(self, other) -> bool:
-        pass
+        return (self.x, self.y) < (other.x, other.y)
 
     def __str__(self) -> str:
-        pass
+        return f"Point({self.x}, {self.y})"
 
     def __repr__(self) -> str:
-        pass
+        return f"Point({self.x})"
 
 
 class SortableStudent:
@@ -48,16 +49,19 @@ class SortableStudent:
     """
 
     def __init__(self, name: str, gpa: float):
-        pass
+        self.name = name
+        self.gpa = gpa
 
     def __lt__(self, other) -> bool:
-        pass
+        if self.gpa != other.gpa:
+            return self.gpa > other.gpa
+        return self.name < other.name
 
     def __str__(self) -> str:
-        pass
+        return f"{self.name} ({self.gpa})"
 
     def __repr__(self) -> str:
-        pass
+        return f"SortableStudent({self.name}, {self.gpa})"
 
 
 class Matrix:
@@ -71,16 +75,24 @@ class Matrix:
     """
 
     def __init__(self, data: list[list[int]]):
-        pass
+        self.data = data
 
     def __len__(self) -> int:
-        pass
+        return len(self.data)
 
     def __getitem__(self, index) -> list[int]:
-        pass
+        return self.data[index]
 
     def __str__(self) -> str:
-        pass
+        rows = []
+
+        for row in self.data:
+            result = ""
+            for index, item in enumerate(row):
+                result += f"{str(item)}{" " if index != len(row) - 1 else ""}"
+            rows.append(result)
+
+        return "\n".join(rows)
 
 
 # --- Tests ---
@@ -105,8 +117,8 @@ if __name__ == "__main__":
     s3 = SortableStudent("Charlie", 3.8)
     students = [s1, s2, s3]
     students.sort()
-    assert students[0].name == "Bob"       # highest GPA first
-    assert students[1].name == "Alice"     # same GPA, alphabetical
+    assert students[0].name == "Bob"  # highest GPA first
+    assert students[1].name == "Alice"  # same GPA, alphabetical
     assert students[2].name == "Charlie"
     assert str(s1) == "Alice (3.8)"
 

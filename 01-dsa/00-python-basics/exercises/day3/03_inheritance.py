@@ -21,16 +21,16 @@ class Shape:
     """
 
     def __init__(self, name: str):
-        pass
+        self.name = name
 
     def area(self) -> float:
-        pass
+        return 0
 
     def perimeter(self) -> float:
-        pass
+        return 0
 
     def __str__(self) -> str:
-        pass
+        return f"{self.name}: {round(self.area(), 2)}"
 
 
 class Rectangle(Shape):
@@ -42,13 +42,15 @@ class Rectangle(Shape):
     """
 
     def __init__(self, width: float, height: float):
-        pass
+        super().__init__("Rectangle")
+        self.width = width
+        self.height = height
 
     def area(self) -> float:
-        pass
+        return self.width * self.height
 
     def perimeter(self) -> float:
-        pass
+        return 2 * (self.width + self.height)
 
 
 class Circle(Shape):
@@ -60,27 +62,35 @@ class Circle(Shape):
     """
 
     def __init__(self, radius: float):
-        pass
+        super().__init__("Circle")
+        self.radius = radius
 
     def area(self) -> float:
-        pass
+        return math.pi * (self.radius**2)
 
     def perimeter(self) -> float:
-        pass
+        return 2 * math.pi * self.radius
 
 
 class ListNode:
     """A node in a singly linked list (base class).
 
     - __init__(val=0, next=None): Store val and next
-    - __str__(): Return "val -> next_val -> ... -> None"
+    - __str__():Return "val -> next_val -> ... -> None"
     """
 
     def __init__(self, val=0, next=None):
-        pass
+        self.val = val
+        self.next = next
 
     def __str__(self) -> str:
-        pass
+        result = []
+        curr = self
+        while curr != None:
+            result.append(str(curr.val))
+            curr = curr.next
+
+        return " -> ".join(result) + " -> None"
 
 
 class DoublyLinkedNode(ListNode):
@@ -91,10 +101,17 @@ class DoublyLinkedNode(ListNode):
     """
 
     def __init__(self, val=0, next=None, prev=None):
-        pass
+        super().__init__(val, next)
+        self.prev = prev
 
     def __str__(self) -> str:
-        pass
+        result = []
+        curr = self
+        while curr != None:
+            result.append(str(curr.val))
+            curr = curr.next
+
+        return "None <->" + " <-> ".join(result) + "<-> None"
 
 
 class TreeNode:
@@ -104,7 +121,9 @@ class TreeNode:
     """
 
     def __init__(self, val=0, left=None, right=None):
-        pass
+        self.val = val
+        self.left = left
+        self.right = right
 
 
 class AnnotatedTreeNode(TreeNode):
@@ -116,10 +135,12 @@ class AnnotatedTreeNode(TreeNode):
     """
 
     def __init__(self, val=0, left=None, right=None, depth=0, parent=None):
-        pass
+        super().__init__(val, left, right)
+        self.depth = depth
+        self.parent = parent
 
     def __repr__(self) -> str:
-        pass
+        return f"AnnotatedTreeNode(val={self.val}, depth={self.depth})"
 
 
 # --- Tests ---
@@ -142,18 +163,18 @@ if __name__ == "__main__":
     d1 = DoublyLinkedNode(10)
     d2 = DoublyLinkedNode(20, prev=d1)
     d1.next = d2
-    assert d1.val == 10          # inherited from ListNode
-    assert d1.next.val == 20     # inherited from ListNode
-    assert d2.prev.val == 10     # new attribute from DoublyLinkedNode
+    assert d1.val == 10  # inherited from ListNode
+    assert d1.next.val == 20  # inherited from ListNode
+    assert d2.prev.val == 10  # new attribute from DoublyLinkedNode
     assert isinstance(d1, ListNode)  # confirms inheritance
 
     # AnnotatedTreeNode inherits from TreeNode
     root = AnnotatedTreeNode(val=1, depth=0)
     child = AnnotatedTreeNode(val=2, depth=1, parent=root)
     root.left = child
-    assert root.val == 1          # inherited from TreeNode
-    assert root.left.val == 2     # inherited from TreeNode
-    assert child.depth == 1       # new attribute
+    assert root.val == 1  # inherited from TreeNode
+    assert root.left.val == 2  # inherited from TreeNode
+    assert child.depth == 1  # new attribute
     assert child.parent.val == 1  # new attribute
     assert isinstance(root, TreeNode)  # confirms inheritance
     assert repr(child) == "AnnotatedTreeNode(val=2, depth=1)"

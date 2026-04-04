@@ -12,7 +12,7 @@ def squares(n: int) -> list[int]:
     """Return list of squares from 1 to n using list comprehension.
     Example: squares(5) -> [1, 4, 9, 16, 25]
     """
-    pass
+    return [x * 2 for x in range(n)]
 
 
 def even_filter(nums: list[int]) -> list[int]:
@@ -50,7 +50,7 @@ if __name__ == "__main__":
     assert flatten_2d([[1, 2], [3, 4]]) == [1, 2, 3, 4]
 
     freq = char_frequency("hello")
-    assert freq == {'l': 2}
+    assert freq == {"l": 2}
 
     assert transpose([[1, 2], [3, 4]]) == [[1, 3], [2, 4]]
     print("All tests passed!")
