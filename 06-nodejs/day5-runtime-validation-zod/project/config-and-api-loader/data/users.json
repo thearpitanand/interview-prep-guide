@@ -1,0 +1,131 @@
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "email": "alice@example.com",
+    "name": "Alice Smith",
+    "age": 32,
+    "role": "admin",
+    "address": {
+      "street": "123 Main St",
+      "city": "Springfield",
+      "state": "IL",
+      "zip": "62701"
+    }
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440002",
+    "email": "NOT_AN_EMAIL",
+    "name": "Bob Jones",
+    "age": 28,
+    "role": "user",
+    "address": {
+      "street": "45 Oak Ave",
+      "city": "Portland",
+      "state": "OR",
+      "zip": "97201"
+    }
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440003",
+    "email": "carol@example.com",
+    "name": "Carol White",
+    "age": 41,
+    "role": "moderator",
+    "address": {
+      "street": "7 Elm Blvd",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80202"
+    }
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440004",
+    "email": "dave@example.com",
+    "name": "Dave Kumar",
+    "age": "thirty-five",
+    "role": "user",
+    "address": {
+      "street": "900 Pine Rd",
+      "city": "Austin",
+      "state": "TX",
+      "zip": "78701"
+    }
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440005",
+    "email": "eve@example.com",
+    "name": "Eve Nguyen",
+    "age": 27,
+    "role": "user",
+    "address": {
+      "street": "22 Maple Ln",
+      "city": "Seattle",
+      "state": "WA",
+      "zip": "98101"
+    }
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440006",
+    "email": "frank@example.com",
+    "name": "Frank Rivera",
+    "age": 55,
+    "role": "admin",
+    "address": {
+      "street": "3 Cedar Dr",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02101"
+    }
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440007",
+    "email": "grace@example.com",
+    "age": 23,
+    "role": "user",
+    "address": {
+      "street": "11 Birch Ct",
+      "city": "Miami",
+      "state": "FL",
+      "zip": "33101"
+    }
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440008",
+    "email": "henry@example.com",
+    "name": "Henry Park",
+    "age": 38,
+    "role": "moderator",
+    "address": {
+      "street": "500 Walnut St",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19101"
+    }
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440009",
+    "email": "iris@example.com",
+    "name": "Iris Chen",
+    "age": 31,
+    "role": "user",
+    "address": {
+      "street": "67 Spruce Way",
+      "city": "San Jose",
+      "state": "CA",
+      "zip": "95101"
+    }
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440010",
+    "email": "james@example.com",
+    "name": "James Okoye",
+    "age": 44,
+    "role": "admin",
+    "address": {
+      "street": "8 Aspen Blvd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85001"
+    }
+  }
+]

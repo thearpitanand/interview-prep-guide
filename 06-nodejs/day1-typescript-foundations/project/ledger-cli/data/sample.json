@@ -1,0 +1,142 @@
+[
+  {
+    "id": "tx_001",
+    "date": "2024-03-01",
+    "description": "Monthly salary",
+    "amount": 4200.00,
+    "category": "income"
+  },
+  {
+    "id": "tx_002",
+    "date": "2024-03-02",
+    "description": "Weekly grocery shop",
+    "amount": -87.45,
+    "category": "groceries"
+  },
+  {
+    "id": "tx_003",
+    "date": "2024-03-03",
+    "description": "Electric bill",
+    "amount": -112.50,
+    "category": "utilities"
+  },
+  {
+    "id": "tx_004",
+    "date": "2024-03-04",
+    "description": "Team lunch",
+    "amount": -34.80,
+    "category": "dining"
+  },
+  {
+    "id": "tx_005",
+    "date": "2024-03-05",
+    "description": "Bus monthly pass",
+    "amount": -45.00,
+    "category": "transport"
+  },
+  {
+    "id": "tx_006",
+    "date": "2024-03-07",
+    "description": "Freelance design project",
+    "amount": 650.00,
+    "category": "income"
+  },
+  {
+    "id": "tx_007",
+    "date": "2024-03-08",
+    "description": "Internet service",
+    "amount": -59.99,
+    "category": "utilities"
+  },
+  {
+    "id": "tx_008",
+    "date": "2024-03-09",
+    "description": "Farmers market",
+    "amount": -62.10,
+    "category": "groceries"
+  },
+  {
+    "id": "tx_009",
+    "date": "2024-03-10",
+    "description": "Coffee and pastry",
+    "amount": -8.75,
+    "category": "dining"
+  },
+  {
+    "id": "tx_010",
+    "date": "2024-03-11",
+    "description": "Train tickets",
+    "amount": -28.50,
+    "category": "transport"
+  },
+  {
+    "id": "tx_011",
+    "date": "2024-03-12",
+    "description": "Water and gas bill",
+    "amount": -78.00,
+    "category": "utilities"
+  },
+  {
+    "id": "tx_012",
+    "date": "2024-03-13",
+    "description": "Supermarket run",
+    "amount": -54.25,
+    "category": "groceries"
+  },
+  {
+    "id": "tx_013",
+    "date": "2024-03-14",
+    "description": "Consulting invoice",
+    "amount": 900.00,
+    "category": "income"
+  },
+  {
+    "id": "tx_014",
+    "date": "2024-03-15",
+    "description": "Friday dinner out",
+    "amount": -52.40,
+    "category": "dining"
+  },
+  {
+    "id": "tx_015",
+    "date": "2024-03-16",
+    "description": "Rideshare to airport",
+    "amount": -22.00,
+    "category": "transport"
+  },
+  {
+    "id": "tx_016",
+    "date": "2024-03-18",
+    "description": "Phone bill",
+    "amount": -35.00,
+    "category": "utilities"
+  },
+  {
+    "id": "tx_017",
+    "date": "2024-03-19",
+    "description": "Weekend groceries",
+    "amount": -71.90,
+    "category": "groceries"
+  },
+  {
+    "id": "tx_018",
+    "date": "2024-03-20",
+    "description": "Bonus payment",
+    "amount": 500.00,
+    "category": "income"
+  },
+  {
+    "id": "tx_019",
+    "date": "2024-03-21",
+    "description": "Brunch with friends",
+    "amount": -41.60,
+    "category": "dining"
+  },
+  {
+    "id": "tx_020",
+    "date": "2024-03-22",
+    "description": "Metro top-up",
+    "amount": -20.00,
+    "category": "transport"
+  }
+]

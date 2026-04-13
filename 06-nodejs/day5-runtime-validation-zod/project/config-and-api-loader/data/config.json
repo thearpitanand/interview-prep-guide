@@ -1,0 +1,39 @@
+{
+  "app": {
+    "name": "data-platform",
+    "version": "2.4.1",
+    "environment": "production"
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8080,
+    "tlsEnabled": true,
+    "maxConnections": 1000
+  },
+  "database": {
+    "host": "db.internal",
+    "port": 5432,
+    "name": "platform_prod",
+    "poolSize": 20,
+    "sslMode": "require",
+    "migrationDir": "./migrations"
+  },
+  "redis": {
+    "host": "redis.internal",
+    "port": 6379,
+    "db": 0,
+    "ttlSeconds": 3600
+  },
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "destinations": ["stdout", "file"],
+    "filePath": "/var/log/platform/app.log"
+  },
+  "features": {
+    "enableNewDashboard": true,
+    "enableBetaExport": false,
+    "maxUploadMb": 50,
+    "allowedOrigins": ["https://app.example.com", "https://admin.example.com"]
+  }
+}

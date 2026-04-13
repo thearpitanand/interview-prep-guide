@@ -1,0 +1,43 @@
+{"kind":"request","method":"GET","path":"/api/users","statusCode":200,"durationMs":42}
+{"kind":"request","method":"POST","path":"/api/users","statusCode":201,"durationMs":87}
+{"kind":"db_query","query":"SELECT * FROM users","durationMs":15,"rowCount":25}
+{"kind":"cache_hit","key":"user:session:abc123","ttlMs":3600000}
+{"kind":"metric","name":"cpu_usage","value":34.2,"unit":"percent"}
+{"kind":"request","method":"GET","path":"/api/products","statusCode":200,"durationMs":31}
+{"kind":"db_query","query":"SELECT * FROM products WHERE active=true","durationMs":22,"rowCount":142}
+{"kind":"cache_hit","key":"product:catalog:v2","ttlMs":86400000}
+{"kind":"request","method":"DELETE","path":"/api/users/99","statusCode":404,"durationMs":8}
+{"kind":"error","message":"User not found","stack":"Error: User not found\n    at UserService.delete (user.service.ts:48)"}
+{"kind":"metric","name":"memory_usage","value":512.0,"unit":"MB"}
+{"kind":"request","method":"PUT","path":"/api/users/1","statusCode":200,"durationMs":55}
+{"kind":"db_query","query":"UPDATE users SET name=? WHERE id=?","durationMs":9,"rowCount":1}
+{"kind":"cache_hit","key":"user:profile:1","ttlMs":1800000}
+{"kind":"metric","name":"request_rate","value":120.5,"unit":"req/s"}
+{"kind":"request","method":"GET","path":"/health","statusCode":200,"durationMs":2}
+{"kind":"db_query","query":"SELECT COUNT(*) FROM orders WHERE status='pending'","durationMs":11,"rowCount":1}
+{"kind":"request","method":"POST","path":"/api/auth/login","statusCode":200,"durationMs":133}
+{"kind":"metric","name":"db_pool_active","value":8,"unit":"connections"}
+{"kind":"cache_hit","key":"config:feature_flags","ttlMs":300000}
+{"kind":"error","message":"Database connection timeout","stack":"Error: connect ETIMEDOUT\n    at TCPConnectWrap.afterConnect"}
+{"kind":"request","method":"GET","path":"/api/orders","statusCode":200,"durationMs":67}
+{"kind":"db_query","query":"SELECT o.*, u.name FROM orders o JOIN users u ON o.user_id=u.id","durationMs":38,"rowCount":50}
+{"kind":"request","method":"POST","path":"/api/orders","statusCode":201,"durationMs":112}
+{"kind":"db_query","query":"INSERT INTO orders (user_id, total) VALUES (?, ?)","durationMs":14,"rowCount":1}
+{"kind":"metric","name":"error_rate","value":0.8,"unit":"percent"}
+{"kind":"request","method":"GET","path":"/api/users/1","statusCode":200,"durationMs":18}
+{"kind":"cache_hit","key":"user:permissions:1","ttlMs":900000}
+{"kind":"request","method":"PATCH","path":"/api/orders/55","statusCode":200,"durationMs":47}
+{"kind":"db_query","query":"UPDATE orders SET status='settled' WHERE id=?","durationMs":7,"rowCount":1}
+{"kind":"metric","name":"latency_p99","value":245.3,"unit":"ms"}
+{"kind":"request","method":"GET","path":"/api/products/12","statusCode":200,"durationMs":24}
+{"kind":"error","message":"Unhandled promise rejection: cannot read property 'id' of undefined"}
+{"kind":"cache_hit","key":"product:detail:12","ttlMs":3600000}
+{"kind":"request","method":"POST","path":"/api/webhooks/stripe","statusCode":200,"durationMs":203}
+{"kind":"db_query","query":"SELECT * FROM webhooks WHERE processed=false","durationMs":19,"rowCount":3}
+{"kind":"metric","name":"queue_depth","value":14,"unit":"messages"}
+{"kind":"request","method":"GET","path":"/api/reports/monthly","statusCode":500,"durationMs":4821}
+{"kind":"error","message":"Report generation exceeded time limit","stack":"Error: Timeout\n    at ReportService.generate (report.service.ts:201)"}
+{"kind":"db_query","query":"SELECT * FROM report_cache WHERE month=?","durationMs":31,"rowCount":0}
+THIS IS NOT JSON AT ALL
+{"kind":"request","missing_fields_here":true}
+{"unexpected":"shape","no_kind":42}

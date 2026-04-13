@@ -1,0 +1,22 @@
+[
+  { "id": "tx-001", "userId": "u-001", "amount": 150.00, "currency": "USD", "type": "credit", "description": "Salary deposit",      "date": "2024-01-01" },
+  { "id": "tx-002", "userId": "u-001", "amount":  45.50, "currency": "USD", "type": "debit",  "description": "Grocery store",       "date": "2024-01-03" },
+  { "id": "tx-003", "userId": "u-002", "amount": 200.00, "currency": "USD", "type": "credit", "description": "Freelance payment",   "date": "2024-01-04" },
+  { "id": "tx-004", "userId": "u-002", "amount":  89.99, "currency": "USD", "type": "debit",  "description": "Online subscription", "date": "2024-01-05" },
+  { "id": "tx-005", "userId": "u-003", "amount": 500.00, "currency": "USD", "type": "credit", "description": "Consulting fee",      "date": "2024-01-06" },
+  { "id": "tx-006", "userId": "u-003", "amount":  12.00, "currency": "USD", "type": "debit",  "description": "Coffee shop",         "date": "2024-01-07" },
+  { "id": "tx-007", "userId": "u-004", "amount":  75.00, "currency": "USD", "type": "credit", "description": "Part-time work",      "date": "2024-01-08" },
+  { "id": "tx-008", "userId": "u-004", "amount":  30.00, "currency": "USD", "type": "debit",  "description": "Streaming service",   "date": "2024-01-09" },
+  { "id": "tx-009", "userId": "u-005", "amount": 300.00, "currency": "USD", "type": "credit", "description": "Bonus payment",       "date": "2024-01-10" },
+  { "id": "tx-010", "userId": "u-005", "amount": 120.00, "currency": "USD", "type": "debit",  "description": "Restaurant",          "date": "2024-01-11" },
+  { "id": "tx-011", "userId": "u-006", "amount":  60.00, "currency": "USD", "type": "credit", "description": "Refund received",     "date": "2024-01-12" },
+  { "id": "tx-012", "userId": "u-006", "amount":  22.50, "currency": "USD", "type": "debit",  "description": "Parking fee",         "date": "2024-01-13" },
+  { "id": "tx-013", "userId": "u-007", "amount": 999.00, "currency": "USD", "type": "credit", "description": "Project milestone",   "date": "2024-01-14" },
+  { "id": "tx-014", "userId": "u-007", "amount": 400.00, "currency": "USD", "type": "debit",  "description": "Rent",                "date": "2024-01-15" },
+  { "id": "tx-015", "userId": "u-008", "amount":  50.00, "currency": "USD", "type": "credit", "description": "Gift received",       "date": "2024-01-16" },
+  { "id": "tx-016", "userId": "u-008", "amount":  18.00, "currency": "USD", "type": "debit",  "description": "Bus pass",            "date": "2024-01-17" },
+  { "id": "tx-017", "userId": "u-009", "amount": 750.00, "currency": "USD", "type": "credit", "description": "Investment return",   "date": "2024-01-18" },
+  { "id": "tx-018", "userId": "u-009", "amount": 250.00, "currency": "USD", "type": "debit",  "description": "Utility bills",       "date": "2024-01-19" },
+  { "id": "tx-019", "userId": "u-010", "amount": 100.00, "currency": "USD", "type": "credit", "description": "Selling old items",   "date": "2024-01-20" },
+  { "id": "tx-020", "userId": "u-010", "amount":  55.00, "currency": "USD", "type": "debit",  "description": "Gym membership",      "date": "2024-01-21" }
+]

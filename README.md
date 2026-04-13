@@ -12,13 +12,14 @@ A structured, end-to-end guide for senior engineers preparing for top-tier tech 
 
 ```mermaid
 graph TB
-    ROOT["Interview Preparation Guide<br/>137 Topics | ~245 Problems"]
+    ROOT["Interview Preparation Guide<br/>144 Topics | ~245 Problems"]
 
     ROOT --> DSA["01-dsa/<br/>15 Topics | ~245 Problems"]
     ROOT --> SD["02-system-design/<br/>58 Topics"]
     ROOT --> EC["03-engineering-core/<br/>35 Topics"]
     ROOT --> BH["04-behavioral/<br/>20 Topics"]
     ROOT --> AI["05-ai-ml/<br/>9 Topics"]
+    ROOT --> NJ["06-nodejs/<br/>7 Days | TypeScript Data CLI"]
 
     DSA --> DSA1["Arrays, Strings, Searching,<br/>Matrix, Linked Lists"]
     DSA --> DSA2["Stacks, Trees, BST,<br/>Heap, Greedy"]
@@ -41,6 +42,10 @@ graph TB
     AI --> AI1["ML Fundamentals,<br/>Classical Algorithms,<br/>Deep Learning"]
     AI --> AI2["NLP & LLMs,<br/>Computer Vision,<br/>ML System Design"]
     AI --> AI3["Math & Statistics,<br/>Practical Coding,<br/>Behavioral Scenarios"]
+
+    NJ --> NJ1["TS Foundations,<br/>Generics, Advanced Types"]
+    NJ --> NJ2["Nested Transforms,<br/>Zod Validation"]
+    NJ --> NJ3["Streams,<br/>Capstone Toolkit"]
 
     style ROOT fill:#1a1a2e,stroke:#e94560,color:#eee
     style DSA fill:#2ecc71,stroke:#27ae60,color:#000
@@ -65,11 +70,15 @@ graph TB
     style AI1 fill:#c0392b,stroke:#a93226,color:#fff
     style AI2 fill:#c0392b,stroke:#a93226,color:#fff
     style AI3 fill:#c0392b,stroke:#a93226,color:#fff
+    style NJ fill:#16a085,stroke:#117a65,color:#fff
+    style NJ1 fill:#117a65,stroke:#0e6655,color:#fff
+    style NJ2 fill:#117a65,stroke:#0e6655,color:#fff
+    style NJ3 fill:#117a65,stroke:#0e6655,color:#fff
 ```
 
 ---
 
-## The Five Pillars
+## The Six Pillars
 
 ### 01 — Data Structures & Algorithms
 
@@ -101,6 +110,12 @@ The daily practice pillar. 15 topics covering ~245 problems across easy, medium,
 
 **[Go to AI/ML →](./05-ai-ml/00-README.md)**
 
+### 06 — Node.js & TypeScript (Data Handling Intensive)
+
+A 7-day, 6–7 hours/day intensive that takes a complete TypeScript beginner to someone who can confidently ingest messy nested data, validate it with Zod, reshape it, stream gigabyte-scale files, and emit clean tables via a Node CLI. Every concept is taught through a data-handling lens. Ends with a real `data-toolkit` CLI capstone.
+
+**[Go to Node.js & TypeScript →](./06-nodejs/00-README.md)**
+
 ---
 
 ## Recommended Study Order
@@ -129,6 +144,7 @@ flowchart TD
         E5["03-engineering-core/language-internals/<br/>3 topics"]
         B2["04-behavioral/senior-mindset/<br/>8 topics"]
         A1["05-ai-ml/<br/>9 topics"]
+        NJ["06-nodejs/<br/>7-day TS data intensive"]
     end
 
     subgraph Phase4["Phase 4: Integration (Weeks 14-16)"]
@@ -152,7 +168,7 @@ flowchart TD
 |-------|-------|----------------|-------|
 | **Phase 1: Foundations** | 1-6 | DSA + System Design Fundamentals + Backend Internals | Build core problem-solving and systems knowledge |
 | **Phase 2: Core Skills** | 4-10 | DSA (ongoing) + HLD + Codebase Design + Production Eng + Communication | Apply concepts to real-world designs and soft skills |
-| **Phase 3: Advanced** | 8-14 | LLD + Debugging + Language Internals + Senior Mindset + AI/ML | Deepen expertise and strategic thinking |
+| **Phase 3: Advanced** | 8-14 | LLD + Debugging + Language Internals + Senior Mindset + AI/ML + Node/TS (7-day intensive) | Deepen expertise and strategic thinking |
 | **Phase 4: Integration** | 14-16 | Mock Interviews + Full Revision | Simulate real interviews across all pillars |
 
 ### Key Principles
@@ -210,10 +226,22 @@ job-prep/
 │   │   └── ...
 │   ├── senior-mindset/
 │   └── mock-interviews/
-└── 05-ai-ml/                             ← 9 topics (flat files)
+├── 05-ai-ml/                             ← 9 topics (flat files)
+│   ├── 00-README.md
+│   ├── 01-ml-fundamentals.md
+│   └── ...
+└── 06-nodejs/                           ← 7 days | TypeScript data CLI
     ├── 00-README.md
-    ├── 01-ml-fundamentals.md
-    └── ...
+    ├── setup.md
+    ├── package.json
+    ├── tsconfig.json
+    ├── day1-typescript-foundations/
+    ├── day2-generics-and-utility-types/
+    ├── day3-advanced-types-for-data/
+    ├── day4-nested-data-transformations/
+    ├── day5-runtime-validation-zod/
+    ├── day6-streams-and-large-data/
+    └── day7-capstone-data-toolkit/
 ```
 
 ---
@@ -280,6 +308,18 @@ job-prep/
 | 08 | Practical Coding | [ ] |
 | 09 | Behavioral Scenarios | [ ] |
 
+### 06-nodejs/ — Node.js & TypeScript
+
+| # | Day | Topic | Status |
+|---|-----|-------|:------:|
+| 01 | Day 1 | TypeScript Foundations | [ ] |
+| 02 | Day 2 | Generics & Utility Types | [ ] |
+| 03 | Day 3 | Advanced Types for Data | [ ] |
+| 04 | Day 4 | Nested Data Transformations | [ ] |
+| 05 | Day 5 | Runtime Validation (Zod) | [ ] |
+| 06 | Day 6 | Streams & Large Data | [ ] |
+| 07 | Day 7 | Capstone: Data Toolkit CLI | [ ] |
+
 ---
 
 ## Quick Stats
@@ -291,4 +331,5 @@ job-prep/
 | 03 | Engineering Core | 35 | 5 sub-sections | [03-engineering-core/00-README.md](./03-engineering-core/00-README.md) |
 | 04 | Behavioral | 20 | 3 sub-sections | [04-behavioral/00-README.md](./04-behavioral/00-README.md) |
 | 05 | AI/ML | 9 | 9 concept files | [05-ai-ml/00-README.md](./05-ai-ml/00-README.md) |
-| | **Total** | **137** | | |
+| 06 | Node.js & TypeScript | 7 | 7-day data-handling intensive | [06-nodejs/00-README.md](./06-nodejs/00-README.md) |
+| | **Total** | **144** | | |

@@ -1,0 +1,12 @@
+[
+  { "id": "u-001", "name": "Alice Chen",    "email": "alice@example.com",   "role": "admin", "age": 32 },
+  { "id": "u-002", "name": "Bob Torres",    "email": "bob@example.com",     "role": "user",  "age": 27 },
+  { "id": "u-003", "name": "Carol Kim",     "email": "carol@example.com",   "role": "user",  "age": 35 },
+  { "id": "u-004", "name": "Dave Patel",    "email": "dave@example.com",    "role": "user",  "age": 22 },
+  { "id": "u-005", "name": "Eve Nakamura",  "email": "eve@example.com",     "role": "admin", "age": 41 },
+  { "id": "u-006", "name": "Frank Okafor",  "email": "frank@example.com",   "role": "user",  "age": 29 },
+  { "id": "u-007", "name": "Grace Liu",     "email": "grace@example.com",   "role": "user",  "age": 38 },
+  { "id": "u-008", "name": "Hiro Sato",     "email": "hiro@example.com",    "role": "user",  "age": 24 },
+  { "id": "u-009", "name": "Ingrid Larsen", "email": "ingrid@example.com",  "role": "admin", "age": 45 },
+  { "id": "u-010", "name": "James Osei",    "email": "james@example.com",   "role": "user",  "age": 31 }
+]

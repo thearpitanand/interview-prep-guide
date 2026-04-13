@@ -1,0 +1,9 @@
+[
+  { "orderId": "O1001", "userId": 1, "product": "Laptop", "category": "electronics", "quantity": 1, "amount": 1200.00, "status": "shipped" },
+  { "orderId": "O1002", "userId": 2, "product": "Book", "category": "education", "quantity": 3, "amount": 45.00, "status": "delivered" },
+  { "orderId": "O1003", "userId": 1, "product": "Mouse", "category": "electronics", "quantity": 2, "amount": 60.00, "status": "delivered" },
+  { "orderId": "O1004", "userId": 3, "product": "Desk", "category": "furniture", "quantity": 1, "amount": 350.00, "status": "pending" },
+  { "orderId": "O1005", "userId": 4, "product": "Keyboard", "category": "electronics", "quantity": 1, "amount": 80.00, "status": "shipped" },
+  { "orderId": "O1006", "userId": 2, "product": "Notebook", "category": "education", "quantity": 5, "amount": 25.00, "status": "delivered" },
+  { "orderId": "O1007", "userId": 5, "product": "Chair", "category": "furniture", "quantity": 1, "amount": 200.00, "status": "pending" }
+]

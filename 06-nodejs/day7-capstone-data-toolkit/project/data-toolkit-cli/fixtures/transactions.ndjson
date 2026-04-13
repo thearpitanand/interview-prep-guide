@@ -1,0 +1,7 @@
+{"txId":"T001","userId":1,"type":"debit","amount":50.00,"currency":"USD","timestamp":"2024-01-15T10:00:00Z"}
+{"txId":"T002","userId":2,"type":"credit","amount":200.00,"currency":"USD","timestamp":"2024-01-15T11:30:00Z"}
+{"txId":"T003","userId":1,"type":"credit","amount":1200.00,"currency":"USD","timestamp":"2024-01-16T09:00:00Z"}
+{"txId":"T004","userId":3,"type":"debit","amount":350.00,"currency":"EUR","timestamp":"2024-01-16T14:00:00Z"}
+{"txId":"T005","userId":4,"type":"debit","amount":80.00,"currency":"USD","timestamp":"2024-01-17T08:00:00Z"}
+{"txId":"T006","userId":2,"type":"debit","amount":25.00,"currency":"GBP","timestamp":"2024-01-17T16:00:00Z"}
+{"txId":"T007","userId":5,"type":"credit","amount":500.00,"currency":"JPY","timestamp":"2024-01-18T12:00:00Z"}
