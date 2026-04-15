@@ -13,29 +13,12 @@ export function flattenRecord(
   prefix = "",
   separator = "."
 ): Row {
-  const result: Row = {};
-
-  for (const [key, value] of Object.entries(obj)) {
-    const fullKey = prefix ? `${prefix}${separator}${key}` : key;
-
-    if (
-      typeof value === "object" &&
-      value !== null &&
-      !Array.isArray(value)
-    ) {
-      const nested = flattenRecord(value as Record<string, unknown>, fullKey, separator);
-      Object.assign(result, nested);
-    } else {
-      result[fullKey] = value;
-    }
-  }
-
-  return result;
+  throw new Error("TODO: implement flattenRecord");
 }
 
 /**
  * Flatten an array of potentially nested records.
  */
 export function flattenRecords(rows: Row[], separator = "."): Row[] {
-  return rows.map(row => flattenRecord(row, "", separator));
+  throw new Error("TODO: implement flattenRecords");
 }

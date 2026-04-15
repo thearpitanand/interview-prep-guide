@@ -8,76 +8,31 @@
  */
 import assert from "node:assert/strict";
 
-// ---------- YOUR CODE / ANSWERS BELOW ----------
-
-// Optional parameter — title is string | undefined inside the function body
-function formatUserLine(email: string, displayName?: string): string {
-  if (displayName !== undefined) {
-    return `${displayName} <${email}>`;
-  }
-  return email;
-}
-
-// Default parameter — role is always string inside the body (never undefined)
-function createLabel(text: string, prefix = "INFO"): string {
-  return `[${prefix}] ${text}`;
-}
-
-// Rest parameter — accepts any number of additional tag strings
-function buildRecord(id: string, amount: number, ...tags: string[]): string {
-  const tagStr = tags.length > 0 ? ` [${tags.join(", ")}]` : "";
-  return `${id}: ${amount.toFixed(2)}${tagStr}`;
-}
-
-// --- function types ---
-
-// A named function type alias
-type NumberFormatter = (value: number, decimals: number) => string;
-
-// A function that matches the NumberFormatter signature
-const formatFixed: NumberFormatter = (value, decimals) =>
-  value.toFixed(decimals);
-
-const formatPercent: NumberFormatter = (value, decimals) =>
-  `${(value * 100).toFixed(decimals)}%`;
-
-// --- higher-order functions ---
-
-// Takes a list of values and a transform function; returns transformed values
-function transformAmounts(
-  amounts: readonly number[],
-  transform: (n: number) => number
-): number[] {
-  return amounts.map(transform);
-}
-
-// Takes a predicate and returns a filter function (returns a function)
-function makeFilter(predicate: (n: number) => boolean): (values: number[]) => number[] {
-  return (values) => values.filter(predicate);
-}
-
-const keepPositive = makeFilter((n) => n > 0);
-const keepNegative = makeFilter((n) => n < 0);
-
-// A callback-accepting function that processes each transaction line
-type TransactionLine = { description: string; amount: number };
-
-function processLines(
-  lines: readonly TransactionLine[],
-  onLine: (line: TransactionLine, index: number) => string
-): string[] {
-  return lines.map((line, i) => onLine(line, i));
-}
-
-const sampleLines: TransactionLine[] = [
-  { description: "Grocery run", amount: -52.30 },
-  { description: "Paycheck", amount: 1800.00 },
-  { description: "Electric bill", amount: -110.00 },
-];
-
-const formatted = processLines(sampleLines, (line, idx) =>
-  `${idx + 1}. ${line.description}: ${line.amount >= 0 ? "+" : ""}${line.amount.toFixed(2)}`
-);
+// ---------- YOUR CODE BELOW ----------
+// TODO: Declare the following so that the tests below pass.
+//   - function formatUserLine(email: string, displayName?: string): string
+//       — with displayName: "<displayName> <<email>>"
+//       — without: just email
+//   - function createLabel(text: string, prefix = "INFO"): string
+//       — returns "[<prefix>] <text>"
+//   - function buildRecord(id: string, amount: number, ...tags: string[]): string
+//       — no tags: "<id>: <amount.toFixed(2)>"
+//       — with tags: "<id>: <amount.toFixed(2)> [<tag1>, <tag2>]"
+//   - type NumberFormatter                   — (value: number, decimals: number) => string
+//   - const formatFixed: NumberFormatter     — returns value.toFixed(decimals)
+//   - const formatPercent: NumberFormatter   — returns "<value*100.toFixed(decimals)>%"
+//   - function transformAmounts(amounts: readonly number[], transform: (n: number) => number): number[]
+//       — applies transform to each element (use .map)
+//   - function makeFilter(predicate: (n: number) => boolean): (values: number[]) => number[]
+//       — returns a function that filters an array by predicate
+//   - const keepPositive                     — makeFilter result for n > 0
+//   - const keepNegative                     — makeFilter result for n < 0
+//   - type TransactionLine                   — { description: string; amount: number }
+//   - function processLines(lines: readonly TransactionLine[], onLine: (line: TransactionLine, index: number) => string): string[]
+//       — maps each line through onLine callback
+//   - const sampleLines: TransactionLine[]   — 3 entries: see test assertions for values
+//   - const formatted                        — processLines result with index+1 prefix formatting
+// Read the tests to infer expected values.
 
 // ---------- TESTS ----------
 

@@ -19,43 +19,28 @@ import assert from "node:assert/strict";
 // ---------------------------------------------------------------------------
 
 type JsonPrimitive = string | number | boolean | null;
-type JsonArray = JsonValue[];
-type JsonObject = { [key: string]: JsonValue };
-export type JsonValue = JsonPrimitive | JsonArray | JsonObject;
+type JsonArray = unknown; // TODO: define JsonArray as an array of JsonValue
+type JsonObject = unknown; // TODO: define JsonObject as { [key: string]: JsonValue }
+export type JsonValue = unknown; // TODO: define recursive JsonValue type
 
 // ---------------------------------------------------------------------------
 // 2. File-system tree node
 // ---------------------------------------------------------------------------
 
-export type FSNode = {
-  name: string;
-  type: "file" | "directory";
-  size?: number;        // bytes; only meaningful for files
-  children?: FSNode[];  // only directories have children
-};
+export type FSNode = unknown; // TODO: define FSNode with name, type, optional size and children
 
 // ---------------------------------------------------------------------------
 // 3. countNodes — total number of nodes in the tree (inclusive of root)
 // ---------------------------------------------------------------------------
 
-export function countNodes(root: FSNode): number {
-  if (root.children === undefined || root.children.length === 0) {
-    return 1;
-  }
-  return 1 + root.children.reduce((sum, child) => sum + countNodes(child), 0);
-}
+export function countNodes(root: FSNode): number { throw new Error("TODO: implement countNodes"); }
 
 // ---------------------------------------------------------------------------
 // 4. depth — length of the longest root-to-leaf path
 //    A single-node tree has depth 1.
 // ---------------------------------------------------------------------------
 
-export function depth(root: FSNode): number {
-  if (root.children === undefined || root.children.length === 0) {
-    return 1;
-  }
-  return 1 + Math.max(...root.children.map(depth));
-}
+export function depth(root: FSNode): number { throw new Error("TODO: implement depth"); }
 
 // ---------------------------------------------------------------------------
 // Tests

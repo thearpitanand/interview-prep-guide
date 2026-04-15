@@ -13,11 +13,7 @@ import { join, dirname } from "node:path";
 // ---------- Types ----------
 
 interface Transaction {
-  id: string;
-  date: string;
-  description: string;
-  amount: number;
-  category: string;
+  /* TODO: define Transaction */
 }
 
 // ---------- Load data ----------
@@ -39,60 +35,21 @@ function computeSummary(txs: readonly Transaction[]): {
   spendByCategory: Record<string, number>;
   transactionCount: number;
 } {
-  if (txs.length === 0) {
-    return {
-      totalIncome: 0,
-      totalExpenses: 0,
-      net: 0,
-      countByCategory: {},
-      spendByCategory: {},
-      transactionCount: 0,
-    };
-  }
-
-  let totalIncome = 0;
-  let totalExpenses = 0;
-  const countByCategory: Record<string, number> = {};
-  const spendByCategory: Record<string, number> = {};
-
-  for (const tx of txs) {
-    if (tx.amount > 0) {
-      totalIncome += tx.amount;
-    } else {
-      totalExpenses += tx.amount;
-    }
-
-    const prevCount = countByCategory[tx.category] ?? 0;
-    countByCategory[tx.category] = prevCount + 1;
-
-    const prevSpend = spendByCategory[tx.category] ?? 0;
-    spendByCategory[tx.category] = prevSpend + tx.amount;
-  }
-
-  return {
-    totalIncome,
-    totalExpenses,
-    net: totalIncome + totalExpenses,
-    countByCategory,
-    spendByCategory,
-    transactionCount: txs.length,
-  };
+  throw new Error("TODO: implement computeSummary");
 }
 
 // ---------- Formatting helpers ----------
 
 function pad(s: string, width: number, right = false): string {
-  if (right) return s.padStart(width);
-  return s.padEnd(width);
+  throw new Error("TODO: implement pad");
 }
 
 function fmtAmount(n: number): string {
-  const sign = n >= 0 ? "+" : "-";
-  return `${sign}$${Math.abs(n).toFixed(2)}`;
+  throw new Error("TODO: implement fmtAmount");
 }
 
 function separator(char = "-", width = 52): string {
-  return char.repeat(width);
+  throw new Error("TODO: implement separator");
 }
 
 // Top N categories by absolute spend (expenses only, most negative first)
@@ -100,10 +57,7 @@ function topCategories(
   spendByCategory: Record<string, number>,
   n: number
 ): Array<[string, number]> {
-  return Object.entries(spendByCategory)
-    .filter(([, amount]) => amount < 0)
-    .sort(([, a], [, b]) => a - b)      // most negative first
-    .slice(0, n);
+  throw new Error("TODO: implement topCategories");
 }
 
 // ---------- Print summary ----------

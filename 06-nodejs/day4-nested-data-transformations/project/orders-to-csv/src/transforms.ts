@@ -67,24 +67,7 @@ export type CustomerTotal = {
 // ---------------------------------------------------------------------------
 
 export function denormalize(customers: readonly Customer[]): FlatLineItem[] {
-  return customers.flatMap(customer =>
-    customer.orders.flatMap(order =>
-      order.items.map(item => ({
-        customerId:   customer.customerId,
-        customerName: customer.name,
-        email:        customer.email,
-        tier:         customer.tier,
-        orderId:      order.orderId,
-        placedAt:     order.placedAt.slice(0, 10), // ISO date, date part only
-        status:       order.status,
-        sku:          item.sku,
-        itemName:     item.name,
-        qty:          item.qty,
-        unitPrice:    item.unitPrice,
-        lineTotal:    round2(item.qty * item.unitPrice),
-      }))
-    )
-  );
+  throw new Error("TODO: implement denormalize");
 }
 
 // ---------------------------------------------------------------------------
@@ -95,13 +78,7 @@ export function groupBy<T>(
   arr: readonly T[],
   fn: (item: T) => string
 ): Record<string, T[]> {
-  const result: Record<string, T[]> = {};
-  for (const item of arr) {
-    const key = fn(item);
-    if (result[key] === undefined) result[key] = [];
-    result[key]!.push(item);
-  }
-  return result;
+  throw new Error("TODO: implement groupBy");
 }
 
 // ---------------------------------------------------------------------------
@@ -112,24 +89,7 @@ export function aggregateCustomers(
   flatRows: readonly FlatLineItem[],
   customers: readonly Customer[]
 ): CustomerTotal[] {
-  const grouped = groupBy(flatRows, r => r.customerId);
-
-  return customers.map(customer => {
-    const rows = grouped[customer.customerId] ?? [];
-
-    // Count distinct orders
-    const orderIds = new Set(rows.map(r => r.orderId));
-
-    return {
-      customerId: customer.customerId,
-      name:       customer.name,
-      email:      customer.email,
-      tier:       customer.tier,
-      orderCount: orderIds.size,
-      itemCount:  rows.reduce((sum, r) => sum + r.qty, 0),
-      totalSpend: round2(rows.reduce((sum, r) => sum + r.lineTotal, 0)),
-    };
-  });
+  throw new Error("TODO: implement aggregateCustomers");
 }
 
 // ---------------------------------------------------------------------------
@@ -142,35 +102,5 @@ export function aggregateCustomers(
 // ---------------------------------------------------------------------------
 
 export function toCSV(rows: readonly Record<string, unknown>[]): string {
-  if (rows.length === 0) return "";
-
-  const firstRow = rows[0];
-  if (firstRow === undefined) return "";
-  const headers = Object.keys(firstRow);
-
-  const escape = (val: unknown): string => {
-    const str = val === null || val === undefined ? "" : String(val);
-    // Quote if the value contains a comma, double-quote, or newline
-    if (str.includes(",") || str.includes('"') || str.includes("\n")) {
-      return `"${str.replace(/"/g, '""')}"`;
-    }
-    return str;
-  };
-
-  const lines: string[] = [headers.join(",")];
-
-  for (const row of rows) {
-    const cells = headers.map(h => escape(row[h]));
-    lines.push(cells.join(","));
-  }
-
-  return lines.join("\n") + "\n";
-}
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-function round2(n: number): number {
-  return Math.round(n * 100) / 100;
+  throw new Error("TODO: implement toCSV");
 }

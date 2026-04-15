@@ -9,42 +9,18 @@
 
 import assert from "node:assert/strict";
 
-// ── Types ──────────────────────────────────────────────────────────────────
-
-type LogEntry =
-  | { level: "info";  message: string }
-  | { level: "warn";  message: string; code: number }
-  | { level: "error"; message: string; error: Error };
-
-// ── assertNever ensures the switch is exhaustive ───────────────────────────
-
-function assertNever(x: never): never {
-  throw new Error(`Unhandled log level: ${JSON.stringify(x)}`);
-}
-
-// ── Business logic narrowed by the discriminant ───────────────────────────
-
-function formatEntry(e: LogEntry): string {
-  switch (e.level) {
-    case "info":
-      return `[INFO]  ${e.message}`;
-    case "warn":
-      return `[WARN]  ${e.message} (code ${e.code})`;
-    case "error":
-      return `[ERROR] ${e.message}: ${e.error.message}`;
-    default:
-      return assertNever(e);
-  }
-}
-
-function severity(e: LogEntry): number {
-  switch (e.level) {
-    case "info":  return 0;
-    case "warn":  return 1;
-    case "error": return 2;
-    default:      return assertNever(e);
-  }
-}
+// ---------- YOUR CODE BELOW ----------
+// TODO: Declare the following so that the tests below pass.
+//   - LogEntry: discriminated union with variants:
+//       { level: "info";  message: string }
+//       { level: "warn";  message: string; code: number }
+//       { level: "error"; message: string; error: Error }
+//   - assertNever(x: never): never — throws an error (ensures exhaustive switches)
+//   - formatEntry(e: LogEntry): string — formats each variant:
+//       "info"  → "[INFO]  <message>"
+//       "warn"  → "[WARN]  <message> (code <code>)"
+//       "error" → "[ERROR] <message>: <error.message>"
+//   - severity(e: LogEntry): number — 0 for info, 1 for warn, 2 for error
 
 // ── Tests ─────────────────────────────────────────────────────────────────
 

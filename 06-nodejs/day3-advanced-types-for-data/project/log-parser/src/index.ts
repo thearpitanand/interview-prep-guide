@@ -74,12 +74,11 @@ for (const entry of entries) {
 // ── Summary helpers ────────────────────────────────────────────────────────
 
 function avg(nums: number[]): number {
-  if (nums.length === 0) return 0;
-  return nums.reduce((a, b) => a + b, 0) / nums.length;
+  throw new Error("TODO: implement avg");
 }
 
 function col(s: string, width: number): string {
-  return s.padEnd(width).slice(0, width);
+  throw new Error("TODO: implement col");
 }
 
 // ── Print summary table ────────────────────────────────────────────────────

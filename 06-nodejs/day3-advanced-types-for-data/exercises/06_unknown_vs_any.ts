@@ -21,25 +21,11 @@ type Transaction = {
 
 // ── Guard that checks every field ─────────────────────────────────────────
 
-function isTransaction(x: unknown): x is Transaction {
-  if (typeof x !== "object" || x === null) return false;
-  const obj = x as Record<string, unknown>;
-  return (
-    typeof obj["id"]       === "string" &&
-    typeof obj["amount"]   === "number" &&
-    typeof obj["currency"] === "string" &&
-    (obj["status"] === "pending" || obj["status"] === "settled" || obj["status"] === "failed")
-  );
-}
+export function isTransaction(x: unknown): x is Transaction { throw new Error("TODO: implement isTransaction"); }
 
 // ── Parse-then-narrow: the correct pattern ────────────────────────────────
 
-function parseTransaction(raw: unknown): Transaction {
-  if (!isTransaction(raw)) {
-    throw new TypeError(`Invalid transaction: ${JSON.stringify(raw)}`);
-  }
-  return raw;
-}
+export function parseTransaction(raw: unknown): Transaction { throw new Error("TODO: implement parseTransaction"); }
 
 // ── Demonstrate why unknown is safer than any ─────────────────────────────
 //

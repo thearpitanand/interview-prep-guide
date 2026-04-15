@@ -8,91 +8,27 @@
  */
 import assert from "node:assert/strict";
 
-// ---------- YOUR CODE / ANSWERS BELOW ----------
-
-// Typed array — all elements must be numbers
-const amounts: number[] = [120.5, -45.0, 200.0, -30.75, 88.25, -15.0];
-
-// map: transform every element — return type is inferred as number[]
-const absAmounts: number[] = amounts.map((n) => Math.abs(n));
-
-// filter: keep only positives — return type is number[]
-const income: number[] = amounts.filter((n) => n > 0);
-
-// filter: keep only negatives
-const expenses: number[] = amounts.filter((n) => n < 0);
-
-// reduce: sum all values
-const total: number = amounts.reduce((acc, n) => acc + n, 0);
-
-// A function that computes stats using readonly input — cannot mutate the array
-function summarize(values: readonly number[]): {
-  count: number;
-  sum: number;
-  min: number;
-  max: number;
-} {
-  if (values.length === 0) {
-    return { count: 0, sum: 0, min: 0, max: 0 };
-  }
-
-  let sum = 0;
-  let min = Infinity;
-  let max = -Infinity;
-
-  for (const v of values) {
-    sum += v;
-    if (v < min) min = v;
-    if (v > max) max = v;
-  }
-
-  return { count: values.length, sum, min, max };
-}
-
-// Tuple type — fixed positions with known types
-type NameAmountPair = [string, number];
-
-// A function that parses a "description:amount" string into a tuple
-function parseEntry(raw: string): NameAmountPair {
-  const colonIndex = raw.indexOf(":");
-  if (colonIndex === -1) {
-    throw new Error(`Invalid entry format: ${raw}`);
-  }
-  const name = raw.slice(0, colonIndex).trim();
-  const amount = parseFloat(raw.slice(colonIndex + 1).trim());
-  return [name, amount];
-}
-
-// Destructuring a tuple
-const [label, value] = parseEntry("Groceries: -52.30");
-
-// A function returning a tuple for min/max
-function minMax(values: readonly number[]): [number, number] {
-  if (values.length === 0) {
-    throw new Error("Cannot compute minMax of empty array");
-  }
-  let lo = Infinity;
-  let hi = -Infinity;
-  for (const v of values) {
-    if (v < lo) lo = v;
-    if (v > hi) hi = v;
-  }
-  return [lo, hi];
-}
-
-const [lo, hi] = minMax(amounts);
-
-// noUncheckedIndexedAccess — arr[i] is T | undefined, must narrow before use
-const tags: string[] = ["urgent", "reviewed", "archived"];
-const firstTag = tags[0];  // type: string | undefined
-
-const displayTag: string = firstTag !== undefined ? firstTag : "untagged";
-
-// for..of is always safe — no T | undefined here
-const upperTags: string[] = [];
-for (const tag of tags) {
-  upperTags.push(tag.toUpperCase());
-}
+// ---------- YOUR CODE BELOW ----------
+// TODO: Declare the following so that the tests below pass.
+//   - amounts: number[]                  — [120.5, -45.0, 200.0, -30.75, 88.25, -15.0]
+//   - absAmounts: number[]               — absolute values of amounts (via map)
+//   - income: number[]                   — only positive values from amounts (via filter)
+//   - expenses: number[]                 — only negative values from amounts (via filter)
+//   - total: number                      — sum of all amounts (via reduce)
+//   - function summarize(values: readonly number[]): { count, sum, min, max }
+//                                        — returns stats; returns all-zeros for empty array
+//   - type NameAmountPair                — tuple type [string, number]
+//   - function parseEntry(raw: string): NameAmountPair
+//                                        — parses "Description: amount" format
+//   - [label, value]                     — destructured result of parseEntry("Groceries: -52.30")
+//   - function minMax(values: readonly number[]): [number, number]
+//                                        — returns [min, max]; throws if empty
+//   - [lo, hi]                           — destructured result of minMax(amounts)
+//   - tags: string[]                     — ["urgent", "reviewed", "archived"]
+//   - firstTag                           — tags[0] (type: string | undefined)
+//   - displayTag: string                 — firstTag if defined, else "untagged"
+//   - upperTags: string[]                — tags mapped to uppercase via for..of
+// Read the tests to infer expected values.
 
 // ---------- TESTS ----------
 

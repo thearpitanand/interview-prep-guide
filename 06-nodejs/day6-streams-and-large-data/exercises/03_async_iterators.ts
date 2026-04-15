@@ -18,11 +18,8 @@ import assert from "node:assert/strict";
  * simulate real async work (e.g., reading from a socket or database cursor).
  */
 async function* range(start: number, end: number): AsyncGenerator<number> {
-  for (let i = start; i <= end; i++) {
-    // Yield control to the event loop (simulates an async data source)
-    await Promise.resolve();
-    yield i;
-  }
+  throw new Error("TODO: implement range");
+  yield undefined as never; // unreachable — present only so TS recognizes the generator signature
 }
 
 /**
@@ -30,14 +27,8 @@ async function* range(start: number, end: number): AsyncGenerator<number> {
  * Useful for turning static test data into an async iterable.
  */
 async function* fromArray<T>(items: T[], delayMs = 0): AsyncGenerator<T> {
-  for (const item of items) {
-    if (delayMs > 0) {
-      await new Promise<void>((r) => setTimeout(r, delayMs));
-    } else {
-      await Promise.resolve();
-    }
-    yield item;
-  }
+  throw new Error("TODO: implement fromArray");
+  yield undefined as never; // unreachable — present only so TS recognizes the generator signature
 }
 
 // ---------------------------------------------------------------------------
@@ -49,12 +40,8 @@ async function* fromArray<T>(items: T[], delayMs = 0): AsyncGenerator<T> {
  * Breaking out of the loop destroys the underlying generator (calls .return()).
  */
 async function* take<T>(iter: AsyncIterable<T>, n: number): AsyncGenerator<T> {
-  if (n <= 0) return;
-  let count = 0;
-  for await (const item of iter) {
-    yield item;
-    if (++count >= n) break;
-  }
+  throw new Error("TODO: implement take");
+  yield undefined as never; // unreachable — present only so TS recognizes the generator signature
 }
 
 /**
@@ -64,9 +51,8 @@ async function* map<T, U>(
   iter: AsyncIterable<T>,
   fn: (item: T) => U | Promise<U>
 ): AsyncGenerator<U> {
-  for await (const item of iter) {
-    yield await fn(item);
-  }
+  throw new Error("TODO: implement map");
+  yield undefined as never; // unreachable — present only so TS recognizes the generator signature
 }
 
 /**
@@ -76,9 +62,8 @@ async function* filter<T>(
   iter: AsyncIterable<T>,
   pred: (item: T) => boolean | Promise<boolean>
 ): AsyncGenerator<T> {
-  for await (const item of iter) {
-    if (await pred(item)) yield item;
-  }
+  throw new Error("TODO: implement filter");
+  yield undefined as never; // unreachable — present only so TS recognizes the generator signature
 }
 
 /**
@@ -89,15 +74,8 @@ async function* batch<T>(
   iter: AsyncIterable<T>,
   size: number
 ): AsyncGenerator<T[]> {
-  let buf: T[] = [];
-  for await (const item of iter) {
-    buf.push(item);
-    if (buf.length >= size) {
-      yield buf;
-      buf = [];
-    }
-  }
-  if (buf.length > 0) yield buf;
+  throw new Error("TODO: implement batch");
+  yield undefined as never; // unreachable — present only so TS recognizes the generator signature
 }
 
 /**
@@ -105,18 +83,14 @@ async function* batch<T>(
  * Only safe for small/bounded iterables — defeats the streaming purpose otherwise.
  */
 async function toArray<T>(iter: AsyncIterable<T>): Promise<T[]> {
-  const result: T[] = [];
-  for await (const item of iter) result.push(item);
-  return result;
+  throw new Error("TODO: implement toArray");
 }
 
 /**
  * Count items in an async iterable without collecting them.
  */
 async function count(iter: AsyncIterable<unknown>): Promise<number> {
-  let n = 0;
-  for await (const _ of iter) n++;
-  return n;
+  throw new Error("TODO: implement count");
 }
 
 // ---------------------------------------------------------------------------

@@ -8,56 +8,22 @@
  */
 import assert from "node:assert/strict";
 
-// ---------- YOUR CODE / ANSWERS BELOW ----------
-
-interface User {
-  id: string;
-  email: string;
-  displayName?: string;         // optional: string | undefined
-  readonly createdAt: Date;     // cannot be reassigned after creation
-}
-
-// A function that returns a greeting using the User shape
-function greetUser(user: User): string {
-  // displayName is string | undefined — use nullish coalescing to provide a fallback
-  const name = user.displayName ?? user.email;
-  return `Hello, ${name}!`;
-}
-
-// A function that formats a user's account summary line
-function formatUserSummary(user: User): string {
-  const displayName = user.displayName ?? "(no display name)";
-  const created = user.createdAt.toISOString().slice(0, 10);
-  return `[${user.id}] ${user.email} | ${displayName} | joined ${created}`;
-}
-
-// An index signature — useful when property names are dynamic
-interface MetadataMap {
-  [key: string]: string;
-}
-
-function buildMetadata(pairs: [string, string][]): MetadataMap {
-  const result: MetadataMap = {};
-  for (const [k, v] of pairs) {
-    result[k] = v;
-  }
-  return result;
-}
-
-// Two test users
-const userAlice: User = {
-  id: "u_001",
-  email: "alice@example.com",
-  displayName: "Alice Chen",
-  createdAt: new Date("2024-01-15"),
-};
-
-const userBob: User = {
-  id: "u_002",
-  email: "bob@example.com",
-  // displayName omitted — optional
-  createdAt: new Date("2024-03-20"),
-};
+// ---------- YOUR CODE BELOW ----------
+// TODO: Declare the following so that the tests below pass.
+//   - interface User                                   — with id: string, email: string,
+//                                                        displayName?: string, readonly createdAt: Date
+//   - function greetUser(user: User): string           — returns "Hello, <displayName or email>!"
+//   - function formatUserSummary(user: User): string   — returns a line containing id, email,
+//                                                        display name (or "(no display name)"),
+//                                                        and join date (YYYY-MM-DD)
+//   - interface MetadataMap                            — index signature [key: string]: string
+//   - function buildMetadata(pairs: [string, string][]): MetadataMap
+//                                                      — builds a map from key-value pair tuples
+//   - userAlice: User                                  — id "u_001", email "alice@example.com",
+//                                                        displayName "Alice Chen", createdAt 2024-01-15
+//   - userBob: User                                    — id "u_002", email "bob@example.com",
+//                                                        no displayName, createdAt 2024-03-20
+// Read the tests to infer expected values.
 
 // ---------- TESTS ----------
 

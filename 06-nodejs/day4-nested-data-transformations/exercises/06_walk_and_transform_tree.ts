@@ -32,17 +32,7 @@ export function mapTree(
   node: CategoryNode,
   fn: (node: CategoryNode) => CategoryNode
 ): CategoryNode {
-  // Apply transformation to this node first
-  const transformed = fn(node);
-
-  if (transformed.children === undefined || transformed.children.length === 0) {
-    return transformed;
-  }
-
-  return {
-    ...transformed,
-    children: transformed.children.map(child => mapTree(child, fn)),
-  };
+  throw new Error("TODO: implement mapTree");
 }
 
 // ---------------------------------------------------------------------------
@@ -53,14 +43,7 @@ export function findInTree(
   node: CategoryNode,
   predicate: (node: CategoryNode) => boolean
 ): CategoryNode | undefined {
-  if (predicate(node)) return node;
-
-  for (const child of node.children ?? []) {
-    const found = findInTree(child, predicate);
-    if (found !== undefined) return found;
-  }
-
-  return undefined;
+  throw new Error("TODO: implement findInTree");
 }
 
 // ---------------------------------------------------------------------------
@@ -72,11 +55,7 @@ export function reduceTree<A>(
   fn: (acc: A, node: CategoryNode) => A,
   initial: A
 ): A {
-  const acc = fn(initial, node);
-  return (node.children ?? []).reduce(
-    (a, child) => reduceTree(child, fn, a),
-    acc
-  );
+  throw new Error("TODO: implement reduceTree");
 }
 
 // ---------------------------------------------------------------------------

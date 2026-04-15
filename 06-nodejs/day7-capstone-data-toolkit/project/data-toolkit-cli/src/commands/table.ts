@@ -5,6 +5,5 @@ import { writeOutput } from "../io/write.ts";
 import type { TableOptions } from "../args.ts";
 
 export function runTable(opts: TableOptions): void {
-  const rows = readFile(opts.file, opts.input);
-  writeOutput(rows, "table");
+  throw new Error("TODO: implement runTable");
 }

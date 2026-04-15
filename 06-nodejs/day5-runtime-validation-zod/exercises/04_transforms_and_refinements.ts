@@ -13,86 +13,46 @@ import assert from "node:assert/strict";
 
 // ---------- PREPROCESS: string → Date before validation ----------
 
-// z.date() requires an actual Date object — strings fail by default.
-// z.preprocess runs BEFORE validation and normalizes the input.
-const FlexibleDateSchema = z.preprocess(
-  (val) => {
-    if (typeof val === "string" || typeof val === "number") {
-      const d = new Date(val);
-      // Return NaN-date as-is so z.date() produces a proper error
-      return d;
-    }
-    return val;
-  },
-  z.date()
-);
+// TODO: define FlexibleDateSchema — use z.preprocess to convert string/number to Date,
+//       then validate with z.date()
+export const FlexibleDateSchema = z.unknown();
 
 // ---------- CROSS-FIELD REFINEMENT: endDate > startDate ----------
 
-const DateRangeSchema = z
-  .object({
-    startDate: FlexibleDateSchema,
-    endDate: FlexibleDateSchema,
-    label: z.string().min(1),
-  })
-  .superRefine((data, ctx) => {
-    if (data.endDate <= data.startDate) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "endDate must be strictly after startDate",
-        path: ["endDate"],
-      });
-    }
-  });
+// TODO: define DateRangeSchema — object with startDate (FlexibleDateSchema), endDate (FlexibleDateSchema),
+//       label (string min 1); use .superRefine to reject when endDate <= startDate,
+//       adding a custom issue on path ["endDate"] with message
+//       "endDate must be strictly after startDate"
+export const DateRangeSchema = z.unknown();
 
 type DateRange = z.infer<typeof DateRangeSchema>;
 
 // ---------- TRANSFORM: normalize email ----------
 
-// .trim() preprocesses the string before .email() validates it,
-// then .transform lowercases the already-trimmed value.
-const NormalizedEmailSchema = z
-  .string()
-  .trim()
-  .email()
-  .transform((s) => s.toLowerCase());
+// TODO: define NormalizedEmailSchema — string, trim, validate as email, transform to lowercase
+export const NormalizedEmailSchema = z.unknown();
 
 // After transform, z.infer is still string, but the value is lowercased
 type NormalizedEmail = z.infer<typeof NormalizedEmailSchema>;
 
 // ---------- TRANSFORM: enrich an object ----------
 
-const RawScoreSchema = z.object({
-  name: z.string(),
-  score: z.number().min(0).max(100),
-});
+// TODO: define RawScoreSchema — object with name (string) and score (number 0-100)
+export const RawScoreSchema = z.unknown();
 
-const EnrichedScoreSchema = RawScoreSchema.transform((data) => ({
-  ...data,
-  grade:
-    data.score >= 90
-      ? "A"
-      : data.score >= 80
-      ? "B"
-      : data.score >= 70
-      ? "C"
-      : data.score >= 60
-      ? "D"
-      : "F",
-  passed: data.score >= 60,
-}));
+// TODO: define EnrichedScoreSchema — transform RawScoreSchema to add:
+//       grade: "A" (>=90), "B" (>=80), "C" (>=70), "D" (>=60), "F" (otherwise)
+//       passed: boolean (score >= 60)
+export const EnrichedScoreSchema = z.unknown();
 
 type EnrichedScore = z.infer<typeof EnrichedScoreSchema>;
 
 // ---------- Z.COERCE: env-style string coercion ----------
 
-// z.coerce.number calls Number(val) then validates as number
-const EnvPortSchema = z.coerce.number().int().min(1).max(65535);
-// Guard against NaN (Number("abc") === NaN)
-const SafeEnvPortSchema = z.coerce
-  .number()
-  .refine((n) => !isNaN(n), "Not a valid number")
-  .pipe(z.number().int().min(1).max(65535));
+// TODO: define EnvPortSchema — coerce to number, integer, min 1, max 65535
+export const EnvPortSchema = z.unknown();
+// TODO: define SafeEnvPortSchema — coerce to number, refine !isNaN, pipe to int min 1 max 65535
+export const SafeEnvPortSchema = z.unknown();
 
 // ---------- TESTS ----------
 

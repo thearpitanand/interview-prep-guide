@@ -4,24 +4,25 @@
  */
 
 export class Table<T extends { id: string }> {
-  private store = new Map<string, T>();
+  private store: Map<string, T>;
+
+  constructor() {
+    // TODO
+    this.store = new Map();
+  }
 
   /**
    * Insert a new record. Throws if a record with the same id already exists.
    */
   insert(record: T): T {
-    if (this.store.has(record.id)) {
-      throw new Error(`Record with id "${record.id}" already exists.`);
-    }
-    this.store.set(record.id, { ...record });
-    return record;
+    throw new Error("TODO: implement insert");
   }
 
   /**
    * Find a record by its primary key. Returns undefined if not found.
    */
   findById(id: string): T | undefined {
-    return this.store.get(id);
+    throw new Error("TODO: implement findById");
   }
 
   /**
@@ -30,27 +31,21 @@ export class Table<T extends { id: string }> {
    * Throws if the record does not exist.
    */
   update(id: string, patch: Partial<Omit<T, "id">>): T {
-    const existing = this.store.get(id);
-    if (existing === undefined) {
-      throw new Error(`Record with id "${id}" not found.`);
-    }
-    const updated: T = { ...existing, ...patch };
-    this.store.set(id, updated);
-    return updated;
+    throw new Error("TODO: implement update");
   }
 
   /**
    * Remove a record by id. Returns true if the record existed, false otherwise.
    */
   delete(id: string): boolean {
-    return this.store.delete(id);
+    throw new Error("TODO: implement delete");
   }
 
   /**
    * Return all records that satisfy the predicate.
    */
   where(predicate: (record: T) => boolean): T[] {
-    return Array.from(this.store.values()).filter(predicate);
+    throw new Error("TODO: implement where");
   }
 
   /**
@@ -58,7 +53,7 @@ export class Table<T extends { id: string }> {
    * The return type is T[K][], precisely typed to the field.
    */
   pluck<K extends keyof T>(key: K): T[K][] {
-    return Array.from(this.store.values()).map((record) => record[key]);
+    throw new Error("TODO: implement pluck");
   }
 
   /**
@@ -66,28 +61,20 @@ export class Table<T extends { id: string }> {
    * Keys of the result are the distinct values seen in the table.
    */
   groupBy<K extends keyof T>(key: K): Record<string, T[]> {
-    const result: Record<string, T[]> = {};
-    for (const record of this.store.values()) {
-      const groupKey = String(record[key]);
-      if (result[groupKey] === undefined) {
-        result[groupKey] = [];
-      }
-      result[groupKey].push(record);
-    }
-    return result;
+    throw new Error("TODO: implement groupBy");
   }
 
   /**
    * Total number of records in the table.
    */
   count(): number {
-    return this.store.size;
+    throw new Error("TODO: implement count");
   }
 
   /**
    * Return all records as an array (insertion order is not guaranteed).
    */
   all(): T[] {
-    return Array.from(this.store.values());
+    throw new Error("TODO: implement all");
   }
 }

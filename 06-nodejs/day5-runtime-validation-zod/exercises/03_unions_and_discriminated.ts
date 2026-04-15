@@ -12,63 +12,33 @@ import assert from "node:assert/strict";
 
 // ---------- DISCRIMINATED UNION SCHEMA ----------
 
-// Each variant shares the "kind" field with a unique literal value.
-// Zod reads kind first and jumps directly to the matching schema.
-const EventSchema = z.discriminatedUnion("kind", [
-  z.object({
-    kind: z.literal("click"),
-    x: z.number(),
-    y: z.number(),
-    button: z.enum(["left", "right", "middle"]).default("left"),
-  }),
-  z.object({
-    kind: z.literal("keypress"),
-    key: z.string().min(1),
-    modifiers: z.array(z.enum(["ctrl", "alt", "shift", "meta"])).default([]),
-  }),
-  z.object({
-    kind: z.literal("scroll"),
-    delta: z.number(),
-    axis: z.enum(["vertical", "horizontal"]).default("vertical"),
-  }),
-  z.object({
-    kind: z.literal("resize"),
-    width: z.number().positive(),
-    height: z.number().positive(),
-  }),
-  z.object({
-    kind: z.literal("focus"),
-    target: z.string(),
-    focused: z.boolean(),
-  }),
-]);
+// TODO: define EventSchema as a z.discriminatedUnion on "kind" with these variants:
+//   - "click": x (number), y (number), button (enum "left"|"right"|"middle", default "left")
+//   - "keypress": key (string min 1), modifiers (array of enum "ctrl"|"alt"|"shift"|"meta", default [])
+//   - "scroll": delta (number), axis (enum "vertical"|"horizontal", default "vertical")
+//   - "resize": width (positive number), height (positive number)
+//   - "focus": target (string), focused (boolean)
+export const EventSchema = z.unknown();
 
 type Event = z.infer<typeof EventSchema>;
 // TypeScript narrows to the correct variant in switch/case blocks
 
 // ---------- HANDLER ----------
 
-// The handler switches on kind — TypeScript knows exactly which fields
-// are available in each branch without any casts.
+// TODO: implement handleEvent — switch on event.kind and return a descriptive string:
+//   click   → "click at (x, y) with <button> button"
+//   keypress → "keypress: <key> [<modifiers joined with +>]"
+//   scroll  → "scroll <axis> by <delta>"
+//   resize  → "resize to <width>x<height>"
+//   focus   → "<"focused"|"blurred"> on <target>"
 function handleEvent(event: Event): string {
-  switch (event.kind) {
-    case "click":
-      return `click at (${event.x}, ${event.y}) with ${event.button} button`;
-    case "keypress":
-      return `keypress: ${event.key} [${event.modifiers.join("+")}]`;
-    case "scroll":
-      return `scroll ${event.axis} by ${event.delta}`;
-    case "resize":
-      return `resize to ${event.width}x${event.height}`;
-    case "focus":
-      return `${event.focused ? "focused" : "blurred"} on ${event.target}`;
-  }
+  throw new Error("TODO: implement handleEvent");
 }
 
 // ---------- GENERIC UNION for comparison ----------
 
-// z.union tries schemas in order — slower and worse errors for N > 2
-const StringOrBool = z.union([z.string(), z.boolean()]);
+// TODO: define StringOrBool as z.union of string and boolean
+export const StringOrBool = z.unknown();
 type StringOrBool = z.infer<typeof StringOrBool>;
 
 // ---------- TESTS ----------

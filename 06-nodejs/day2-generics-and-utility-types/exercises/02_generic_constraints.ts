@@ -13,38 +13,23 @@ import assert from "node:assert/strict";
 /**
  * Return obj[key], preserving the exact type of that property.
  */
-function pluck<T, K extends keyof T>(obj: T, key: K): T[K] {
-  return obj[key];
+export function pluck<T, K extends keyof T>(obj: T, key: K): T[K] {
+  throw new Error("TODO: implement pluck");
 }
 
 /**
  * Return a new object containing only the specified keys from obj.
  */
-function pickKeys<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
-  const result = {} as Pick<T, K>;
-  for (const key of keys) {
-    result[key] = obj[key];
-  }
-  return result;
+export function pickKeys<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
+  throw new Error("TODO: implement pickKeys");
 }
 
 /**
  * Return the element in arr for which fn returns the highest number.
  * Returns undefined if the array is empty.
  */
-function maxBy<T>(arr: T[], fn: (t: T) => number): T | undefined {
-  if (arr.length === 0) return undefined;
-  let best = arr[0] as T;
-  let bestScore = fn(best);
-  for (let i = 1; i < arr.length; i++) {
-    const item = arr[i] as T;
-    const score = fn(item);
-    if (score > bestScore) {
-      best = item;
-      bestScore = score;
-    }
-  }
-  return best;
+export function maxBy<T>(arr: T[], fn: (t: T) => number): T | undefined {
+  throw new Error("TODO: implement maxBy");
 }
 
 // ---------- TESTS ----------

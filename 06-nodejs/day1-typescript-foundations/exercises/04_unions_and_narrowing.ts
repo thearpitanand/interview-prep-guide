@@ -8,91 +8,28 @@
  */
 import assert from "node:assert/strict";
 
-// ---------- YOUR CODE / ANSWERS BELOW ----------
-
-// --- typeof narrowing ---
-
-// Formats a value that might be a number (raw amount) or a string (pre-formatted)
-function formatAmount(value: string | number): string {
-  if (typeof value === "string") {
-    // value is string in this branch
-    return value.trim();
-  }
-  // value is number in this branch
-  return value >= 0
-    ? `+${value.toFixed(2)}`
-    : `-${Math.abs(value).toFixed(2)}`;
-}
-
-// --- truthiness narrowing ---
-
-interface User {
-  id: string;
-  email: string;
-  displayName?: string;
-}
-
-// Returns a greeting, safely handling the null case
-function greetUser(user: User | null): string {
-  if (!user) {
-    // user is null here
-    return "Hello, guest!";
-  }
-  // user is User here
-  const name = user.displayName ?? user.email;
-  return `Hello, ${name}!`;
-}
-
-// Also useful for optional fields
-function getUserLabel(user: User): string {
-  // user.displayName is string | undefined
-  if (user.displayName) {
-    return user.displayName;
-  }
-  return user.email;
-}
-
-// --- in narrowing ---
-
-type EmailContact = { kind: "email"; address: string };
-type SmsContact = { kind: "sms"; phone: string };
-type Contact = EmailContact | SmsContact;
-
-// Narrow by checking for a property that only one branch has
-function describeContact(contact: Contact): string {
-  if ("address" in contact) {
-    // contact is EmailContact
-    return `Email: ${contact.address}`;
-  }
-  // contact is SmsContact
-  return `SMS: ${contact.phone}`;
-}
-
-// Narrow by the discriminant literal value (equivalent, often clearer)
-function notifyContact(contact: Contact): string {
-  if (contact.kind === "email") {
-    return `Sending email to ${contact.address}`;
-  }
-  return `Sending SMS to ${contact.phone}`;
-}
-
-// --- combining narrowing in a realistic shape ---
-
-type TransactionSource =
-  | { channel: "api"; apiKey: string }
-  | { channel: "csv"; filename: string }
-  | { channel: "manual"; enteredBy: string };
-
-function describeSource(source: TransactionSource): string {
-  switch (source.channel) {
-    case "api":
-      return `API import (key: ${source.apiKey.slice(0, 4)}...)`;
-    case "csv":
-      return `CSV import from ${source.filename}`;
-    case "manual":
-      return `Manual entry by ${source.enteredBy}`;
-  }
-}
+// ---------- YOUR CODE BELOW ----------
+// TODO: Declare the following so that the tests below pass.
+//   - function formatAmount(value: string | number): string
+//       — if string: return value.trim()
+//       — if number: positive → "+X.XX", negative → "-X.XX" (no sign for original)
+//   - interface User                              — id: string, email: string, displayName?: string
+//   - function greetUser(user: User | null): string
+//       — null → "Hello, guest!"
+//       — User → "Hello, <displayName or email>!"
+//   - function getUserLabel(user: User): string   — displayName if truthy, else email
+//   - type EmailContact                           — { kind: "email"; address: string }
+//   - type SmsContact                             — { kind: "sms"; phone: string }
+//   - type Contact                               — EmailContact | SmsContact
+//   - function describeContact(contact: Contact): string
+//       — narrow by "address" in contact: "Email: <address>" or "SMS: <phone>"
+//   - function notifyContact(contact: Contact): string
+//       — narrow by contact.kind: "Sending email to <address>" or "Sending SMS to <phone>"
+//   - type TransactionSource                      — discriminated union on channel:
+//       "api" (apiKey), "csv" (filename), "manual" (enteredBy)
+//   - function describeSource(source: TransactionSource): string
+//       — switch on channel: see test assertions for exact output format
+// Read the tests to infer expected values.
 
 // ---------- TESTS ----------
 

@@ -8,62 +8,29 @@
  */
 import assert from "node:assert/strict";
 
-// ---------- YOUR CODE / ANSWERS BELOW ----------
-
-// Explicit type annotations
-const userId: string = "u_001";
-const transactionAmount: number = -49.99;
-const isActive: boolean = true;
-const maybeNull: null = null;
-const notYet: undefined = undefined;
-
-// Inferred types — TypeScript figures out the type from the initializer
-const inferredString = "hello";     // inferred: "hello" (literal type, because const)
-const inferredNumber = 42;          // inferred: 42 (literal type)
-const inferredBool = false;         // inferred: false (literal type)
-
-// let widens — the value might be reassigned to any other string
-let mutableLabel = "pending";       // inferred: string (not literal "pending")
-mutableLabel = "complete";          // legal — it's just string
-
-// const narrows — TypeScript knows the value can never change
-const STATUS_PENDING = "pending";   // inferred: "pending" (string literal type)
-
-// Demonstrating the widening difference matters for union types
-type Status = "pending" | "complete" | "failed";
-
-function applyStatus(s: Status): string {
-  return `status=${s}`;
-}
-
-// This works because STATUS_PENDING has literal type "pending"
-const r1 = applyStatus(STATUS_PENDING);
-
-// To use a let variable, cast it or use as const at the assignment
-const dynamicStatus = "complete" as const;  // pins to literal "complete"
-const r2 = applyStatus(dynamicStatus);
-
-// as const on an object — all properties become readonly literal types
-const defaultConfig = {
-  host: "localhost",
-  port: 5432,
-  ssl: false,
-} as const;
-// defaultConfig.port has type 5432, not number
-
-// as const on an array — becomes readonly tuple of literals
-const VALID_CATEGORIES = ["groceries", "utilities", "transport", "dining"] as const;
-// type: readonly ["groceries", "utilities", "transport", "dining"]
-
-type Category = typeof VALID_CATEGORIES[number];
-// type: "groceries" | "utilities" | "transport" | "dining"
-
-function formatCategory(c: Category): string {
-  return c.charAt(0).toUpperCase() + c.slice(1);
-}
-
-// bigint — for integers that exceed Number.MAX_SAFE_INTEGER
-const bigBalance: bigint = 9_007_199_254_740_993n;
+// ---------- YOUR CODE BELOW ----------
+// TODO: Declare the following so that the tests below pass.
+//   - userId: string                          — value "u_001"
+//   - transactionAmount: number               — value -49.99
+//   - isActive: boolean                       — value true
+//   - maybeNull: null                         — value null
+//   - notYet: undefined                       — value undefined
+//   - inferredString                          — inferred string const, value "hello"
+//   - inferredNumber                          — inferred number const, value 42
+//   - inferredBool                            — inferred boolean const, value false
+//   - mutableLabel (let)                      — reassigned to "complete" before tests
+//   - STATUS_PENDING (const)                  — literal "pending"
+//   - type Status                             — union "pending" | "complete" | "failed"
+//   - function applyStatus(s: Status): string — returns `status=${s}`
+//   - r1                                      — result of applyStatus(STATUS_PENDING)
+//   - dynamicStatus                           — "complete" as const
+//   - r2                                      — result of applyStatus(dynamicStatus)
+//   - defaultConfig                           — as const object with host, port, ssl
+//   - VALID_CATEGORIES                        — as const array of 4 category strings
+//   - type Category                           — derived from typeof VALID_CATEGORIES[number]
+//   - function formatCategory(c: Category): string — uppercases first letter
+//   - bigBalance: bigint                      — value 9_007_199_254_740_993n
+// Read the tests to infer expected values.
 
 // ---------- TESTS ----------
 

@@ -11,42 +11,20 @@ import assert from "node:assert/strict";
 
 // ── Assertion functions ────────────────────────────────────────────────────
 
-function assertIsNumber(x: unknown): asserts x is number {
-  if (typeof x !== "number" || Number.isNaN(x)) {
-    throw new TypeError(`Expected number, got ${typeof x}`);
-  }
-}
+export function assertIsNumber(x: unknown): asserts x is number { throw new TypeError("TODO: implement assertIsNumber"); }
 
-function assertIsString(x: unknown): asserts x is string {
-  if (typeof x !== "string") {
-    throw new TypeError(`Expected string, got ${typeof x}`);
-  }
-}
+export function assertIsString(x: unknown): asserts x is string { throw new TypeError("TODO: implement assertIsString"); }
 
-function assertHasKey<K extends string>(
+export function assertHasKey<K extends string>(
   obj: unknown,
   key: K
-): asserts obj is Record<K, unknown> {
-  if (typeof obj !== "object" || obj === null || !(key in obj)) {
-    throw new TypeError(`Expected object with key "${key}"`);
-  }
-}
+): asserts obj is Record<K, unknown> { throw new TypeError("TODO: implement assertHasKey"); }
 
 // ── Using assertions to extract a deeply nested value ─────────────────────
 
-function extractUserId(payload: unknown): number {
-  assertHasKey(payload, "user");
-  assertHasKey(payload["user"], "id");
-  assertIsNumber(payload["user"]["id"]);
-  // After all three assertions, TypeScript knows payload["user"]["id"] is number.
-  return payload["user"]["id"];
-}
+export function extractUserId(payload: unknown): number { throw new Error("TODO: implement extractUserId"); }
 
-function extractEventName(payload: unknown): string {
-  assertHasKey(payload, "event");
-  assertIsString(payload["event"]);
-  return payload["event"];
-}
+export function extractEventName(payload: unknown): string { throw new Error("TODO: implement extractEventName"); }
 
 // ── Tests ─────────────────────────────────────────────────────────────────
 

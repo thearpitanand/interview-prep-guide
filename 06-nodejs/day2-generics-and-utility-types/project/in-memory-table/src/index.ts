@@ -13,21 +13,11 @@ import transactionsRaw from "../data/transactions.json" with { type: "json" };
 // ---------- Types ----------
 
 interface User {
-  id: string;
-  name: string;
-  email: string;
-  role: "admin" | "user";
-  age: number;
+  /* TODO: define User */
 }
 
 interface Transaction {
-  id: string;
-  userId: string;
-  amount: number;
-  currency: string;
-  type: "credit" | "debit";
-  description: string;
-  date: string;
+  /* TODO: define Transaction */
 }
 
 // ---------- Seed Tables ----------

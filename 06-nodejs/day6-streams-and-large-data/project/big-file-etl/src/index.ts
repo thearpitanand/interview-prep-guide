@@ -51,63 +51,11 @@ if (!existsSync(inputPath)) {
 // Main
 // ---------------------------------------------------------------------------
 
-console.log("=".repeat(60));
-console.log("Big-File ETL — Streaming Pipeline");
-console.log("=".repeat(60));
-console.log(`Input:  ${inputPath}`);
-console.log(`Output: ${outputPath}`);
-console.log("");
-
-let lastProgressRow = 0;
-
-function onProgress(rowsRead: number): void {
-  if (rowsRead > lastProgressRow) {
-    process.stdout.write(`  Processed ${rowsRead.toLocaleString()} rows...\r`);
-    lastProgressRow = rowsRead;
-  }
+async function main(): Promise<void> {
+  throw new Error("TODO: implement CLI entry point");
 }
 
-try {
-  const result = await runPipeline(inputPath, outputPath, onProgress);
-
-  // Clear the progress line
-  process.stdout.write(" ".repeat(60) + "\r");
-
-  console.log("Pipeline complete.");
-  console.log("");
-  console.log("Results:");
-  console.log(`  Rows read:           ${result.rowsRead.toLocaleString()}`);
-  console.log(`  Rows valid:          ${result.rowsValid.toLocaleString()}`);
-  console.log(`  Rows invalid (Zod):  ${result.rowsInvalid.toLocaleString()}`);
-  console.log(`  Malformed JSON:      ${result.rowsMalformedJson.toLocaleString()}`);
-  console.log(`  Categories found:    ${result.categoriesFound}`);
-  console.log(`  Elapsed:             ${result.elapsedMs} ms`);
-  console.log("");
-  console.log("Category Summary:");
-  console.log(
-    "  " +
-      ["Category".padEnd(14), "Events".padStart(8), "Total ($)".padStart(12), "Avg ($)".padStart(10), "Flagged".padStart(9)].join("  ")
-  );
-  console.log("  " + "-".repeat(60));
-
-  for (const row of result.summary) {
-    const totalDollars = (row.total_amount_cents / 100).toFixed(2);
-    const avgDollars = (row.avg_amount_cents / 100).toFixed(2);
-    console.log(
-      "  " +
-        [
-          row.category.padEnd(14),
-          row.event_count.toLocaleString().padStart(8),
-          `$${totalDollars}`.padStart(12),
-          `$${avgDollars}`.padStart(10),
-          row.flagged_count.toLocaleString().padStart(9),
-        ].join("  ")
-    );
-  }
-
-  console.log("");
-  console.log(`Output written to: ${outputPath}`);
-} catch (err) {
+main().catch((err: unknown) => {
   console.error("ETL pipeline failed:", err);
   process.exit(1);
-}
+});

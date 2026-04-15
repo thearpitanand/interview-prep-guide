@@ -12,37 +12,38 @@ import assert from "node:assert/strict";
 
 // ---------- PRIMITIVE SCHEMAS ----------
 
-// A simple string schema
-const NameSchema = z.string().min(1).max(100);
+// TODO: define NameSchema — string, min 1, max 100
+export const NameSchema = z.unknown();
 type Name = z.infer<typeof NameSchema>;
 
-// Number with bounds
-const AgeSchema = z.number().int().min(0).max(150);
+// TODO: define AgeSchema — integer number, min 0, max 150
+export const AgeSchema = z.unknown();
 type Age = z.infer<typeof AgeSchema>;
 
-// Boolean
-const ActiveSchema = z.boolean();
+// TODO: define ActiveSchema — boolean
+export const ActiveSchema = z.unknown();
 type Active = z.infer<typeof ActiveSchema>;
 
-// Literal — only the exact value passes
-const AdminLiteralSchema = z.literal("admin");
+// TODO: define AdminLiteralSchema — literal "admin"
+export const AdminLiteralSchema = z.unknown();
 type AdminLiteral = z.infer<typeof AdminLiteralSchema>;
 
-// Enum — one of several string values
-const RoleSchema = z.enum(["admin", "user", "moderator"]);
+// TODO: define RoleSchema — enum of "admin", "user", "moderator"
+export const RoleSchema = z.unknown();
 type Role = z.infer<typeof RoleSchema>;
 
 // ---------- STRING REFINEMENTS ----------
 
-const EmailSchema = z.string().email();
-const UrlSchema = z.string().url();
-const UuidSchema = z.string().uuid();
-const ZipSchema = z.string().regex(/^\d{5}(-\d{4})?$/, "Invalid US ZIP code");
-const PasswordSchema = z
-  .string()
-  .min(8, "Password must be at least 8 characters")
-  .refine((s) => /[A-Z]/.test(s), "Must contain at least one uppercase letter")
-  .refine((s) => /\d/.test(s), "Must contain at least one digit");
+// TODO: define EmailSchema — string email
+export const EmailSchema = z.unknown();
+// TODO: define UrlSchema — string url
+export const UrlSchema = z.unknown();
+// TODO: define UuidSchema — string uuid
+export const UuidSchema = z.unknown();
+// TODO: define ZipSchema — string matching /^\d{5}(-\d{4})?$/ with message "Invalid US ZIP code"
+export const ZipSchema = z.unknown();
+// TODO: define PasswordSchema — string, min 8, refine uppercase, refine digit
+export const PasswordSchema = z.unknown();
 
 // ---------- PARSE: throws on invalid input ----------
 

@@ -45,16 +45,7 @@ export function leftJoin<L, R>(
   leftKey:  (l: L) => string,
   rightKey: (r: R) => string
 ): Array<L & { right: R | undefined }> {
-  // Hash the right side: O(m) to build, O(1) per lookup
-  const rightIndex = new Map<string, R>();
-  for (const r of right) {
-    rightIndex.set(rightKey(r), r);
-  }
-
-  return left.map(l => ({
-    ...l,
-    right: rightIndex.get(leftKey(l)),
-  }));
+  throw new Error("TODO: implement leftJoin");
 }
 
 // ---------------------------------------------------------------------------
@@ -71,15 +62,7 @@ export function innerJoin<L, R>(
   leftKey:  (l: L) => string,
   rightKey: (r: R) => string
 ): Array<L & { right: R }> {
-  const rightIndex = new Map<string, R>();
-  for (const r of right) {
-    rightIndex.set(rightKey(r), r);
-  }
-
-  return left.flatMap(l => {
-    const match = rightIndex.get(leftKey(l));
-    return match !== undefined ? [{ ...l, right: match }] : [];
-  });
+  throw new Error("TODO: implement innerJoin");
 }
 
 // ---------------------------------------------------------------------------

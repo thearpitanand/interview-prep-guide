@@ -10,20 +10,20 @@ import assert from "node:assert/strict";
 
 // ---------- YOUR CODE / ANSWERS BELOW ----------
 
-function first<T>(arr: T[]): T | undefined {
-  return arr[0];
+export function first<T>(arr: T[]): T | undefined {
+  throw new Error("TODO: implement first");
 }
 
-function last<T>(arr: T[]): T | undefined {
-  return arr[arr.length - 1];
+export function last<T>(arr: T[]): T | undefined {
+  throw new Error("TODO: implement last");
 }
 
-function identity<T>(x: T): T {
-  return x;
+export function identity<T>(x: T): T {
+  throw new Error("TODO: implement identity");
 }
 
-function pair<A, B>(a: A, b: B): [A, B] {
-  return [a, b];
+export function pair<A, B>(a: A, b: B): [A, B] {
+  throw new Error("TODO: implement pair");
 }
 
 // ---------- TESTS ----------

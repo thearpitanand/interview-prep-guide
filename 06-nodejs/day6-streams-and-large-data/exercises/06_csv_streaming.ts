@@ -59,9 +59,7 @@ interface SummaryRow {
  * Uses csv-parse with columns:true so headers become object keys.
  */
 function streamCsv<T>(path: string): AsyncIterable<T> {
-  return createReadStream(path, { encoding: "utf8" }).pipe(
-    parse({ columns: true, trim: true, skip_empty_lines: true })
-  ) as AsyncIterable<T>;
+  throw new Error("TODO: implement streamCsv");
 }
 
 /**
@@ -71,15 +69,7 @@ async function aggregateCsv(
   path: string,
   sumField: keyof RawSaleRow
 ): Promise<{ rowCount: number; sum: number }> {
-  let rowCount = 0;
-  let sum = 0;
-
-  for await (const row of streamCsv<RawSaleRow>(path)) {
-    rowCount++;
-    sum += parseFloat(row[sumField] ?? "0");
-  }
-
-  return { rowCount, sum };
+  throw new Error("TODO: implement aggregateCsv");
 }
 
 /**
@@ -87,32 +77,7 @@ async function aggregateCsv(
  * Memory is bounded: one Map entry per unique category.
  */
 async function groupByCategory(path: string): Promise<Map<string, SummaryRow>> {
-  const acc = new Map<string, SummaryRow>();
-
-  for await (const raw of streamCsv<RawSaleRow>(path)) {
-    const row: SaleRow = {
-      product: raw.product,
-      category: raw.category,
-      amount: parseFloat(raw.amount),
-      quantity: parseInt(raw.quantity, 10),
-    };
-
-    const existing = acc.get(row.category);
-    if (existing) {
-      existing.total_amount += row.amount;
-      existing.total_quantity += row.quantity;
-      existing.row_count++;
-    } else {
-      acc.set(row.category, {
-        category: row.category,
-        total_amount: row.amount,
-        total_quantity: row.quantity,
-        row_count: 1,
-      });
-    }
-  }
-
-  return acc;
+  throw new Error("TODO: implement groupByCategory");
 }
 
 /**
@@ -123,11 +88,7 @@ async function writeCsv<T extends Record<string, unknown>>(
   rows: T[],
   header: boolean = true
 ): Promise<void> {
-  await pipeline(
-    Readable.from(rows),
-    stringify({ header, cast: { number: (v) => v.toString() } }),
-    createWriteStream(path)
-  );
+  throw new Error("TODO: implement writeCsv");
 }
 
 // ---------------------------------------------------------------------------

@@ -18,40 +18,17 @@ type Product = { sku: string; price: number };
 
 // ── Type guards ────────────────────────────────────────────────────────────
 
-function isUser(x: unknown): x is User {
-  if (typeof x !== "object" || x === null) return false;
-  const obj = x as Record<string, unknown>;
-  return (
-    typeof obj["id"]    === "number" &&
-    typeof obj["name"]  === "string" &&
-    typeof obj["email"] === "string"
-  );
-}
+export function isUser(x: unknown): x is User { throw new Error("TODO: implement isUser"); }
 
-function isProduct(x: unknown): x is Product {
-  if (typeof x !== "object" || x === null) return false;
-  const obj = x as Record<string, unknown>;
-  return (
-    typeof obj["sku"]   === "string" &&
-    typeof obj["price"] === "number"
-  );
-}
+export function isProduct(x: unknown): x is Product { throw new Error("TODO: implement isProduct"); }
 
-function isNonEmptyString(x: unknown): x is string {
-  return typeof x === "string" && x.length > 0;
-}
+export function isNonEmptyString(x: unknown): x is string { throw new Error("TODO: implement isNonEmptyString"); }
 
 // ── Functions using the guards ─────────────────────────────────────────────
 
-function extractUsers(items: unknown[]): User[] {
-  return items.filter(isUser);
-}
+export function extractUsers(items: unknown[]): User[] { throw new Error("TODO: implement extractUsers"); }
 
-function getDisplayName(x: unknown): string {
-  if (isUser(x)) return x.name;
-  if (isNonEmptyString(x)) return x;
-  return "(unknown)";
-}
+export function getDisplayName(x: unknown): string { throw new Error("TODO: implement getDisplayName"); }
 
 // ── Tests ─────────────────────────────────────────────────────────────────
 

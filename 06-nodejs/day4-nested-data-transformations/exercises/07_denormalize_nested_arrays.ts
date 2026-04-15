@@ -70,23 +70,7 @@ type FlatLineItem = {
  * no crash, no undefined rows.
  */
 export function denormalize(customers: readonly Customer[]): FlatLineItem[] {
-  return customers.flatMap(customer =>
-    customer.orders.flatMap(order =>
-      order.items.map(item => ({
-        customerId:   customer.customerId,
-        customerName: customer.name,
-        tier:         customer.tier,
-        orderId:      order.orderId,
-        placedAt:     order.placedAt,
-        status:       order.status,
-        sku:          item.sku,
-        itemName:     item.itemName,
-        qty:          item.qty,
-        unitPrice:    item.unitPrice,
-        lineTotal:    Math.round(item.qty * item.unitPrice * 100) / 100,
-      }))
-    )
-  );
+  throw new Error("TODO: implement denormalize");
 }
 
 // ---------------------------------------------------------------------------

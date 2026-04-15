@@ -63,52 +63,7 @@ export function pivot(
   valueKey: keyof SaleRow,
   agg: (acc: number, val: number) => number = (a, b) => a + b
 ): PivotRow[] {
-  if (rows.length === 0) return [];
-
-  // Step 1: discover all column values in input order (deduped)
-  const seenCols = new Set<string>();
-  const cols: string[] = [];
-  for (const row of rows) {
-    const colVal = String(row[colKey]);
-    if (!seenCols.has(colVal)) {
-      seenCols.add(colVal);
-      cols.push(colVal);
-    }
-  }
-
-  // Step 2: group rows by rowKey
-  const groups = groupBy(rows, r => String(r[rowKey]));
-
-  // Step 3: preserve rowKey insertion order
-  const rowOrder: string[] = [];
-  const seenRows = new Set<string>();
-  for (const row of rows) {
-    const val = String(row[rowKey]);
-    if (!seenRows.has(val)) {
-      seenRows.add(val);
-      rowOrder.push(val);
-    }
-  }
-
-  // Step 4: build one output row per distinct rowKey value
-  return rowOrder.map(rowVal => {
-    const groupRows = groups[rowVal] ?? [];
-
-    // Start with zeroes for all columns
-    const pivotRow: PivotRow = { month: rowVal };
-    for (const col of cols) {
-      pivotRow[col] = 0;
-    }
-
-    // Aggregate values into the appropriate column
-    for (const r of groupRows) {
-      const col = String(r[colKey]);
-      const val = Number(r[valueKey]);
-      pivotRow[col] = agg(pivotRow[col] ?? 0, val);
-    }
-
-    return pivotRow;
-  });
+  throw new Error("TODO: implement pivot");
 }
 
 // ---------------------------------------------------------------------------

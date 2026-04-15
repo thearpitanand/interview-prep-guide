@@ -6,8 +6,5 @@ import { groupBy, parseAggSpec } from "../transforms/group.ts";
 import type { GroupOptions } from "../args.ts";
 
 export function runGroup(opts: GroupOptions): void {
-  const rows = readFile(opts.file, opts.input);
-  const agg = parseAggSpec(opts.agg);
-  const result = groupBy(rows, opts.by, agg);
-  writeOutput(result, opts.format);
+  throw new Error("TODO: implement runGroup");
 }

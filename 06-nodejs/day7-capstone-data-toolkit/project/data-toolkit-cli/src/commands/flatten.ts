@@ -6,7 +6,5 @@ import { flattenRecords } from "../transforms/flatten.ts";
 import type { FlattenOptions } from "../args.ts";
 
 export function runFlatten(opts: FlattenOptions): void {
-  const rows = readFile(opts.file, opts.input);
-  const flat = flattenRecords(rows);
-  writeOutput(flat, opts.format);
+  throw new Error("TODO: implement runFlatten");
 }

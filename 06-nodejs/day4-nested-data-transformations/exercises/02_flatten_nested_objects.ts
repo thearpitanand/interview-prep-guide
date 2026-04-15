@@ -24,26 +24,7 @@ export function flatten(
   sep = ".",
   prefix = ""
 ): Record<string, unknown> {
-  const result: Record<string, unknown> = {};
-
-  for (const [key, value] of Object.entries(obj)) {
-    const fullKey = prefix ? `${prefix}${sep}${key}` : key;
-
-    if (
-      value !== null &&
-      typeof value === "object" &&
-      !Array.isArray(value)
-    ) {
-      // Recurse into plain objects; merge results into `result`
-      const nested = flatten(value as Record<string, unknown>, sep, fullKey);
-      Object.assign(result, nested);
-    } else {
-      // Primitives, null, and arrays are stored as-is
-      result[fullKey] = value;
-    }
-  }
-
-  return result;
+  throw new Error("TODO: implement flatten");
 }
 
 // ---------------------------------------------------------------------------
@@ -54,35 +35,7 @@ export function unflatten(
   flat: Record<string, unknown>,
   sep = "."
 ): Record<string, unknown> {
-  const result: Record<string, unknown> = {};
-
-  for (const [key, value] of Object.entries(flat)) {
-    const parts = key.split(sep);
-    let cursor: Record<string, unknown> = result;
-
-    for (let i = 0; i < parts.length - 1; i++) {
-      const part = parts[i];
-      if (part === undefined) continue;
-
-      // Create an intermediate object if missing or overwriting a primitive
-      if (
-        !(part in cursor) ||
-        typeof cursor[part] !== "object" ||
-        cursor[part] === null ||
-        Array.isArray(cursor[part])
-      ) {
-        cursor[part] = {};
-      }
-      cursor = cursor[part] as Record<string, unknown>;
-    }
-
-    const lastPart = parts[parts.length - 1];
-    if (lastPart !== undefined) {
-      cursor[lastPart] = value;
-    }
-  }
-
-  return result;
+  throw new Error("TODO: implement unflatten");
 }
 
 // ---------------------------------------------------------------------------

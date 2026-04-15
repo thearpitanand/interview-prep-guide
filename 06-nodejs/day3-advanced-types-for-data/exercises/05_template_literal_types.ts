@@ -9,44 +9,21 @@
 
 import assert from "node:assert/strict";
 
-// ── Derive handler names from event names ──────────────────────────────────
-
-type DomEvent = "click" | "focus" | "blur" | "change";
-type HandlerName = `on${Capitalize<DomEvent>}`;
-// "onClick" | "onFocus" | "onBlur" | "onChange"
-
-// A record of handlers keyed by the derived names.
-type HandlerMap = Partial<Record<HandlerName, () => void>>;
-
-function attachHandlers(element: string, handlers: HandlerMap): string[] {
-  return Object.keys(handlers).map((k) => `${element}: ${k}`);
-}
-
-// ── Path type that requires a leading slash ────────────────────────────────
-
-type Path = `/${string}`;
-
-function createUrl(base: string, path: Path): string {
-  return `${base}${path}`;
-}
-
-// ── HTTP header name — conventionally Title-Case ───────────────────────────
-
-type HttpHeaderName = `X-${Capitalize<string>}`;
-
-function makeCustomHeader(name: string, value: string): Record<HttpHeaderName, string> {
-  const key = `X-${name.charAt(0).toUpperCase()}${name.slice(1)}` as HttpHeaderName;
-  return { [key]: value } as Record<HttpHeaderName, string>;
-}
-
-// ── Uppercase/Lowercase intrinsics ─────────────────────────────────────────
-
-type EnvKey = Uppercase<"database_url" | "api_key" | "port">;
-// "DATABASE_URL" | "API_KEY" | "PORT"
-
-function getEnv(key: EnvKey): string | undefined {
-  return process.env[key];
-}
+// ---------- YOUR CODE BELOW ----------
+// TODO: Declare the following so that the tests below pass.
+//   - DomEvent: union literal type "click" | "focus" | "blur" | "change"
+//   - HandlerName: template literal type deriving "onClick" | "onFocus" | "onBlur" | "onChange"
+//   - HandlerMap: Partial<Record<HandlerName, () => void>>
+//   - attachHandlers(element: string, handlers: HandlerMap): string[]
+//       returns an array of "<element>: <handlerKey>" strings for each key in handlers
+//   - Path: template literal type constraining strings to start with "/"
+//   - createUrl(base: string, path: Path): string — concatenates base + path
+//   - HttpHeaderName: template literal type `X-${Capitalize<string>}`
+//   - makeCustomHeader(name: string, value: string): Record<HttpHeaderName, string>
+//       capitalizes the first letter of name and returns { "X-<Name>": value }
+//   - EnvKey: Uppercase<"database_url" | "api_key" | "port">
+//       i.e. "DATABASE_URL" | "API_KEY" | "PORT"
+//   - getEnv(key: EnvKey): string | undefined — returns process.env[key]
 
 // ── Tests ─────────────────────────────────────────────────────────────────
 

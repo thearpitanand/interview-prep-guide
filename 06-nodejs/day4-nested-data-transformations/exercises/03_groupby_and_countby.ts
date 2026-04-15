@@ -33,16 +33,7 @@ export function groupBy<T, K extends string>(
   arr: readonly T[],
   fn: (item: T) => K
 ): Record<K, T[]> {
-  const result = {} as Record<K, T[]>;
-  for (const item of arr) {
-    const key = fn(item);
-    if (result[key] === undefined) {
-      result[key] = [];
-    }
-    // Non-null assertion: we just ensured it exists above
-    result[key]!.push(item);
-  }
-  return result;
+  throw new Error("TODO: implement groupBy");
 }
 
 // ---------------------------------------------------------------------------
@@ -53,12 +44,7 @@ export function countBy<T, K extends string>(
   arr: readonly T[],
   fn: (item: T) => K
 ): Record<K, number> {
-  const result = {} as Record<K, number>;
-  for (const item of arr) {
-    const key = fn(item);
-    result[key] = (result[key] ?? 0) + 1;
-  }
-  return result;
+  throw new Error("TODO: implement countBy");
 }
 
 // ---------------------------------------------------------------------------
@@ -69,11 +55,7 @@ export function indexBy<T, K extends string>(
   arr: readonly T[],
   fn: (item: T) => K
 ): Record<K, T> {
-  const result = {} as Record<K, T>;
-  for (const item of arr) {
-    result[fn(item)] = item;
-  }
-  return result;
+  throw new Error("TODO: implement indexBy");
 }
 
 // ---------------------------------------------------------------------------

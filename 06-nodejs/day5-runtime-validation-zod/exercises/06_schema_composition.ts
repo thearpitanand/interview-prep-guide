@@ -12,91 +12,61 @@ import assert from "node:assert/strict";
 
 // ---------- BASE SCHEMA ----------
 
-// Every entity in our system has these fields
-const EntitySchema = z.object({
-  id: z.string().uuid(),
-  createdAt: z.coerce.date(), // coerce so ISO strings work
-  updatedAt: z.coerce.date(),
-});
+// TODO: define EntitySchema — object with id (uuid), createdAt (coerce date), updatedAt (coerce date)
+export const EntitySchema = z.unknown();
 
 type Entity = z.infer<typeof EntitySchema>;
 
 // ---------- MIXIN: soft-delete support ----------
 
-const SoftDeletableSchema = z.object({
-  deletedAt: z.coerce.date().nullable().default(null),
-});
+// TODO: define SoftDeletableSchema — object with deletedAt (coerce date, nullable, default null)
+export const SoftDeletableSchema = z.unknown();
 
 // ---------- USER SCHEMA — extends Entity ----------
 
-const UserSchema = EntitySchema.extend({
-  email: z.string().email(),
-  name: z.string().min(1),
-  role: z.enum(["admin", "user", "moderator"]),
-  bio: z.string().max(500).optional(),
-}).merge(SoftDeletableSchema);
+// TODO: define UserSchema — extend EntitySchema with email, name (min 1),
+//       role (enum: "admin"|"user"|"moderator"), bio (string max 500, optional),
+//       then merge SoftDeletableSchema
+export const UserSchema = z.unknown();
 
 type User = z.infer<typeof UserSchema>;
 
 // ---------- PRODUCT SCHEMA — extends Entity ----------
 
-const ProductSchema = EntitySchema.extend({
-  name: z.string().min(1),
-  description: z.string().max(2000).optional(),
-  price: z.number().positive(),
-  currency: z.string().length(3).default("USD"), // ISO 4217
-  category: z.enum(["electronics", "clothing", "food", "books", "other"]),
-  inStock: z.boolean().default(true),
-  tags: z.array(z.string()).default([]),
-}).merge(SoftDeletableSchema);
+// TODO: define ProductSchema — extend EntitySchema with name (min 1),
+//       description (string max 2000, optional), price (positive number),
+//       currency (string length 3, default "USD"), category (enum: "electronics"|"clothing"|"food"|"books"|"other"),
+//       inStock (boolean, default true), tags (string[], default []),
+//       then merge SoftDeletableSchema
+export const ProductSchema = z.unknown();
 
 type Product = z.infer<typeof ProductSchema>;
 
 // ---------- DTOs ----------
 
-// What the API returns when listing users — no sensitive timestamps
-const UserListItemSchema = UserSchema.pick({
-  id: true,
-  email: true,
-  name: true,
-  role: true,
-});
+// TODO: define UserListItemSchema — pick id, email, name, role from UserSchema
+export const UserListItemSchema = z.unknown();
 type UserListItem = z.infer<typeof UserListItemSchema>;
 
-// What the client sends to create a user — no id, timestamps, or deletedAt
-const CreateUserSchema = UserSchema.omit({
-  id: true,
-  createdAt: true,
-  updatedAt: true,
-  deletedAt: true,
-});
+// TODO: define CreateUserSchema — omit id, createdAt, updatedAt, deletedAt from UserSchema
+export const CreateUserSchema = z.unknown();
 type CreateUser = z.infer<typeof CreateUserSchema>;
 
-// PATCH schema — all fields optional except id
-const PatchUserSchema = UserSchema.partial().required({ id: true });
+// TODO: define PatchUserSchema — all fields optional, but id required
+export const PatchUserSchema = z.unknown();
 type PatchUser = z.infer<typeof PatchUserSchema>;
 
-// Product summary DTO
-const ProductSummarySchema = ProductSchema.pick({
-  id: true,
-  name: true,
-  price: true,
-  currency: true,
-  inStock: true,
-  category: true,
-});
+// TODO: define ProductSummarySchema — pick id, name, price, currency, inStock, category from ProductSchema
+export const ProductSummarySchema = z.unknown();
 type ProductSummary = z.infer<typeof ProductSummarySchema>;
 
 // ---------- COMPOSITION WITH .merge ----------
 
-// AuditedSchema adds audit fields to any schema
-const AuditFieldsSchema = z.object({
-  createdBy: z.string().uuid(),
-  updatedBy: z.string().uuid().optional(),
-});
+// TODO: define AuditFieldsSchema — object with createdBy (uuid), updatedBy (uuid, optional)
+export const AuditFieldsSchema = z.unknown();
 
-// Extend a DTO with audit fields via .merge
-const AuditedUserSchema = UserListItemSchema.merge(AuditFieldsSchema);
+// TODO: define AuditedUserSchema — merge UserListItemSchema with AuditFieldsSchema
+export const AuditedUserSchema = z.unknown();
 type AuditedUser = z.infer<typeof AuditedUserSchema>;
 
 // ---------- TEST DATA ----------

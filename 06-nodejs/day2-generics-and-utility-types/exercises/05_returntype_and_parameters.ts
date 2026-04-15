@@ -11,49 +11,41 @@ import assert from "node:assert/strict";
 // ---------- YOUR CODE / ANSWERS BELOW ----------
 
 // A real function whose return type we want to derive
-function buildProfile(userId: string, displayName: string, age: number) {
-  return {
-    id: userId,
-    displayName,
-    age,
-    slug: displayName.toLowerCase().replace(/\s+/g, "-"),
-    createdAt: new Date("2024-01-01"),
-  };
+export function buildProfile(userId: string, displayName: string, age: number) {
+  throw new Error("TODO: implement buildProfile");
 }
 
-// Derive the return type without repeating the shape
-type Profile = ReturnType<typeof buildProfile>;
+// TODO: derive Profile from the return type of buildProfile (no manual shape)
+type Profile = unknown; // TODO: define Profile using ReturnType<...>
 
-// Derive the parameter tuple
-type BuildProfileParams = Parameters<typeof buildProfile>;
+// TODO: derive BuildProfileParams from the parameter tuple of buildProfile
+type BuildProfileParams = unknown; // TODO: define BuildProfileParams using Parameters<...>
 
 /**
  * A wrapper that calls buildProfile but logs the arguments first.
  * Uses the derived Parameters type so the signature stays in sync automatically.
  */
-function buildProfileWithLog(...args: Parameters<typeof buildProfile>): ReturnType<typeof buildProfile> {
-  console.log(`Building profile for: ${args[0]}`);
-  return buildProfile(...args);
+export function buildProfileWithLog(...args: Parameters<typeof buildProfile>): ReturnType<typeof buildProfile> {
+  throw new Error("TODO: implement buildProfileWithLog");
 }
 
 // ---------- Awaited demonstration ----------
 
 // An async function that resolves to a number
-async function fetchScore(userId: string): Promise<number> {
-  // In real code this would be a network call
-  return Promise.resolve(userId.length * 10);
+export async function fetchScore(userId: string): Promise<number> {
+  throw new Error("TODO: implement fetchScore");
 }
 
-// Unwrap the Promise type
-type Score = Awaited<ReturnType<typeof fetchScore>>; // number
+// TODO: derive Score — unwrap the Promise return type of fetchScore
+type Score = unknown; // TODO: define Score using Awaited<ReturnType<...>>
 
-// Demonstrate Awaited works with nested promises too
-type NestedP = Promise<Promise<string>>;
-type UnwrappedNested = Awaited<NestedP>; // string
+// TODO: define NestedP as Promise<Promise<string>> and UnwrappedNested as Awaited<NestedP>
+type NestedP = unknown; // TODO: define NestedP
+type UnwrappedNested = unknown; // TODO: define UnwrappedNested
 
 // Use Awaited in a generic helper
-function resolveWith<T>(value: Awaited<Promise<T>>): T {
-  return value;
+export function resolveWith<T>(value: Awaited<Promise<T>>): T {
+  throw new Error("TODO: implement resolveWith");
 }
 
 // ---------- TESTS ----------

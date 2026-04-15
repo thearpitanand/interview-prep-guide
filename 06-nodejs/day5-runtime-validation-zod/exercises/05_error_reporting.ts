@@ -31,49 +31,24 @@ type User = z.infer<typeof UserSchema>;
 
 // ---------- HELPERS ----------
 
-// Produce a human-friendly per-field error summary from .flatten()
+// TODO: implement formatFlatErrors — use error.flatten() to produce a human-friendly
+//       per-field error summary. Format:
+//         "Form errors: <msg1>, <msg2>" (if formErrors is non-empty)
+//         "  <field>: <msg1>, <msg2>" (one line per field with errors)
+//       Return "No errors" if nothing to report.
 function formatFlatErrors(error: z.ZodError): string {
-  const flat = error.flatten();
-  const lines: string[] = [];
-
-  if (flat.formErrors.length > 0) {
-    lines.push(`Form errors: ${flat.formErrors.join(", ")}`);
-  }
-
-  for (const [field, msgs] of Object.entries(flat.fieldErrors)) {
-    if (msgs && msgs.length > 0) {
-      lines.push(`  ${field}: ${msgs.join(", ")}`);
-    }
-  }
-
-  return lines.length > 0 ? lines.join("\n") : "No errors";
+  throw new Error("TODO: implement formatFlatErrors");
 }
 
-// Produce a nested summary from .format() — walks the formatted tree
+// TODO: implement formatNestedErrors — recursively walk the formatted object returned
+//       by error.format(). For each "_errors" array that is non-empty, emit a line:
+//         "<prefix || "root">: <errs joined with ", ">"
+//       Recurse into nested keys, building dot-separated prefixes.
 function formatNestedErrors(
   formatted: z.ZodFormattedError<unknown>,
   prefix = ""
 ): string[] {
-  const lines: string[] = [];
-  const obj = formatted as Record<string, unknown>;
-
-  for (const [key, val] of Object.entries(obj)) {
-    if (key === "_errors") {
-      const errs = val as string[];
-      if (errs.length > 0) {
-        lines.push(`${prefix || "root"}: ${errs.join(", ")}`);
-      }
-    } else if (typeof val === "object" && val !== null) {
-      lines.push(
-        ...formatNestedErrors(
-          val as z.ZodFormattedError<unknown>,
-          prefix ? `${prefix}.${key}` : key
-        )
-      );
-    }
-  }
-
-  return lines;
+  throw new Error("TODO: implement formatNestedErrors");
 }
 
 // ---------- TEST DATA — all invalid ----------

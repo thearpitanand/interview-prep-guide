@@ -14,31 +14,19 @@ import assert from "node:assert/strict";
  * Count occurrences of each word in the input array.
  * Returns a Record<string, number> mapping word -> count.
  */
-function countWords(words: string[]): Record<string, number> {
-  const counts: Record<string, number> = {};
-  for (const word of words) {
-    counts[word] = (counts[word] ?? 0) + 1;
-  }
-  return counts;
+export function countWords(words: string[]): Record<string, number> {
+  throw new Error("TODO: implement countWords");
 }
 
 /**
  * Group an array of T by the string key returned by fn.
  * K is constrained to string so it can serve as an object key.
  */
-function groupBy<T, K extends string>(
+export function groupBy<T, K extends string>(
   arr: T[],
   fn: (t: T) => K
 ): Record<K, T[]> {
-  const result = {} as Record<K, T[]>;
-  for (const item of arr) {
-    const key = fn(item);
-    if (result[key] === undefined) {
-      result[key] = [];
-    }
-    result[key].push(item);
-  }
-  return result;
+  throw new Error("TODO: implement groupBy");
 }
 
 // ---------- TESTS ----------

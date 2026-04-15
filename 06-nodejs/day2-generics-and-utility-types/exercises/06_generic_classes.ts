@@ -10,7 +10,7 @@ import assert from "node:assert/strict";
 
 // ---------- YOUR CODE / ANSWERS BELOW ----------
 
-class Box<T> {
+export class Box<T> {
   private value: T;
 
   constructor(initial: T) {
@@ -18,53 +18,53 @@ class Box<T> {
   }
 
   get(): T {
-    return this.value;
+    throw new Error("TODO: implement get");
   }
 
   set(newValue: T): void {
-    this.value = newValue;
+    throw new Error("TODO: implement set");
   }
 
   /**
    * Transform the contained value, returning a new Box of the result type.
    */
   map<U>(fn: (value: T) => U): Box<U> {
-    return new Box(fn(this.value));
+    throw new Error("TODO: implement map");
   }
 
   toString(): string {
-    return `Box(${String(this.value)})`;
+    throw new Error("TODO: implement toString");
   }
 }
 
-class Stack<T> {
+export class Stack<T> {
   private items: T[] = [];
 
   push(item: T): void {
-    this.items.push(item);
+    throw new Error("TODO: implement push");
   }
 
   pop(): T | undefined {
-    return this.items.pop();
+    throw new Error("TODO: implement pop");
   }
 
   peek(): T | undefined {
-    return this.items[this.items.length - 1];
+    throw new Error("TODO: implement peek");
   }
 
   get size(): number {
-    return this.items.length;
+    throw new Error("TODO: implement size");
   }
 
   isEmpty(): boolean {
-    return this.items.length === 0;
+    throw new Error("TODO: implement isEmpty");
   }
 
   /**
    * Return a copy of all items as an array (bottom to top).
    */
   toArray(): T[] {
-    return [...this.items];
+    throw new Error("TODO: implement toArray");
   }
 }
 

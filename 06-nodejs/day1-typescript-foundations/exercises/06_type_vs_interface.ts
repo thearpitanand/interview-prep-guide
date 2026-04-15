@@ -8,111 +8,32 @@
  */
 import assert from "node:assert/strict";
 
-// ---------- YOUR CODE / ANSWERS BELOW ----------
-
-// --- Same shape, two syntaxes ---
-
-interface TransactionInterface {
-  id: string;
-  date: string;
-  amount: number;
-  category: string;
-}
-
-type TransactionType = {
-  id: string;
-  date: string;
-  amount: number;
-  category: string;
-};
-
-// Both accept the same object literal — they are structurally identical
-function describeInterface(tx: TransactionInterface): string {
-  return `${tx.date} | ${tx.category} | ${tx.amount >= 0 ? "+" : ""}${tx.amount.toFixed(2)}`;
-}
-
-function describeType(tx: TransactionType): string {
-  return `${tx.date} | ${tx.category} | ${tx.amount >= 0 ? "+" : ""}${tx.amount.toFixed(2)}`;
-}
-
-// A value that satisfies both (structural typing — shape is what matters)
-const sampleTx = {
-  id: "tx_001",
-  date: "2024-03-15",
-  amount: -52.30,
-  category: "groceries",
-};
-
-// --- Extending an interface ---
-
-interface BaseRecord {
-  id: string;
-  createdAt: string;
-}
-
-// extends adds fields from the parent
-interface AnnotatedTransaction extends BaseRecord {
-  amount: number;
-  category: string;
-  note?: string;
-}
-
-function formatAnnotated(tx: AnnotatedTransaction): string {
-  const note = tx.note ? ` (${tx.note})` : "";
-  return `[${tx.id}] ${tx.amount.toFixed(2)}${note}`;
-}
-
-// --- Intersecting a type ---
-
-type BaseRecordType = {
-  id: string;
-  createdAt: string;
-};
-
-// & merges both shapes into one
-type AnnotatedTransactionType = BaseRecordType & {
-  amount: number;
-  category: string;
-  note?: string;
-};
-
-function formatAnnotatedType(tx: AnnotatedTransactionType): string {
-  const note = tx.note ? ` (${tx.note})` : "";
-  return `[${tx.id}] ${tx.amount.toFixed(2)}${note}`;
-}
-
-// --- Declaration merging (interface only) ---
-// Two interface declarations with the same name are merged automatically.
-// This is useful for augmenting types from external libraries.
-
-interface AppConfig {
-  host: string;
-}
-
-interface AppConfig {
-  port: number;
-}
-
-// AppConfig now has both host and port
-const config: AppConfig = {
-  host: "localhost",
-  port: 3000,
-};
-
-// type cannot be redeclared — the equivalent for type is a new intersection
-type AppConfigV2 = { host: string } & { port: number };
-
-const configV2: AppConfigV2 = { host: "localhost", port: 3000 };
-
-// --- When to prefer type ---
-// type is required for unions, intersections of non-object types, and primitives
-
-type ID = string | number;             // union — only type can do this
-type StringPair = [string, string];    // tuple alias
-
-function lookupById(id: ID): string {
-  return typeof id === "string" ? id : String(id);
-}
+// ---------- YOUR CODE BELOW ----------
+// TODO: Declare the following so that the tests below pass.
+//   - interface TransactionInterface         — id: string, date: string, amount: number, category: string
+//   - type TransactionType                   — same shape as TransactionInterface (using type syntax)
+//   - function describeInterface(tx: TransactionInterface): string
+//       — "<date> | <category> | <+/-><amount.toFixed(2)>"
+//   - function describeType(tx: TransactionType): string
+//       — same format as describeInterface
+//   - const sampleTx                         — id "tx_001", date "2024-03-15", amount -52.30, category "groceries"
+//   - interface BaseRecord                   — id: string, createdAt: string
+//   - interface AnnotatedTransaction extends BaseRecord
+//       — adds amount: number, category: string, note?: string
+//   - function formatAnnotated(tx: AnnotatedTransaction): string
+//       — "[<id>] <amount.toFixed(2)>" with optional " (<note>)" suffix
+//   - type BaseRecordType                    — { id: string; createdAt: string }
+//   - type AnnotatedTransactionType          — BaseRecordType & { amount: number; category: string; note?: string }
+//   - function formatAnnotatedType(tx: AnnotatedTransactionType): string
+//       — same format as formatAnnotated
+//   - interface AppConfig (declared twice)   — first with host: string, then with port: number (declaration merging)
+//   - const config: AppConfig               — host "localhost", port 3000
+//   - type AppConfigV2                       — { host: string } & { port: number }
+//   - const configV2: AppConfigV2           — host "localhost", port 3000
+//   - type ID                               — string | number
+//   - type StringPair                        — [string, string]
+//   - function lookupById(id: ID): string   — if string return it, if number return String(id)
+// Read the tests to infer expected values.
 
 // ---------- TESTS ----------
 

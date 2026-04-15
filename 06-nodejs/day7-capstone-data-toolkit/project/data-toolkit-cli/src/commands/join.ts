@@ -7,9 +7,5 @@ import type { JoinOptions } from "../args.ts";
 
 export function runJoin(opts: JoinOptions): void {
   // Both files are read as JSON by default; infer individually
-  const left = readFile(opts.leftFile, opts.input);
-  const right = readFile(opts.rightFile, opts.input);
-  const { leftKey, rightKey } = parseJoinKeys(opts.on);
-  const result = joinRecords(left, right, leftKey, rightKey, opts.type);
-  writeOutput(result, opts.format);
+  throw new Error("TODO: implement runJoin");
 }

@@ -22,15 +22,7 @@ import assert from "node:assert/strict";
  * stream), so we measure UTF-8 byte length with Buffer.byteLength.
  */
 async function totalByteLength(filePath: string): Promise<number> {
-  const stream = createReadStream(filePath, { encoding: "utf8" });
-  let total = 0;
-
-  for await (const chunk of stream) {
-    // chunk is a string because we set encoding: "utf8"
-    total += Buffer.byteLength(chunk as string, "utf8");
-  }
-
-  return total;
+  throw new Error("TODO: implement totalByteLength");
 }
 
 /**
@@ -38,14 +30,7 @@ async function totalByteLength(filePath: string): Promise<number> {
  * This is fine for small test data — not for production large files!
  */
 async function readAll(filePath: string): Promise<string> {
-  const stream = createReadStream(filePath, { encoding: "utf8" });
-  const parts: string[] = [];
-
-  for await (const chunk of stream) {
-    parts.push(chunk as string);
-  }
-
-  return parts.join("");
+  throw new Error("TODO: implement readAll");
 }
 
 /**
@@ -56,19 +41,7 @@ async function readWithSmallBuffer(
   filePath: string,
   hwm: number
 ): Promise<{ chunks: number; content: string }> {
-  const stream = createReadStream(filePath, {
-    encoding: "utf8",
-    highWaterMark: hwm,
-  });
-  const parts: string[] = [];
-  let chunkCount = 0;
-
-  for await (const chunk of stream) {
-    parts.push(chunk as string);
-    chunkCount++;
-  }
-
-  return { chunks: chunkCount, content: parts.join("") };
+  throw new Error("TODO: implement readWithSmallBuffer");
 }
 
 // ---------------------------------------------------------------------------

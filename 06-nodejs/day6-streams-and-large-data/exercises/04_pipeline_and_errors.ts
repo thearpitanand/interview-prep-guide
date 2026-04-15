@@ -46,13 +46,7 @@ class PoisonRejectTransform extends Transform {
     _encoding: BufferEncoding,
     callback: TransformCallback
   ): void {
-    const str = Buffer.isBuffer(chunk) ? chunk.toString("utf8") : String(chunk);
-    if (str.trim() === POISON) {
-      callback(new Error(`Poison input encountered: "${str.trim()}"`));
-    } else {
-      this.push(str);
-      callback();
-    }
+    throw new Error("TODO: implement PoisonRejectTransform._transform");
   }
 }
 
@@ -69,9 +63,7 @@ class UpperTransform extends Transform {
     _encoding: BufferEncoding,
     callback: TransformCallback
   ): void {
-    const str = Buffer.isBuffer(chunk) ? chunk.toString("utf8") : String(chunk);
-    this.push(str.toUpperCase());
-    callback();
+    throw new Error("TODO: implement UpperTransform._transform");
   }
 }
 
@@ -93,13 +85,7 @@ class ContainsPoisonTransform extends Transform {
     _encoding: BufferEncoding,
     callback: TransformCallback
   ): void {
-    const str = Buffer.isBuffer(chunk) ? chunk.toString("utf8") : String(chunk);
-    if (str.includes(this.poison)) {
-      callback(new Error(`Chunk contains poison string: "${this.poison}"`));
-    } else {
-      this.push(str);
-      callback();
-    }
+    throw new Error("TODO: implement ContainsPoisonTransform._transform");
   }
 }
 

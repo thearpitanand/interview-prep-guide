@@ -12,52 +12,38 @@ import assert from "node:assert/strict";
 
 // ---------- SCHEMAS ----------
 
-const AddressSchema = z.object({
-  street: z.string().min(1),
-  city: z.string().min(1),
-  state: z.string().length(2), // 2-letter state code
-  zip: z.string().regex(/^\d{5}$/),
-  country: z.string().default("US"),
-});
+// TODO: define AddressSchema — object with street (string min 1), city (string min 1),
+//       state (string length 2), zip (string regex /^\d{5}$/), country (string default "US")
+export const AddressSchema = z.unknown();
 
-const CompanySchema = z.object({
-  name: z.string().min(1),
-  domain: z.string().url(),
-  size: z.enum(["startup", "small", "medium", "enterprise"]),
-});
+// TODO: define CompanySchema — object with name (string min 1), domain (string url),
+//       size (enum: "startup" | "small" | "medium" | "enterprise")
+export const CompanySchema = z.unknown();
 
-const UserSchema = z.object({
-  id: z.string().uuid(),
-  email: z.string().email(),
-  name: z.string().min(1),
-  age: z.number().int().min(0).max(150).optional(),
-  address: AddressSchema,
-  company: CompanySchema.optional(),
-  tags: z.array(z.string()).default([]),
-  active: z.boolean().default(true),
-});
+// TODO: define UserSchema — object with id (uuid), email, name (min 1), age (int 0-150, optional),
+//       address (AddressSchema), company (CompanySchema, optional),
+//       tags (array of string, default []), active (boolean, default true)
+export const UserSchema = z.unknown();
 
 // Derived types — no separate interfaces needed
 type Address = z.infer<typeof AddressSchema>;
 type Company = z.infer<typeof CompanySchema>;
 type User = z.infer<typeof UserSchema>;
 
-// DTOs via .pick and .omit
-const UserSummarySchema = UserSchema.pick({ id: true, email: true, name: true, active: true });
+// TODO: define UserSummarySchema — pick id, email, name, active from UserSchema
+export const UserSummarySchema = z.unknown();
 type UserSummary = z.infer<typeof UserSummarySchema>;
 
-const CreateUserSchema = UserSchema.omit({ id: true, active: true, tags: true });
+// TODO: define CreateUserSchema — omit id, active, tags from UserSchema
+export const CreateUserSchema = z.unknown();
 type CreateUser = z.infer<typeof CreateUserSchema>;
 
-// Partial schema for PATCH requests
-const PatchUserSchema = UserSchema.partial().required({ id: true });
+// TODO: define PatchUserSchema — all fields optional, but id required
+export const PatchUserSchema = z.unknown();
 type PatchUser = z.infer<typeof PatchUserSchema>;
 
-// Extended schema — add a role field to the base user
-const AdminUserSchema = UserSchema.extend({
-  role: z.literal("admin"),
-  permissions: z.array(z.string()),
-});
+// TODO: define AdminUserSchema — extend UserSchema with role (literal "admin") and permissions (string[])
+export const AdminUserSchema = z.unknown();
 type AdminUser = z.infer<typeof AdminUserSchema>;
 
 // ---------- TEST DATA ----------

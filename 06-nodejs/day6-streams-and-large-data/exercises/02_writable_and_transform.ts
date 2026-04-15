@@ -34,9 +34,7 @@ class UpperCaseTransform extends Transform {
     _encoding: BufferEncoding,
     callback: TransformCallback
   ): void {
-    const str = Buffer.isBuffer(chunk) ? chunk.toString("utf8") : String(chunk);
-    this.push(str.toUpperCase());
-    callback();
+    throw new Error("TODO: implement UpperCaseTransform._transform");
   }
 }
 
@@ -58,23 +56,11 @@ class PrefixTransform extends Transform {
     _encoding: BufferEncoding,
     callback: TransformCallback
   ): void {
-    const str = Buffer.isBuffer(chunk) ? chunk.toString("utf8") : String(chunk);
-    const combined = this.leftover + str;
-    const lines = combined.split("\n");
-    // The last element may be an incomplete line — save it for the next chunk
-    this.leftover = lines.pop() ?? "";
-
-    for (const line of lines) {
-      this.push(`${this.prefix}${line}\n`);
-    }
-    callback();
+    throw new Error("TODO: implement PrefixTransform._transform");
   }
 
   override _flush(callback: TransformCallback): void {
-    if (this.leftover.length > 0) {
-      this.push(`${this.prefix}${this.leftover}`);
-    }
-    callback();
+    throw new Error("TODO: implement PrefixTransform._flush");
   }
 }
 

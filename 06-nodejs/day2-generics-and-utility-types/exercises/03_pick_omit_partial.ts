@@ -19,29 +19,28 @@ interface User {
   createdAt: Date;
 }
 
-// Only expose safe public fields
-type PublicUser = Omit<User, "passwordHash">;
+// TODO: define PublicUser — omit the passwordHash field from User
+type PublicUser = unknown; // TODO: define PublicUser
 
-// All fields optional for PATCH requests
-type UserPatch = Partial<User>;
+// TODO: define UserPatch — all User fields optional (for PATCH requests)
+type UserPatch = unknown; // TODO: define UserPatch
 
-// Omit the auto-generated fields for creation
-type CreateUserInput = Omit<User, "id" | "createdAt">;
+// TODO: define CreateUserInput — omit the auto-generated id and createdAt fields
+type CreateUserInput = unknown; // TODO: define CreateUserInput
 
 /**
  * Apply a partial patch to a user, returning a new User object.
  * Only the provided fields are overwritten; the rest stay as-is.
  */
-function patchUser(user: User, patch: Partial<User>): User {
-  return { ...user, ...patch };
+export function patchUser(user: User, patch: Partial<User>): User {
+  throw new Error("TODO: implement patchUser");
 }
 
 /**
  * Strip the passwordHash before sending user data out of the system.
  */
-function toPublicUser(user: User): PublicUser {
-  const { passwordHash: _ignored, ...rest } = user;
-  return rest;
+export function toPublicUser(user: User): PublicUser {
+  throw new Error("TODO: implement toPublicUser");
 }
 
 // ---------- TESTS ----------

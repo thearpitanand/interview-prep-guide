@@ -37,21 +37,8 @@ async function* readNdjson<T>(
   path: string,
   onMalformed?: (line: string, err: unknown) => void
 ): AsyncGenerator<T> {
-  const fileStream = createReadStream(path, { encoding: "utf8" });
-  const rl = createInterface({
-    input: fileStream,
-    crlfDelay: Infinity,
-  });
-
-  for await (const line of rl) {
-    const trimmed = line.trim();
-    if (!trimmed) continue; // skip blank lines
-    try {
-      yield JSON.parse(trimmed) as T;
-    } catch (err) {
-      onMalformed?.(trimmed, err);
-    }
-  }
+  throw new Error("TODO: implement readNdjson");
+  yield undefined as never; // unreachable — present only so TS recognizes the generator signature
 }
 
 // ---------------------------------------------------------------------------
