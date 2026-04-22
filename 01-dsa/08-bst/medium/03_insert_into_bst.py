@@ -2,6 +2,7 @@
 Insert into a Binary Search Tree (LC 701)
 
 Day: 26 | Difficulty: Medium | Pattern: BST Insert
+Priority: VV IMP
 
 You are given the root of a BST and a value to insert into the tree. Return
 the root of the BST after the insertion. It is guaranteed that the new value

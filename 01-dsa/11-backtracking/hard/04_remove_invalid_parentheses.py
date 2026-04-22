@@ -19,6 +19,7 @@ Constraints:
 
 Hint: BFS level by level (remove one paren at a time) or count mismatched parens and backtrack.
 Pattern: BFS / Backtracking
+Priority: IMP
 """
 
 

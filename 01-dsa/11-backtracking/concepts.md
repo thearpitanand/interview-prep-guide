@@ -188,7 +188,7 @@ def solve(problem):
 
 ## 4. Key Patterns
 
-### Pattern A: Permutations
+### Pattern A: Permutations — IMP
 
 Generate all arrangements of elements where **order matters** and every element is used exactly once.
 
@@ -253,7 +253,7 @@ graph TD
 
 ---
 
-### Pattern B: Combinations / Subsets
+### Pattern B: Combinations / Subsets — IMP
 
 Generate groups where **order does not matter**. Use a `start` index to avoid duplicates.
 
@@ -342,7 +342,7 @@ graph TD
 
 ---
 
-### Pattern C: N-Queens (Constraint Satisfaction)
+### Pattern C: N-Queens (Constraint Satisfaction) — IMP
 
 Place N queens on an NxN board so that no two queens attack each other (same row, column, or diagonal).
 
@@ -417,7 +417,7 @@ graph TD
 
 ---
 
-### Pattern D: Sudoku (Constraint Propagation + Backtracking)
+### Pattern D: Sudoku (Constraint Propagation + Backtracking) — IMP
 
 Fill a 9x9 grid so each row, column, and 3x3 box contains digits 1-9 exactly once.
 
@@ -458,7 +458,7 @@ def solve_sudoku(board):
 
 ---
 
-### Pattern E: String Partitioning
+### Pattern E: String Partitioning — IMP
 
 Partition a string such that every substring satisfies a condition (e.g., palindrome).
 
@@ -486,7 +486,7 @@ def partition(s):
 
 ---
 
-### Pattern F: Word Search in Grid
+### Pattern F: Word Search in Grid — IMP
 
 Search for a word in a 2D grid by moving to adjacent cells (up, down, left, right).
 

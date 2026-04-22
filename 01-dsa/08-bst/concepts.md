@@ -313,7 +313,7 @@ This property is used in many problems:
 
 ## 5. Key Patterns
 
-### Pattern 1: BST Search/Insert (Easy)
+### Pattern 1: BST Search/Insert (Easy) — VV IMP
 
 Use the BST property to decide left/right at each step.
 
@@ -333,7 +333,7 @@ def search_iterative(root, val):
     return root
 ```
 
-### Pattern 2: BST Validation (Medium)
+### Pattern 2: BST Validation (Medium) — VV IMP
 
 Pass a valid **range** `(low, high)` down the recursion. Every node must fall within its allowed range.
 
@@ -364,7 +364,7 @@ def isValidBST(root, low=float('-inf'), high=float('inf')):
             isValidBST(root.right, root.val, high))
 ```
 
-### Pattern 3: Inorder Successor/Predecessor (Medium)
+### Pattern 3: Inorder Successor/Predecessor (Medium) — VV IMP
 
 The **inorder successor** is the node with the smallest value **greater than** the given node.
 
@@ -384,7 +384,7 @@ def inorder_successor(root, target):
     return successor
 ```
 
-### Pattern 4: BST to Sorted List (Medium)
+### Pattern 4: BST to Sorted List (Medium) — VV IMP
 
 Use **inorder traversal** (iterative or recursive) to collect values in sorted order, then reconstruct.
 
@@ -413,7 +413,7 @@ graph TD
     style F fill:#eee,color:#999
 ```
 
-### Pattern 6: Kth Smallest (Medium)
+### Pattern 6: Kth Smallest (Medium) — VV IMP
 
 Perform **inorder traversal** and count nodes. When count reaches k, you have the answer.
 

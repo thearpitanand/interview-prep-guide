@@ -3,6 +3,7 @@ Reverse Linked List - Day 17 | Easy | LC 206
 https://leetcode.com/problems/reverse-linked-list/
 
 Pattern: Reversal
+Priority: VV IMP
 
 Given the head of a singly linked list, reverse the list, and return
 the reversed list.

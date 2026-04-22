@@ -36,6 +36,7 @@ Hint:
 
 Pattern: Circular DP. Break the circular constraint by running linear
     House Robber twice on different ranges. Take the maximum.
+Priority: IMP
 """
 
 from typing import List

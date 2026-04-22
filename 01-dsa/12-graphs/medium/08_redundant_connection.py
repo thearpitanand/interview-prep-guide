@@ -2,6 +2,7 @@
 Redundant Connection (LC 684)
 
 Day: 35 | Difficulty: Medium | Pattern: Union-Find
+Priority: IMP
 
 In this problem, a tree is an undirected graph that is connected and has no
 cycles. You are given a graph that started as a tree with n nodes (1 to n),

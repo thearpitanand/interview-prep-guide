@@ -166,7 +166,7 @@ if not queue:
 
 ## 4. Key Patterns
 
-### Pattern 1: Parentheses Matching (Easy)
+### Pattern 1: Parentheses Matching (Easy) — VV IMP
 
 **When to use:** Any problem involving matching brackets, tags, or nested structures.
 
@@ -205,7 +205,7 @@ graph TD
 
 ---
 
-### Pattern 2: Monotonic Stack (Medium)
+### Pattern 2: Monotonic Stack (Medium) — VV IMP
 
 **When to use:** Finding the next/previous greater/smaller element for each position in an array.
 
@@ -252,7 +252,7 @@ def next_greater_element(nums):
 
 ---
 
-### Pattern 3: Stack-based Evaluation (Medium)
+### Pattern 3: Stack-based Evaluation (Medium) — VV IMP
 
 **When to use:** Evaluating mathematical expressions, postfix notation, or calculator problems.
 
@@ -284,7 +284,7 @@ For expressions like `3 + 2 * 2`:
 
 ---
 
-### Pattern 4: Queue with Stacks (Easy)
+### Pattern 4: Queue with Stacks (Easy) — VV IMP
 
 **When to use:** Interview classic -- implement one data structure using another.
 
@@ -323,7 +323,7 @@ class MyQueue:
 
 ---
 
-### Pattern 5: Sliding Window Max with Monotonic Deque (Hard)
+### Pattern 5: Sliding Window Max with Monotonic Deque (Hard) — VV IMP
 
 **When to use:** Finding max/min in a sliding window efficiently.
 
@@ -373,7 +373,7 @@ def max_sliding_window(nums, k):
 
 ---
 
-### Pattern 6: Min Stack (Medium)
+### Pattern 6: Min Stack (Medium) — VV IMP
 
 **When to use:** When you need O(1) access to the minimum element at all times.
 

@@ -28,6 +28,7 @@ Hint:
 
 Pattern: Unbounded knapsack variant. The "coins" are 1, 4, 9, 16, ...
     Each square can be used unlimited times. Same structure as Coin Change.
+Priority: IMP
 """
 
 

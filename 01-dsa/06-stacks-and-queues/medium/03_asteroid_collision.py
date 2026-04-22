@@ -2,6 +2,7 @@
 Asteroid Collision
 
 Day: 21 | Difficulty: Medium | Pattern: Stack
+Priority: VV IMP
 LeetCode 735: https://leetcode.com/problems/asteroid-collision/
 
 Problem:

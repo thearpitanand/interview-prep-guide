@@ -32,6 +32,7 @@ Hint:
 
 Pattern: Sort by value (units per box) descending, greedily take as many of
     the highest-value boxes as possible.
+Priority: IMP
 """
 
 from typing import List

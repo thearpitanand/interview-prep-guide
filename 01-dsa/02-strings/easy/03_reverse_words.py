@@ -33,6 +33,7 @@ Constraints:
 Hint: split() without arguments splits on any whitespace and removes empty strings.
       Then reverse the list and join with a single space.
 Pattern: String Manipulation
+Priority: VV IMP
 """
 
 

@@ -3,6 +3,7 @@ Merge k Sorted Lists - Day 19 | Hard | LC 23
 https://leetcode.com/problems/merge-k-sorted-lists/
 
 Pattern: Heap (Priority Queue) + Merge
+Priority: VV IMP
 
 Merge k sorted linked lists and return it as one sorted list.
 

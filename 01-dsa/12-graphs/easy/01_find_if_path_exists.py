@@ -2,6 +2,7 @@
 Find if Path Exists in Graph (LC 1971)
 
 Day: 33 | Difficulty: Easy | Pattern: BFS/DFS
+Priority: IMP
 
 There is a bi-directional graph with n vertices, where each vertex is labeled
 from 0 to n - 1. The edges in the graph are represented as a 2D integer array

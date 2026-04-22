@@ -35,6 +35,7 @@ Hint:
 
 Pattern: Sort + sweep line. Sort arrivals and departures independently. Use
     two pointers to track current platforms needed. Track maximum.
+Priority: IMP
 """
 
 from typing import List

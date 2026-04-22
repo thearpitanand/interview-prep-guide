@@ -40,6 +40,7 @@ Hint:
 
 Pattern: Backtracking with constraint checking. Find empty cell -> try digits
 -> validate -> recurse -> backtrack. Return True/False to signal success.
+Priority: IMP
 """
 
 from typing import List

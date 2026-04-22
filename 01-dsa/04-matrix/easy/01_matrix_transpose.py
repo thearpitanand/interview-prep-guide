@@ -30,6 +30,7 @@ Hint:
     are n x m (swapped from original m x n).
 
 Pattern: Matrix Manipulation
+Priority: IMP
     - Create a new matrix with swapped dimensions (cols x rows)
     - Copy element [i][j] to [j][i]
     - For square matrices you can do it in-place by swapping upper

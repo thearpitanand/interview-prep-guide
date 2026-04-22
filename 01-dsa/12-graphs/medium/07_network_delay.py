@@ -2,6 +2,7 @@
 Network Delay Time (LC 743)
 
 Day: 34 | Difficulty: Medium | Pattern: Dijkstra's Algorithm
+Priority: IMP
 
 You are given a network of n nodes, labeled from 1 to n. You are given times,
 a list of travel times as directed edges times[i] = (ui, vi, wi), where ui is

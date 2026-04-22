@@ -6,6 +6,7 @@ Difficulty: Medium
 Topic: Heap
 Link: https://leetcode.com/problems/top-k-frequent-elements/
 Pattern: Top-K Elements (Heap + Frequency Count)
+Priority: VV IMP
 
 Description:
     Given an integer array nums and an integer k, return the k most frequent

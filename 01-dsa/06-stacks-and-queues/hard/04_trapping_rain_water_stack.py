@@ -2,6 +2,7 @@
 Trapping Rain Water (Stack Approach)
 
 Day: 22 | Difficulty: Hard | Pattern: Stack
+Priority: VV IMP
 LeetCode 42: https://leetcode.com/problems/trapping-rain-water/
 
 Problem:

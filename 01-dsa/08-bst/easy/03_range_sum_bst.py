@@ -2,6 +2,7 @@
 Range Sum of BST (LC 938)
 
 Day: 26 | Difficulty: Easy | Pattern: DFS with BST Property
+Priority: VV IMP
 
 Given the root of a BST and two integers low and high, return the sum of
 values of all nodes with a value in the inclusive range [low, high].

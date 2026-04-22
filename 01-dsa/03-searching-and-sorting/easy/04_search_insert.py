@@ -29,6 +29,7 @@ Constraints:
 Hint: This is equivalent to finding the leftmost index where nums[index] >= target.
       After binary search, left pointer will be at the insert position.
 Pattern: Binary Search (Boundary Finding)
+Priority: VV IMP
 """
 
 from typing import List

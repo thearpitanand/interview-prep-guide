@@ -36,6 +36,7 @@ Hint:
     cell (backtrack). Return True if index reaches len(word).
 
 Pattern: DFS/Backtracking on Grid
+Priority: IMP
     - Try every cell as starting point
     - DFS tracks current index in word
     - Mark cell visited before recursing, restore after (backtrack)

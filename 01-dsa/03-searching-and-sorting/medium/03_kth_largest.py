@@ -26,6 +26,7 @@ Hint: Quick Select: partition around a random pivot. If pivot lands at index
       n-k, that's the answer. Otherwise recurse on the correct half.
       Alternative: Use a min-heap of size k.
 Pattern: Quick Select / Heap
+Priority: VV IMP
 """
 
 from typing import List

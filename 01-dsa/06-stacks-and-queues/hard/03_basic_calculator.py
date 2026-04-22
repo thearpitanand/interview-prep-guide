@@ -2,6 +2,7 @@
 Basic Calculator
 
 Day: 22 | Difficulty: Hard | Pattern: Stack
+Priority: VV IMP
 LeetCode 224: https://leetcode.com/problems/basic-calculator/
 
 Problem:

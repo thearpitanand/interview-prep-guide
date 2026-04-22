@@ -41,6 +41,7 @@ Hint:
     This gives O(log^2 n) time.
 
 Pattern: Binary Search + DFS (exploiting complete tree property)
+Priority: VV IMP
 Time: O(log^2 n) - log n levels, each height computation is O(log n)
 Space: O(log n) - recursion depth
 """

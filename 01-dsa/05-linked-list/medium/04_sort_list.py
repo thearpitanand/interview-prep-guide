@@ -3,6 +3,7 @@ Sort List - Day 18 | Medium | LC 148
 https://leetcode.com/problems/sort-list/
 
 Pattern: Merge Sort (Divide and Conquer)
+Priority: VV IMP
 
 Sort a linked list in O(n log n) time and O(log n) space (recursion stack).
 

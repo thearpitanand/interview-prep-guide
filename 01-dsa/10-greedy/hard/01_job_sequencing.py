@@ -33,6 +33,7 @@ Hint:
 
 Pattern: Greedy - sort by profit descending. For each job, try to schedule it
     at the latest possible slot before its deadline using a slot array.
+Priority: IMP
 """
 
 from typing import List, Tuple

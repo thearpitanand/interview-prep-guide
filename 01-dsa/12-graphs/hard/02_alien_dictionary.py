@@ -2,6 +2,7 @@
 Alien Dictionary (LC 269 variant)
 
 Day: 35 | Difficulty: Hard | Pattern: Topological Sort
+Priority: IMP
 
 There is a new alien language that uses the English alphabet. However, the
 order of the letters is unknown to you. You are given a list of strings words

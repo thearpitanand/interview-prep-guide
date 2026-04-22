@@ -2,6 +2,7 @@
 Next Greater Element I
 
 Day: 20 | Difficulty: Easy | Pattern: Monotonic Stack
+Priority: VV IMP
 LeetCode 496: https://leetcode.com/problems/next-greater-element-i/
 
 Problem:

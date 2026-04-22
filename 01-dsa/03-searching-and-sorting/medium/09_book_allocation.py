@@ -18,6 +18,7 @@ Constraints:
 
 Hint: Binary search on answer. For a given max pages, greedily check if m students suffice.
 Pattern: Binary Search on Answer
+Priority: VV IMP
 """
 
 

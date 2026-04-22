@@ -17,6 +17,7 @@ Constraints:
 
 Hint: If current value < next value, subtract; otherwise add.
 Pattern: Greedy / HashMap
+Priority: VV IMP
 """
 
 

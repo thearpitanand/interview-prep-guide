@@ -2,6 +2,7 @@
 Course Schedule (LC 207)
 
 Day: 34 | Difficulty: Medium | Pattern: Topological Sort / Cycle Detection
+Priority: IMP
 
 There are a total of numCourses courses you have to take, labeled from 0 to
 numCourses - 1. You are given an array prerequisites where

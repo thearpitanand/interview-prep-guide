@@ -17,6 +17,7 @@ Constraints:
 
 Hint: Use a set.
 Pattern: Hash Set
+Priority: VV IMP
 """
 
 

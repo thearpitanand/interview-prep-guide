@@ -28,6 +28,7 @@ Hint:
 
 Pattern: 0/1 Knapsack counting. Each element is used at most once (iterate
     backwards). Instead of max, we sum the count of ways.
+Priority: IMP
 """
 
 from typing import List

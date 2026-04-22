@@ -2,6 +2,7 @@
 Pacific Atlantic Water Flow (LC 417)
 
 Day: 35 | Difficulty: Medium | Pattern: Multi-source DFS/BFS
+Priority: IMP
 
 There is an m x n rectangular island that borders both the Pacific and Atlantic
 oceans. The Pacific Ocean touches the island's left and top edges, and the

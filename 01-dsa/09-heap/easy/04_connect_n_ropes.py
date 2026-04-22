@@ -15,6 +15,7 @@ Constraints:
 
 Hint: Always connect the two shortest ropes first. Use a min-heap.
 Pattern: Min-Heap / Greedy
+Priority: VV IMP
 """
 
 

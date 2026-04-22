@@ -27,6 +27,7 @@ Hint:
 
 Pattern: Backtracking with constraints. Two choices at each step (open or close
 paren), but pruned by: (1) can't exceed n opens, (2) closes can't exceed opens.
+Priority: IMP
 """
 
 from typing import List

@@ -29,6 +29,7 @@ Hint: Use sorted string as a hash key (anagrams produce the same sorted string).
       Alternatively, use a tuple of 26 character counts as the key for O(n*k)
       where k is the max string length (avoids the n*k*log(k) sorting cost).
 Pattern: Hash Map
+Priority: VV IMP
 """
 from collections import defaultdict
 

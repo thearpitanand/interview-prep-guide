@@ -2,6 +2,7 @@
 Lowest Common Ancestor of a Binary Search Tree (LC 235)
 
 Day: 27 | Difficulty: Medium | Pattern: BST Property
+Priority: VV IMP
 
 Given a BST, find the lowest common ancestor (LCA) of two given nodes.
 

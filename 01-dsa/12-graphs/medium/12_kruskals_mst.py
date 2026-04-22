@@ -15,6 +15,7 @@ Constraints:
 
 Hint: Sort edges by weight. Use Union-Find to add edges that don't form cycles.
 Pattern: Union-Find / Kruskal's Algorithm
+Priority: IMP
 """
 
 

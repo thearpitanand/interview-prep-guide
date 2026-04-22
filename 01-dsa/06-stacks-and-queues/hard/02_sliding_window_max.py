@@ -2,6 +2,7 @@
 Sliding Window Maximum
 
 Day: 22 | Difficulty: Hard | Pattern: Monotonic Deque
+Priority: VV IMP
 LeetCode 239: https://leetcode.com/problems/sliding-window-maximum/
 
 Problem:

@@ -136,7 +136,7 @@ for dr, dc in directions:
 
 ---
 
-### Pattern 1: Spiral Traversal
+### Pattern 1: Spiral Traversal — IMP
 
 Traverse the matrix in a spiral (clockwise) order by maintaining four boundaries: top, bottom, left, right. Shrink them inward after processing each edge.
 
@@ -211,7 +211,7 @@ def spiral_order(matrix):
 
 ---
 
-### Pattern 2: Diagonal Traversal
+### Pattern 2: Diagonal Traversal — IMP
 
 Traverse elements along diagonals. Two main types:
 - **Primary diagonals** (top-left to bottom-right): `row - col` is constant
@@ -264,7 +264,7 @@ def diagonal_traverse(matrix):
 
 ---
 
-### Pattern 3: Staircase Search (Search in Sorted Matrix)
+### Pattern 3: Staircase Search (Search in Sorted Matrix) — IMP
 
 For a matrix where each row and column is sorted in ascending order, start from the **top-right corner** (or bottom-left). At each step, eliminate an entire row or column.
 
@@ -324,7 +324,7 @@ def search_matrix(matrix, target):
 
 ---
 
-### Pattern 4: In-place Modification
+### Pattern 4: In-place Modification — IMP
 
 Modify the matrix without extra space. Common tricks:
 - **Use first row/col as markers** (Set Matrix Zeroes)
@@ -361,7 +361,7 @@ graph TD
 
 ---
 
-### Pattern 5: Island / Grid DFS/BFS
+### Pattern 5: Island / Grid DFS/BFS — IMP
 
 Treat the grid as a graph. Each cell is a node, and adjacent cells (4-directional) are edges. Use DFS or BFS to explore connected components.
 

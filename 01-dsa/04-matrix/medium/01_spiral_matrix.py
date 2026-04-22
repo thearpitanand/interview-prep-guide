@@ -31,6 +31,7 @@ Hint:
     Stop when boundaries cross.
 
 Pattern: Spiral Traversal
+Priority: IMP
     - Maintain 4 boundaries that shrink inward
     - Process one edge per step (right, down, left, up)
     - Check boundary validity before bottom-row and left-col passes

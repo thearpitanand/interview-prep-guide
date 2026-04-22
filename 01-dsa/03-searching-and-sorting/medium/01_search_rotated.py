@@ -28,6 +28,7 @@ Constraints:
 Hint: In binary search, at least one half (left or right of mid) is always sorted.
       Determine which half is sorted, then check if target falls in that range.
 Pattern: Modified Binary Search
+Priority: VV IMP
 """
 
 from typing import List

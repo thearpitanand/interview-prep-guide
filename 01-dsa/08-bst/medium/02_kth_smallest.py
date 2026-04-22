@@ -2,6 +2,7 @@
 Kth Smallest Element in a BST (LC 230)
 
 Day: 26 | Difficulty: Medium | Pattern: Inorder Traversal
+Priority: VV IMP
 
 Given the root of a BST and an integer k, return the kth smallest value
 (1-indexed) of all the values of the nodes in the tree.

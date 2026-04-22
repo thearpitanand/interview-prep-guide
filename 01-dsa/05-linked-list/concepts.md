@@ -223,7 +223,7 @@ def length(head):
 
 ## 5. Key Patterns (Easy to Hard)
 
-### Pattern 1: Traversal & Basic Operations (Easy)
+### Pattern 1: Traversal & Basic Operations (Easy) — VV IMP
 
 The most fundamental pattern. Walk through nodes one by one using a pointer.
 
@@ -258,7 +258,7 @@ def traverse(head):
 
 ---
 
-### Pattern 2: Fast & Slow Pointers (Medium)
+### Pattern 2: Fast & Slow Pointers (Medium) — VV IMP
 
 Use two pointers moving at different speeds. **Slow** moves 1 step, **fast** moves 2 steps.
 
@@ -335,7 +335,7 @@ def has_cycle(head):
 
 ---
 
-### Pattern 3: Reversal (Medium)
+### Pattern 3: Reversal (Medium) — VV IMP
 
 Reverse the direction of pointers. Track three pointers: `prev`, `curr`, `next_node`.
 
@@ -407,7 +407,7 @@ def reverse_recursive(head):
 
 ---
 
-### Pattern 4: Merge (Medium)
+### Pattern 4: Merge (Medium) — VV IMP
 
 Combine two sorted lists by comparing nodes and linking them in order.
 
@@ -449,7 +449,7 @@ def merge(l1, l2):
 
 ---
 
-### Pattern 5: Dummy Node (Medium)
+### Pattern 5: Dummy Node (Medium) — VV IMP
 
 Create a fake head node to simplify edge cases (empty list, single node, operations on head).
 
@@ -482,7 +482,7 @@ def process_list(head):
 
 ---
 
-### Pattern 6: Complex Pointer Manipulation (Hard)
+### Pattern 6: Complex Pointer Manipulation (Hard) — VV IMP
 
 Advanced operations requiring careful management of multiple pointers, often combining reversal with grouping or flattening.
 

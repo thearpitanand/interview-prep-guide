@@ -30,6 +30,7 @@ Hint:
     Base case: empty node has depth 0.
 
 Pattern: DFS Height/Depth
+Priority: VV IMP
 Time: O(n) - visit every node
 Space: O(h) - recursion stack, where h is the height
 """

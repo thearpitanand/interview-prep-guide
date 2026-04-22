@@ -3,6 +3,7 @@ Remove Nth Node From End of List - Day 17 | Easy | LC 19
 https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
 Pattern: Two Pointers (Gap Technique)
+Priority: VV IMP
 
 Given the head of a linked list, remove the nth node from the end
 and return the head.

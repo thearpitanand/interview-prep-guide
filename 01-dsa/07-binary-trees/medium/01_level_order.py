@@ -33,6 +33,7 @@ Hint:
     each level to know how many nodes belong to the current level.
 
 Pattern: BFS Level Order (queue-based)
+Priority: VV IMP
 Time: O(n) - visit every node
 Space: O(n) - queue can hold up to n/2 nodes (last level of complete tree)
 """

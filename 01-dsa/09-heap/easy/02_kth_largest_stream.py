@@ -6,6 +6,7 @@ Difficulty: Easy
 Topic: Min Heap
 Link: https://leetcode.com/problems/kth-largest-element-in-a-stream/
 Pattern: Min Heap of size K
+Priority: VV IMP
 
 Description:
     Design a class to find the kth largest element in a stream. Note that it

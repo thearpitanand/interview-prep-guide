@@ -41,6 +41,7 @@ Hint:
     Otherwise, change pixel to new color and recurse on 4 neighbors.
 
 Pattern: DFS/BFS on Grid
+Priority: IMP
     - Base case: out of bounds OR pixel color != original color
     - Action: change color, recurse in 4 directions
     - Edge case: if original color == new color, return as-is

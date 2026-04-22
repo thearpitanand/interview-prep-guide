@@ -37,6 +37,7 @@ Hint:
 
 Pattern: State machine DP with 3 states. Each day, transition between states
     based on buy/sell/rest actions. O(n) time, O(1) space.
+Priority: IMP
 """
 
 from typing import List

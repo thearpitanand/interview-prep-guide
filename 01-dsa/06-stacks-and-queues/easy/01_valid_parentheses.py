@@ -2,6 +2,7 @@
 Valid Parentheses
 
 Day: 20 | Difficulty: Easy | Pattern: Stack / Parentheses Matching
+Priority: VV IMP
 LeetCode 20: https://leetcode.com/problems/valid-parentheses/
 
 Problem:

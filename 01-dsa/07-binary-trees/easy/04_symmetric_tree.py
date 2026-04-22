@@ -37,6 +37,7 @@ Hint:
     - Values equal AND mirror(left.left, right.right) AND mirror(left.right, right.left)
 
 Pattern: DFS Recursive (mirror comparison)
+Priority: VV IMP
 Time: O(n)
 Space: O(h)
 """

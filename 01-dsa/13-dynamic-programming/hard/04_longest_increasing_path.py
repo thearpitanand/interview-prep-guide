@@ -36,6 +36,7 @@ Hint:
 
 Pattern: DFS + Memoization (top-down DP on a DAG). The strictly increasing
     constraint ensures no cycles, so this is a DAG longest path problem.
+Priority: IMP
 """
 
 from typing import List

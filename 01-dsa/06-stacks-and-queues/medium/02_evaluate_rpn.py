@@ -2,6 +2,7 @@
 Evaluate Reverse Polish Notation
 
 Day: 21 | Difficulty: Medium | Pattern: Stack
+Priority: VV IMP
 LeetCode 150: https://leetcode.com/problems/evaluate-reverse-polish-notation/
 
 Problem:

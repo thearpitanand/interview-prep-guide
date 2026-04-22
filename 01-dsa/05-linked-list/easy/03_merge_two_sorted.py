@@ -3,6 +3,7 @@ Merge Two Sorted Lists - Day 17 | Easy | LC 21
 https://leetcode.com/problems/merge-two-sorted-lists/
 
 Pattern: Merge / Dummy Node
+Priority: VV IMP
 
 Merge two sorted linked lists and return it as a sorted list.
 The list should be made by splicing together the nodes of the two lists.

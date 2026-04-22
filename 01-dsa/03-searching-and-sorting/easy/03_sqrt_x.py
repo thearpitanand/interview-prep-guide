@@ -23,6 +23,7 @@ Constraints:
 Hint: Binary search in range [0, x]. For mid, check if mid*mid <= x.
       Find the largest mid such that mid*mid <= x.
 Pattern: Binary Search on Answer
+Priority: VV IMP
 """
 
 

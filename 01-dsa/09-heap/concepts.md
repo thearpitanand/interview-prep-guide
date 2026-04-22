@@ -273,7 +273,7 @@ graph TD
 
 ## 5. Key Patterns
 
-### Pattern 1: Top-K Elements (Medium)
+### Pattern 1: Top-K Elements (Medium) — VV IMP
 
 **When to use**: "Find k largest/smallest/most frequent elements."
 
@@ -316,7 +316,7 @@ def top_k_largest(nums, k):
 
 ---
 
-### Pattern 2: Merge K Sorted (Hard)
+### Pattern 2: Merge K Sorted (Hard) — VV IMP
 
 **When to use**: "Merge K sorted lists/arrays/streams."
 
@@ -348,7 +348,7 @@ graph TD
 
 ---
 
-### Pattern 3: Two Heaps / Median (Hard)
+### Pattern 3: Two Heaps / Median (Hard) — VV IMP
 
 **When to use**: "Find median in a stream", "Balance two halves."
 
@@ -402,7 +402,7 @@ graph LR
 
 ---
 
-### Pattern 4: Priority Queue (Medium)
+### Pattern 4: Priority Queue (Medium) — VV IMP
 
 **When to use**: "Schedule tasks by priority", "Process elements in a specific order."
 

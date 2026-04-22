@@ -43,6 +43,7 @@ Hint:
     each level by subtracting the first position.
 
 Pattern: BFS with position indexing
+Priority: VV IMP
 Time: O(n)
 Space: O(n)
 """

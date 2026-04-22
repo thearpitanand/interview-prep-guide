@@ -2,6 +2,7 @@
 Implement Stack using Queues
 
 Day: 20 | Difficulty: Easy | Pattern: Queue
+Priority: VV IMP
 LeetCode 225: https://leetcode.com/problems/implement-stack-using-queues/
 
 Problem:

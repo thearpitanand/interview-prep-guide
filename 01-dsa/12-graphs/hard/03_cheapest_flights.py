@@ -2,6 +2,7 @@
 Cheapest Flights Within K Stops (LC 787)
 
 Day: 35 | Difficulty: Hard | Pattern: Dijkstra / Bellman-Ford
+Priority: IMP
 
 There are n cities connected by some number of flights. You are given an array
 flights where flights[i] = [fromi, toi, pricei] indicates there is a flight

@@ -16,6 +16,7 @@ Constraints:
 
 Hint: Start from top-right corner. If target < current, move left; if target > current, move down.
 Pattern: Staircase Search
+Priority: IMP
 """
 
 

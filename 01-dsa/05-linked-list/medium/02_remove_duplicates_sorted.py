@@ -3,6 +3,7 @@ Remove Duplicates from Sorted List - Day 18 | Medium | LC 83
 https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 
 Pattern: Traversal
+Priority: VV IMP
 
 Given the head of a sorted linked list, delete all duplicates such
 that each element appears only once. Return the sorted list.

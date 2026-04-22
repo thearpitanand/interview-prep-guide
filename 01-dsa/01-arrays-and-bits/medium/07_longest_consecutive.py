@@ -11,6 +11,7 @@ Example:
 
 Hint: Use a set. Only start counting from sequence starts (n-1 not in set).
 Pattern: Hash Set
+Priority: VV IMP
 """
 
 

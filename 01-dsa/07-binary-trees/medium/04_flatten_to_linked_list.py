@@ -47,6 +47,7 @@ Hint:
     left subtree, connect it to node.right, then move node.left to node.right.
 
 Pattern: DFS (reverse postorder or iterative)
+Priority: VV IMP
 Time: O(n)
 Space: O(h) for recursive, O(1) for Morris-like
 """

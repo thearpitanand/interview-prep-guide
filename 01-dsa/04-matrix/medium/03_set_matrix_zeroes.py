@@ -38,6 +38,7 @@ Hint:
     6) Finally handle first row and first col
 
 Pattern: In-place Modification
+Priority: IMP
     - Don't zero out immediately (you'll lose information)
     - Mark first, then apply in a second pass
     - Use the matrix itself as storage for the markers

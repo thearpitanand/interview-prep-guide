@@ -19,6 +19,7 @@ Constraints:
 
 Hint: Use stack storing indices. Push -1 as base. On ')', pop; if stack empty push current index as new base.
 Pattern: Stack with Indices
+Priority: VV IMP
 """
 
 

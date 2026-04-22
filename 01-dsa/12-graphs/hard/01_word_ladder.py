@@ -2,6 +2,7 @@
 Word Ladder (LC 127)
 
 Day: 35 | Difficulty: Hard | Pattern: BFS
+Priority: IMP
 
 A transformation sequence from word beginWord to word endWord using a
 dictionary wordList is a sequence beginWord -> s1 -> s2 -> ... -> sk such that:

@@ -16,6 +16,7 @@ Constraints:
 
 Hint: Gap method (Shell sort idea) — start with gap = ceil((m+n)/2), compare and swap.
 Pattern: Gap Method / Two Pointers
+Priority: VV IMP
 """
 
 

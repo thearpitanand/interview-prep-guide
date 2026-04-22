@@ -30,6 +30,7 @@ Hint: Binary search on the partition of the shorter array. For a partition i in
       The correct partition satisfies: nums1[i-1] <= nums2[j] and
       nums2[j-1] <= nums1[i].
 Pattern: Binary Search on Partition
+Priority: VV IMP
 """
 
 from typing import List

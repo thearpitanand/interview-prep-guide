@@ -15,6 +15,7 @@ Constraints:
 
 Hint: Try coloring each vertex 1..m, backtrack if any neighbor has same color.
 Pattern: Backtracking
+Priority: IMP
 """
 
 

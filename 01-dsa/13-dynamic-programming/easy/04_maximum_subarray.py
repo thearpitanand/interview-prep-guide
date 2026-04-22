@@ -31,6 +31,7 @@ Hint:
 
 Pattern: Kadane's algorithm is a special form of 1D DP. Track current_sum
     and max_sum. If current_sum drops below 0, reset it to the current element.
+Priority: IMP
 """
 
 from typing import List

@@ -32,6 +32,7 @@ Constraints:
 Hint: Use two hash maps for bidirectional mapping (s->t and t->s). If any
       character already has a conflicting mapping, return False.
 Pattern: Hash Map
+Priority: VV IMP
 """
 
 

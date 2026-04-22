@@ -23,6 +23,7 @@ Constraints:
 Hint: Count character frequencies with a hash map or Counter. Two strings
       are anagrams if and only if their character frequency maps are identical.
 Pattern: Hash Map
+Priority: VV IMP
 """
 
 

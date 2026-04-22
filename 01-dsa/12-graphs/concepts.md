@@ -248,7 +248,7 @@ def build_weighted_adj_list(n, edges):
 
 ## 3. Key Algorithms
 
-### 3.1 BFS - Breadth-First Search (Medium)
+### 3.1 BFS - Breadth-First Search (Medium) — IMP
 
 BFS explores the graph **level by level**, visiting all neighbors of a node before moving deeper. It uses a **queue** and guarantees the shortest path in **unweighted** graphs.
 
@@ -340,7 +340,7 @@ def bfs_shortest_path(graph, start, end):
 
 ---
 
-### 3.2 DFS - Depth-First Search (Medium)
+### 3.2 DFS - Depth-First Search (Medium) — IMP
 
 DFS explores the graph by going **as deep as possible** before backtracking. It uses a **stack** (or recursion). Good for exploring all paths, detecting cycles, and topological sorting.
 
@@ -432,7 +432,7 @@ def dfs_iterative(graph, start):
 
 ---
 
-### 3.3 Topological Sort (Medium)
+### 3.3 Topological Sort (Medium) — IMP
 
 Topological sort produces a **linear ordering** of vertices in a **DAG** (Directed Acyclic Graph) such that for every directed edge u -> v, vertex u comes before v in the ordering.
 
@@ -554,7 +554,7 @@ def topological_sort_dfs(num_nodes, edges):
 
 ---
 
-### 3.4 Dijkstra's Algorithm (Medium)
+### 3.4 Dijkstra's Algorithm (Medium) — IMP
 
 Finds the **shortest path** from a source to all other vertices in a **weighted graph with non-negative weights**. Uses a **priority queue** (min-heap).
 
@@ -633,7 +633,7 @@ def dijkstra(graph, start):
 
 ---
 
-### 3.5 Union-Find / Disjoint Set Union (Medium)
+### 3.5 Union-Find / Disjoint Set Union (Medium) — IMP
 
 Union-Find tracks **connected components** and efficiently answers "Are A and B connected?" and "Connect A and B".
 
@@ -731,7 +731,7 @@ class UnionFind:
 
 ---
 
-### 3.6 Cycle Detection (Medium)
+### 3.6 Cycle Detection (Medium) — IMP
 
 #### Cycle in Directed Graph -- DFS Coloring
 

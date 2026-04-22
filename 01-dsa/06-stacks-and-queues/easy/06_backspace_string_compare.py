@@ -2,6 +2,7 @@
 Backspace String Compare
 
 Day: 20 | Difficulty: Easy | Pattern: Stack
+Priority: VV IMP
 LeetCode 844: https://leetcode.com/problems/backspace-string-compare/
 
 Problem:

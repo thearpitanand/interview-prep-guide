@@ -6,6 +6,7 @@ Difficulty: Easy
 Topic: Heap / Sort
 Link: https://leetcode.com/problems/relative-ranks/
 Pattern: Heap or Sort with Index Mapping
+Priority: VV IMP
 
 Description:
     You are given an integer array 'score' of size n, where score[i] is the

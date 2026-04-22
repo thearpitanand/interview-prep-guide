@@ -16,6 +16,7 @@ Constraints:
 
 Hint: Backtrack in all 4 directions (sorted: D, L, R, U for lexicographic order).
 Pattern: Backtracking
+Priority: IMP
 """
 
 

@@ -2,6 +2,7 @@
 Number of Islands (LC 200)
 
 Day: 33 | Difficulty: Medium | Pattern: DFS/BFS on Grid
+Priority: IMP
 
 Given an m x n 2D binary grid which represents a map of '1's (land) and '0's
 (water), return the number of islands.

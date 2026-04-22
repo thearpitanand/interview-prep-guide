@@ -33,6 +33,7 @@ Hint:
 
 Pattern: Sort by end time, greedily pick intervals that don't overlap with
     the last selected interval. Removals = total - selected.
+Priority: IMP
 """
 
 from typing import List

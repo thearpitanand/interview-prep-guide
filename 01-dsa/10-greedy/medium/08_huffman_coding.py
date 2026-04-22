@@ -14,6 +14,7 @@ Constraints:
 
 Hint: Use min-heap. Repeatedly extract two min freq nodes, create parent with sum freq.
 Pattern: Min-Heap / Greedy
+Priority: IMP
 """
 import heapq
 

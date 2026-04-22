@@ -32,6 +32,7 @@ Hint:
     Iterative: use a stack. Go as far left as possible, then process and go right.
 
 Pattern: DFS Recursive / Iterative with Stack
+Priority: VV IMP
 Time: O(n) - visit every node
 Space: O(h) - recursion stack / explicit stack, h = height
 """

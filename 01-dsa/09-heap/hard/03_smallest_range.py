@@ -6,6 +6,7 @@ Difficulty: Hard
 Topic: Heap + Sliding Window
 Link: https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/
 Pattern: Heap with Tracking Max (Merge K Sorted variant)
+Priority: VV IMP
 
 Description:
     You have k lists of sorted integers in non-decreasing order. Find the

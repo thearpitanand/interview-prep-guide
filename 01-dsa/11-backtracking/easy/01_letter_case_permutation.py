@@ -28,6 +28,7 @@ Hint:
 
 Pattern: Backtracking - at each index, choose lowercase or uppercase for letters,
 then recurse to the next index. Digits are added as-is.
+Priority: IMP
 """
 
 from typing import List

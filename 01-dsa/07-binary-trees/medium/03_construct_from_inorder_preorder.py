@@ -38,6 +38,7 @@ Hint:
     - Recursively build left and right subtrees.
 
 Pattern: DFS + HashMap for index lookup
+Priority: VV IMP
 Time: O(n)
 Space: O(n) - hashmap + recursion stack
 """

@@ -33,6 +33,7 @@ Hint: Sort by width ascending, then by height DESCENDING (for same width).
       Sorting height descending for same width prevents selecting two envelopes
       with equal width.
 Pattern: Sort + Longest Increasing Subsequence (Binary Search)
+Priority: VV IMP
 """
 
 from typing import List

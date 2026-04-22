@@ -121,7 +121,7 @@ chr(65)            # 'A'
 
 ## 3. Key Patterns (Easy to Hard)
 
-### Pattern 1: Basic String Manipulation (Easy)
+### Pattern 1: Basic String Manipulation (Easy) — VV IMP
 
 Core operations: reversing, checking palindromes, comparing characters.
 
@@ -152,7 +152,7 @@ graph LR
 
 ---
 
-### Pattern 2: Sliding Window (Medium)
+### Pattern 2: Sliding Window (Medium) — VV IMP
 
 Used for substring problems where you need to find an optimal window. Two variants:
 
@@ -229,7 +229,7 @@ sequenceDiagram
 
 ---
 
-### Pattern 3: Two Pointers (Medium)
+### Pattern 3: Two Pointers (Medium) — VV IMP
 
 Move two pointers from opposite ends (or same direction) to solve problems in O(n).
 
@@ -265,7 +265,7 @@ graph LR
 
 ---
 
-### Pattern 4: Hash Map for Frequency (Medium)
+### Pattern 4: Hash Map for Frequency (Medium) — VV IMP
 
 Count character occurrences to solve anagram, frequency, and grouping problems.
 

@@ -15,6 +15,7 @@ Constraints:
 
 Hint: Last element of postorder is root. Find it in inorder to split left/right subtrees. Recurse.
 Pattern: Divide and Conquer / Recursion
+Priority: VV IMP
 """
 
 

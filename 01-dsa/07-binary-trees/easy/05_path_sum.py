@@ -39,6 +39,7 @@ Hint:
     Base case: if node is None, return False.
 
 Pattern: DFS Path (top-down subtraction)
+Priority: VV IMP
 Time: O(n)
 Space: O(h)
 """

@@ -2,6 +2,7 @@
 Serialize and Deserialize BST (LC 449)
 
 Day: 27 | Difficulty: Hard | Pattern: BST Property (Preorder)
+Priority: VV IMP
 
 Design an algorithm to serialize and deserialize a BST. Serialization is
 converting a data structure to a string. Deserialization is reconstructing

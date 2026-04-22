@@ -6,6 +6,7 @@ Difficulty: Hard
 Topic: Two Heaps
 Link: https://leetcode.com/problems/find-median-from-data-stream/
 Pattern: Two Heaps (Max-Heap for lower half + Min-Heap for upper half)
+Priority: VV IMP
 
 Description:
     The median is the middle value in an ordered integer list. If the size

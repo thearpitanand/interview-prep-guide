@@ -30,6 +30,7 @@ Hint:
 
 Pattern: Greedy - maintain the farthest reachable position. At each step,
     update farthest = max(farthest, i + nums[i]). If i > farthest, stuck.
+Priority: IMP
 """
 
 from typing import List

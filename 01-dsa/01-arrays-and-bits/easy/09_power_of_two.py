@@ -14,6 +14,7 @@ Example 2:
 
 Hint: A power of 2 has exactly one set bit: n & (n-1) == 0.
 Pattern: Bit Manipulation
+Priority: VV IMP
 """
 
 

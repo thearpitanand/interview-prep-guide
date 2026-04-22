@@ -14,6 +14,7 @@ Example 2:
 
 Hint: n & (n-1) removes the lowest set bit.
 Pattern: Bit Manipulation
+Priority: VV IMP
 """
 
 

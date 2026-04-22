@@ -32,6 +32,7 @@ Hint:
 
 Pattern: Classic 2D DP on two strings. Build an (m+1) x (n+1) table.
     Can be space-optimized to O(min(m, n)) using two rows.
+Priority: IMP
 """
 
 

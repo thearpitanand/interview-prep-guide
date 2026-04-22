@@ -33,6 +33,7 @@ Hint:
 
 Pattern: Transform into subset sum counting problem using the math trick
     above. Then solve with 0/1 knapsack counting DP.
+Priority: IMP
 """
 
 from typing import List

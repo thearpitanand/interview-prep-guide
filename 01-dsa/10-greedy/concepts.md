@@ -140,7 +140,7 @@ graph LR
 
 ---
 
-### Pattern 1: Activity / Interval Selection (Medium)
+### Pattern 1: Activity / Interval Selection (Medium) — IMP
 
 **Idea:** Select the maximum number of non-overlapping activities.
 
@@ -196,7 +196,7 @@ def activity_selection(activities):
 
 ---
 
-### Pattern 2: Fractional Knapsack (Medium)
+### Pattern 2: Fractional Knapsack (Medium) — IMP
 
 **Idea:** Maximize value in a knapsack where items can be broken into fractions.
 
@@ -237,7 +237,7 @@ def fractional_knapsack(items, capacity):
 
 ---
 
-### Pattern 3: Huffman Coding (Medium)
+### Pattern 3: Huffman Coding (Medium) — IMP
 
 **Idea:** Build an optimal prefix-free binary code. Characters with higher frequency get shorter codes.
 
@@ -292,7 +292,7 @@ def huffman_coding(freq_map):
 
 ---
 
-### Pattern 4: Jump Game (Medium)
+### Pattern 4: Jump Game (Medium) — IMP
 
 **Idea:** Track the **farthest reachable** index at each position.
 
@@ -319,7 +319,7 @@ def can_jump(nums):
 
 ---
 
-### Pattern 5: Gas Station / Circular Tour (Medium)
+### Pattern 5: Gas Station / Circular Tour (Medium) — IMP
 
 **Idea:** Find starting station for a circular trip. If total gas >= total cost, a solution always exists.
 
@@ -360,7 +360,7 @@ def gas_station(gas, cost):
 
 ---
 
-### Pattern 6: Job Sequencing with Deadlines (Medium)
+### Pattern 6: Job Sequencing with Deadlines (Medium) — IMP
 
 **Idea:** Schedule jobs to maximize profit. Each job has a deadline and profit; each job takes 1 unit of time.
 

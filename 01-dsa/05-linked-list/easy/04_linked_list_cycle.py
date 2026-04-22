@@ -3,6 +3,7 @@ Linked List Cycle - Day 17 | Easy | LC 141
 https://leetcode.com/problems/linked-list-cycle/
 
 Pattern: Fast & Slow Pointers (Floyd's Cycle Detection)
+Priority: VV IMP
 
 Given head, determine if the linked list has a cycle in it.
 A cycle exists if some node's next pointer points back to a

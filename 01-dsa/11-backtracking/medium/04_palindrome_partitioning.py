@@ -28,6 +28,7 @@ Hint:
 
 Pattern: Backtracking on string partitions. At index i, try every end position
 j > i. If s[i:j] is a palindrome, include it and recurse from j.
+Priority: IMP
 """
 
 from typing import List

@@ -29,6 +29,7 @@ Hint: Treat the 2D matrix as a flattened 1D sorted array of size m*n.
       Index i in 1D maps to matrix[i // n][i % n] in 2D.
       Then apply standard binary search.
 Pattern: Binary Search (2D to 1D mapping)
+Priority: VV IMP
 """
 
 from typing import List

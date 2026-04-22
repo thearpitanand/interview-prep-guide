@@ -2,6 +2,7 @@
 Remove K Digits
 
 Day: 21 | Difficulty: Medium | Pattern: Monotonic Stack
+Priority: VV IMP
 LeetCode 402: https://leetcode.com/problems/remove-k-digits/
 
 Problem:

@@ -43,6 +43,7 @@ Hint:
 Pattern: Trie + Backtracking on grid. The Trie replaces checking each word
 individually, turning O(words * cells * 4^L) into a single traversal that
 finds all words simultaneously.
+Priority: IMP
 """
 
 from typing import List

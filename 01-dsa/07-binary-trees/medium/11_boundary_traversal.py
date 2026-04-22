@@ -18,6 +18,7 @@ Constraints:
 
 Hint: Three parts: left boundary (exclude leaves), leaf nodes, right boundary reversed (exclude leaves).
 Pattern: Tree Traversal
+Priority: VV IMP
 """
 
 

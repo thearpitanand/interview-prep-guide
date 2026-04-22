@@ -6,6 +6,7 @@ Difficulty: Easy
 Topic: Max Heap
 Link: https://leetcode.com/problems/last-stone-weight/
 Pattern: Max Heap (negate values for Python heapq)
+Priority: VV IMP
 
 Description:
     You are given an array of integers 'stones' where stones[i] is the weight

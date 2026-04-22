@@ -99,7 +99,7 @@ graph TD
     style G fill:#45b7d1,stroke:#333,color:#fff
 ```
 
-### Balanced Binary Tree
+### Balanced Binary Tree — VV IMP
 For **every node**, the height difference between left and right subtrees is **at most 1**.
 
 ```mermaid
@@ -220,7 +220,7 @@ graph TD
     style G fill:#45b7d1,stroke:#333,color:#fff
 ```
 
-### Inorder Traversal (Left -> Root -> Right)
+### Inorder Traversal (Left -> Root -> Right) — VV IMP
 
 Visit order: `4 -> 2 -> 5 -> 1 -> 6 -> 3 -> 7`
 
@@ -259,7 +259,7 @@ def inorder_iterative(root):
     return result
 ```
 
-### Preorder Traversal (Root -> Left -> Right)
+### Preorder Traversal (Root -> Left -> Right) — VV IMP
 
 Visit order: `1 -> 2 -> 4 -> 5 -> 3 -> 6 -> 7`
 
@@ -299,7 +299,7 @@ def preorder_iterative(root):
     return result
 ```
 
-### Postorder Traversal (Left -> Right -> Root)
+### Postorder Traversal (Left -> Right -> Root) — VV IMP
 
 Visit order: `4 -> 5 -> 2 -> 6 -> 7 -> 3 -> 1`
 
@@ -325,7 +325,7 @@ def postorder(root):
     return postorder(root.left) + postorder(root.right) + [root.val]
 ```
 
-### Level Order Traversal (BFS)
+### Level Order Traversal (BFS) — VV IMP
 
 Visit order: `[1] -> [2, 3] -> [4, 5, 6, 7]`
 
@@ -396,7 +396,7 @@ def level_order(root):
 
 ## 5. Key Patterns
 
-### Pattern 1: DFS Recursive (Easy)
+### Pattern 1: DFS Recursive (Easy) — VV IMP
 
 The backbone of tree problems. Most tree problems follow one of these templates:
 
@@ -421,7 +421,7 @@ def solve(root):
 
 ---
 
-### Pattern 2: BFS Level Order (Medium)
+### Pattern 2: BFS Level Order (Medium) — VV IMP
 
 Use a queue to process nodes level by level.
 
@@ -457,7 +457,7 @@ def bfs_template(root):
 
 ---
 
-### Pattern 3: Height / Depth (Easy/Medium)
+### Pattern 3: Height / Depth (Easy/Medium) — VV IMP
 
 ```python
 def max_depth(root):
@@ -482,7 +482,7 @@ def is_balanced(root):
 
 ---
 
-### Pattern 4: Path Problems (Medium)
+### Pattern 4: Path Problems (Medium) — VV IMP
 
 Track the path from root to leaf or compute path sums.
 
@@ -517,7 +517,7 @@ def all_paths(root):
 
 ---
 
-### Pattern 5: Tree Views (Medium)
+### Pattern 5: Tree Views (Medium) — VV IMP
 
 Seeing the tree from different angles.
 
@@ -568,7 +568,7 @@ def right_side_view(root):
 
 ---
 
-### Pattern 6: Lowest Common Ancestor (Medium)
+### Pattern 6: Lowest Common Ancestor (Medium) — VV IMP
 
 ```mermaid
 graph TD

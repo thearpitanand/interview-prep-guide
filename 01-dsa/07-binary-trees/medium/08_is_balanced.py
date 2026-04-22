@@ -42,6 +42,7 @@ Hint:
     Otherwise return 1 + max(left, right).
 
 Pattern: DFS Height with early termination
+Priority: VV IMP
 Time: O(n)
 Space: O(h)
 """

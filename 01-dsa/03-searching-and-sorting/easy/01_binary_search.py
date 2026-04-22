@@ -23,6 +23,7 @@ Constraints:
 
 Hint: Use two pointers (left, right) and check the middle element each iteration.
 Pattern: Standard Binary Search
+Priority: VV IMP
 """
 
 from typing import List

@@ -38,6 +38,7 @@ Hint:
 Pattern: 2D DP. Each cell depends on its top, left, and top-left neighbors.
     Can optimize to O(n) space using a single row + one variable for the
     diagonal element.
+Priority: IMP
 """
 
 from typing import List

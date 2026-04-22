@@ -2,6 +2,7 @@
 Search in a Binary Search Tree (LC 700)
 
 Day: 26 | Difficulty: Easy | Pattern: BST Search
+Priority: VV IMP
 
 Given the root of a BST and an integer val, find the node in the BST whose
 value equals val. Return the subtree rooted at that node. If no such node

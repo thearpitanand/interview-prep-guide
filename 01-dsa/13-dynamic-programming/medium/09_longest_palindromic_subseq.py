@@ -32,6 +32,7 @@ Hint:
 
 Pattern: String DP / Interval DP. Can also be reduced to LCS(s, reverse(s)).
     Fill the table by increasing interval length.
+Priority: IMP
 """
 
 

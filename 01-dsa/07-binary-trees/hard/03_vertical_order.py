@@ -41,6 +41,7 @@ Hint:
     Alternative: Use a defaultdict keyed by column, storing (row, val) pairs.
 
 Pattern: BFS + Column/Row tracking + Sort
+Priority: VV IMP
 Time: O(n log n) due to sorting
 Space: O(n)
 """

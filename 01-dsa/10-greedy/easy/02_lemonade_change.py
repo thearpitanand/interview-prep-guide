@@ -31,6 +31,7 @@ Hint:
 
 Pattern: Greedy simulation - always prefer to give larger bills as change to
     preserve smaller, more flexible bills.
+Priority: IMP
 """
 
 from typing import List

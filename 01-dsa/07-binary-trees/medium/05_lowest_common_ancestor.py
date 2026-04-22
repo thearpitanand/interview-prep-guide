@@ -38,6 +38,7 @@ Hint:
     - If only one side returns non-None, the LCA is on that side.
 
 Pattern: LCA (post-order DFS)
+Priority: VV IMP
 Time: O(n)
 Space: O(h)
 """

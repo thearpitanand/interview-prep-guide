@@ -15,6 +15,7 @@ Example 2:
 
 Hint: Use bit shifting. Double the divisor until it exceeds dividend.
 Pattern: Bit Manipulation
+Priority: VV IMP
 """
 
 

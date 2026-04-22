@@ -3,6 +3,7 @@ Add Two Numbers - Day 18 | Medium | LC 2
 https://leetcode.com/problems/add-two-numbers/
 
 Pattern: Traversal + Dummy Node
+Priority: VV IMP
 
 Two non-empty linked lists represent two non-negative integers.
 Digits are stored in reverse order, each node contains a single digit.

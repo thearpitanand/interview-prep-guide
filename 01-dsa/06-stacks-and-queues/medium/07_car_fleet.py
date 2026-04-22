@@ -2,6 +2,7 @@
 Car Fleet
 
 Day: 22 | Difficulty: Medium | Pattern: Stack / Sort
+Priority: VV IMP
 LeetCode 853: https://leetcode.com/problems/car-fleet/
 
 Problem:

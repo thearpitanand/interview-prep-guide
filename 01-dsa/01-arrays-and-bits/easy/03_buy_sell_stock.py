@@ -18,6 +18,7 @@ Constraints:
 
 Hint: Track the minimum price seen so far.
 Pattern: Greedy / Kadane's variant
+Priority: VV IMP
 """
 
 

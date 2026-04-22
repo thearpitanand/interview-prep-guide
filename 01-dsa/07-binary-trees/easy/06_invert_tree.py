@@ -32,6 +32,7 @@ Hint:
     invert the left and right subtrees. Base case: if node is None, return None.
 
 Pattern: DFS Recursive (swap children)
+Priority: VV IMP
 Time: O(n)
 Space: O(h)
 """

@@ -32,6 +32,7 @@ Hint:
     Alternative: rotate in layers, moving 4 elements at a time.
 
 Pattern: In-place Modification
+Priority: IMP
     - Transpose: for i in range(n), for j in range(i+1, n), swap
     - Reverse rows: for each row, reverse it
     - This transforms (i,j) -> (j, n-1-i) which is 90 degree clockwise

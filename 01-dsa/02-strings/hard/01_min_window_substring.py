@@ -34,6 +34,7 @@ Hint: Use a sliding window with two pointers. Maintain a frequency map of
       in t are covered, shrink from left to find the minimum window.
       Track how many unique characters have been fully satisfied.
 Pattern: Sliding Window
+Priority: VV IMP
 """
 from collections import Counter
 

@@ -6,6 +6,7 @@ Difficulty: Hard
 Topic: Min Heap
 Link: https://leetcode.com/problems/merge-k-sorted-lists/
 Pattern: Merge K Sorted (Min Heap tracking heads)
+Priority: VV IMP
 
 Description:
     You are given an array of k linked-lists lists, each linked-list is

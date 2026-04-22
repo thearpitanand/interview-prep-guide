@@ -29,6 +29,7 @@ Hint:
 
 Pattern: 1D DP with include/exclude decision. Fibonacci-style since dp[i]
     only depends on dp[i-1] and dp[i-2]. Can optimize to O(1) space.
+Priority: IMP
 """
 
 from typing import List

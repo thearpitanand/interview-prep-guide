@@ -41,6 +41,7 @@ Hint:
     Each DFS/BFS call handles one complete island.
 
 Pattern: DFS/BFS on Grid (Connected Components)
+Priority: IMP
     - Each unvisited '1' starts a new island
     - DFS/BFS from that cell marks all connected land as visited
     - Mark visited by changing '1' to '0' (in-place) or use a set

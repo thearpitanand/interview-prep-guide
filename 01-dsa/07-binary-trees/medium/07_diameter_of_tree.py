@@ -33,6 +33,7 @@ Hint:
     The height function returns the height but also updates the diameter.
 
 Pattern: DFS Height with global tracking
+Priority: VV IMP
 Time: O(n)
 Space: O(h)
 """

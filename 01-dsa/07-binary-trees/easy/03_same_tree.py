@@ -30,6 +30,7 @@ Hint:
     3. Values are equal AND left subtrees are same AND right subtrees are same
 
 Pattern: DFS Recursive (simultaneous traversal)
+Priority: VV IMP
 Time: O(n) - visit every node in both trees
 Space: O(h) - recursion stack
 """

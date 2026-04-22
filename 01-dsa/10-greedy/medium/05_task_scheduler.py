@@ -34,6 +34,7 @@ Hint:
 
 Pattern: Greedy - the most frequent task creates (f-1) "frames" of size (n+1).
     Fill idle slots with other tasks. Answer = max(total_tasks, frame_slots).
+Priority: IMP
 """
 
 from typing import List

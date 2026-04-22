@@ -28,6 +28,7 @@ Hint:
 
 Pattern: Backtracking with used array - for each position, try every unused element.
 No start index needed because order matters in permutations.
+Priority: IMP
 """
 
 from typing import List

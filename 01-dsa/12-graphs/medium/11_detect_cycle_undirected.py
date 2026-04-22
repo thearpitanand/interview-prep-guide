@@ -14,6 +14,7 @@ Constraints:
 
 Hint: BFS/DFS — if you visit an already-visited node that isn't the parent, there's a cycle. Or use Union-Find.
 Pattern: DFS / Union-Find
+Priority: IMP
 """
 
 

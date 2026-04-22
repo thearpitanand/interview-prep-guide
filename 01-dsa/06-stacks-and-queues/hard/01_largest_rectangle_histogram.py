@@ -2,6 +2,7 @@
 Largest Rectangle in Histogram
 
 Day: 22 | Difficulty: Hard | Pattern: Monotonic Stack
+Priority: VV IMP
 LeetCode 84: https://leetcode.com/problems/largest-rectangle-in-histogram/
 
 Problem:

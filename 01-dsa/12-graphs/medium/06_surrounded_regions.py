@@ -2,6 +2,7 @@
 Surrounded Regions (LC 130)
 
 Day: 34 | Difficulty: Medium | Pattern: DFS from Boundary
+Priority: IMP
 
 Given an m x n matrix board containing 'X' and 'O', capture all regions that
 are 4-directionally surrounded by 'X'. A region is captured by flipping all

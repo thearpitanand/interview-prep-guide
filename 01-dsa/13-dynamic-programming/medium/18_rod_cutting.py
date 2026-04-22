@@ -14,6 +14,7 @@ Constraints:
 
 Hint: dp[i] = max revenue for rod of length i. dp[i] = max(prices[j] + dp[i-j-1]) for all j < i.
 Pattern: Unbounded Knapsack variant
+Priority: IMP
 """
 
 

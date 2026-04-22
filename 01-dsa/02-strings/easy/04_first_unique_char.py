@@ -27,6 +27,7 @@ Constraints:
 Hint: First pass: build a frequency map. Second pass: find the first char
       with frequency 1. Total O(n) time.
 Pattern: Hash Map
+Priority: VV IMP
 """
 
 

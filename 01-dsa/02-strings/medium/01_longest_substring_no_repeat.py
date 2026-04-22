@@ -28,6 +28,7 @@ Hint: Use a sliding window with a set or hash map. Expand the right pointer.
       When a duplicate is found, shrink from the left until the duplicate
       is removed. Track the maximum window size.
 Pattern: Sliding Window
+Priority: VV IMP
 """
 
 

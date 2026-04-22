@@ -31,6 +31,7 @@ Hint:
 
 Pattern: Backtracking with constraint sets. Place one queen per row, use sets
 for O(1) conflict detection on columns and diagonals.
+Priority: IMP
 """
 
 from typing import List

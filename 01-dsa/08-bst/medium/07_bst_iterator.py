@@ -2,6 +2,7 @@
 Binary Search Tree Iterator (LC 173)
 
 Day: 27 | Difficulty: Medium | Pattern: Controlled Inorder Traversal
+Priority: VV IMP
 
 Implement the BSTIterator class that represents an iterator over the inorder
 traversal of a BST:

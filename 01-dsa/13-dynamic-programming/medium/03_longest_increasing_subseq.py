@@ -36,6 +36,7 @@ Hint:
 Pattern: Classic LIS. O(n^2) DP approach: for each element, check all previous
     elements to extend the longest subsequence. Can be optimized to O(n log n)
     with patience sorting (binary search on tails array).
+Priority: IMP
 """
 
 from typing import List

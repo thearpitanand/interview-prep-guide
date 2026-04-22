@@ -2,6 +2,7 @@
 Decode String
 
 Day: 21 | Difficulty: Medium | Pattern: Stack
+Priority: VV IMP
 LeetCode 394: https://leetcode.com/problems/decode-string/
 
 Problem:

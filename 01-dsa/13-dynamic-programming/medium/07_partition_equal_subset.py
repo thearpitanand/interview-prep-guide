@@ -30,6 +30,7 @@ Hint:
 
 Pattern: 0/1 Knapsack where capacity = total_sum / 2. Each number is used
     at most once, so iterate backwards in the 1D optimization.
+Priority: IMP
 """
 
 from typing import List

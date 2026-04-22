@@ -2,6 +2,7 @@
 Is Graph Bipartite? (LC 785)
 
 Day: 35 | Difficulty: Medium | Pattern: BFS/DFS Coloring
+Priority: IMP
 
 There is an undirected graph with n nodes where each node is labeled between
 0 and n - 1. You are given a 2D array graph where graph[u] is an array of

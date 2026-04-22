@@ -35,6 +35,7 @@ Hint:
 
 Pattern: Two-pass greedy. First pass ensures left-neighbor constraint.
     Second pass ensures right-neighbor constraint. Take max at each position.
+Priority: IMP
 """
 
 from typing import List

@@ -35,6 +35,7 @@ Hint:
 Pattern: Unbounded knapsack variant. Each coin can be used unlimited times,
     so iterate coins in the outer loop and amounts forward in the inner loop.
     Or iterate amounts in the outer loop and try all coins.
+Priority: IMP
 """
 
 from typing import List

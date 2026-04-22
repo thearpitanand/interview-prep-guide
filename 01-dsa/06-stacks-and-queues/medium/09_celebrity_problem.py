@@ -15,6 +15,7 @@ Constraints:
 
 Hint: Use stack: push all people, pop two, eliminate one who knows the other. Verify final candidate.
 Pattern: Stack Elimination
+Priority: VV IMP
 """
 
 

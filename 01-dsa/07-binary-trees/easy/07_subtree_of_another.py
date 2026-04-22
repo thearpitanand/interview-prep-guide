@@ -36,6 +36,7 @@ Hint:
                             OR is_subtree(root.right, sub)
 
 Pattern: DFS + Same Tree check
+Priority: VV IMP
 Time: O(m * n) where m = nodes in root, n = nodes in subRoot
 Space: O(h) where h = height of root
 """

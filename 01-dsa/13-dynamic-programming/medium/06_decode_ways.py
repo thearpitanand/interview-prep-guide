@@ -35,6 +35,7 @@ Hint:
 
 Pattern: Fibonacci-style 1D DP with conditions. Each position can extend
     by 1 digit or 2 digits. Handle '0' carefully -- it cannot stand alone.
+Priority: IMP
 """
 
 

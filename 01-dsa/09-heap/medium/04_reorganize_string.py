@@ -6,6 +6,7 @@ Difficulty: Medium
 Topic: Max Heap
 Link: https://leetcode.com/problems/reorganize-string/
 Pattern: Max Heap (Greedy with Priority Queue)
+Priority: VV IMP
 
 Description:
     Given a string s, rearrange the characters of s so that any two adjacent

@@ -26,6 +26,7 @@ Hint: Binary search on the answer (minimum distance).
       such that each pair is at least d apart. Sort stalls first.
       Search space: lo=0, hi=max(stalls)-min(stalls).
 Pattern: Binary Search on Answer
+Priority: VV IMP
 """
 
 from typing import List

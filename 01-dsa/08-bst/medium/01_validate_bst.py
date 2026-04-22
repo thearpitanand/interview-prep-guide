@@ -2,6 +2,7 @@
 Validate Binary Search Tree (LC 98)
 
 Day: 26 | Difficulty: Medium | Pattern: DFS with Range
+Priority: VV IMP
 
 Given the root of a binary tree, determine if it is a valid BST.
 

@@ -14,6 +14,7 @@ Constraints:
 
 Hint: Greedy: pick largest denomination first, subtract, repeat.
 Pattern: Greedy
+Priority: IMP
 """
 
 

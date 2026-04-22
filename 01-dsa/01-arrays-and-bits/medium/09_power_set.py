@@ -10,6 +10,7 @@ Example:
 
 Hint: Use bitmask: for n elements, iterate 0 to 2^n - 1.
 Pattern: Bitmask / Backtracking
+Priority: VV IMP
 """
 
 

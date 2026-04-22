@@ -42,6 +42,7 @@ Hint:
     (potentially using both sides) in a global variable.
 
 Pattern: DFS with global max tracking
+Priority: VV IMP
 Time: O(n)
 Space: O(h)
 """

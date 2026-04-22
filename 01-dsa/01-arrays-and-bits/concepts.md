@@ -116,7 +116,7 @@ Python lists store **pointers to objects**, not raw values. This means:
 
 ## 4. Key Patterns (Easy to Hard)
 
-### 4.1 Two Pointers (Easy/Medium)
+### 4.1 Two Pointers (Easy/Medium) — VV IMP
 
 **When to use:** Sorted arrays, pairs/triplets, partitioning, palindromes, in-place operations.
 
@@ -174,7 +174,7 @@ def two_pointer_same(arr):
 
 ---
 
-### 4.2 Sliding Window (Medium)
+### 4.2 Sliding Window (Medium) — VV IMP
 
 **When to use:** Subarray/substring problems, contiguous sequences, max/min in a range.
 
@@ -236,7 +236,7 @@ def variable_window(arr, target):
 
 ---
 
-### 4.3 Kadane's Algorithm (Medium)
+### 4.3 Kadane's Algorithm (Medium) — VV IMP
 
 **When to use:** Maximum subarray sum, maximum subarray product (variant).
 
@@ -338,7 +338,7 @@ def dutch_national_flag(arr):
 
 ---
 
-### 4.5 Prefix Sum (Medium)
+### 4.5 Prefix Sum (Medium) — VV IMP
 
 **When to use:** Range sum queries, subarray sums equal to k, cumulative operations.
 
@@ -388,7 +388,7 @@ def subarray_sum(nums, k):
 
 ---
 
-### 4.6 Merge Intervals (Medium)
+### 4.6 Merge Intervals (Medium) — VV IMP
 
 **When to use:** Overlapping intervals, scheduling, calendar conflicts.
 
@@ -516,7 +516,7 @@ graph TD
     end
 ```
 
-### 5.2 Common Bit Tricks
+### 5.2 Common Bit Tricks — VV IMP
 
 ```mermaid
 graph TD
@@ -547,7 +547,7 @@ n    = 1 0 1 0 0  (20)
 AND  = 0 0 1 0 0  (4)  ← only lowest set bit remains!
 ```
 
-### 5.3 XOR Properties
+### 5.3 XOR Properties — VV IMP
 
 ```mermaid
 graph LR
@@ -569,7 +569,7 @@ graph LR
 = 4
 ```
 
-### 5.4 Bitmask for Subsets
+### 5.4 Bitmask for Subsets — VV IMP
 
 For a set of n elements, each subset can be represented by an n-bit number:
 

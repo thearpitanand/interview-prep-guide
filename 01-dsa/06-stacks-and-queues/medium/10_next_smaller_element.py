@@ -14,6 +14,7 @@ Constraints:
 
 Hint: Use a stack (similar to Next Greater Element but look for smaller).
 Pattern: Monotonic Stack
+Priority: VV IMP
 """
 
 

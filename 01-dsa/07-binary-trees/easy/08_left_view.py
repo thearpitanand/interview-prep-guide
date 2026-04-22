@@ -17,6 +17,7 @@ Constraints:
 
 Hint: BFS level-order, take first element of each level. Or DFS tracking max level seen.
 Pattern: BFS / DFS Level Tracking
+Priority: VV IMP
 """
 
 

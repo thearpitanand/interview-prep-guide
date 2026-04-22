@@ -221,7 +221,7 @@ flowchart TD
 
 ---
 
-### Pattern 1: Fibonacci-style (Easy)
+### Pattern 1: Fibonacci-style (Easy) — IMP
 
 **State depends on previous 1-2 states.**
 
@@ -256,7 +256,7 @@ def fib_style(n):
 
 ---
 
-### Pattern 2: Knapsack (Medium)
+### Pattern 2: Knapsack (Medium) — IMP
 
 **Include/exclude decision at each item.**
 
@@ -321,7 +321,7 @@ def coin_change(coins, amount):
 
 ---
 
-### Pattern 3: LCS / LIS (Medium)
+### Pattern 3: LCS / LIS (Medium) — IMP
 
 **Longest Common Subsequence / Longest Increasing Subsequence**
 
@@ -378,7 +378,7 @@ def lis(nums):
 
 ---
 
-### Pattern 4: Grid DP (Medium)
+### Pattern 4: Grid DP (Medium) — IMP
 
 **Unique paths, minimum path sum -- fill grid cell by cell.**
 
@@ -427,7 +427,7 @@ def unique_paths(m, n):
 
 ---
 
-### Pattern 5: Partition / Subset Sum (Medium)
+### Pattern 5: Partition / Subset Sum (Medium) — IMP
 
 **Can we partition into subsets meeting a condition?**
 
@@ -499,7 +499,7 @@ def edit_distance(word1, word2):
 
 ---
 
-### Pattern 7: Stock Trading / State Machine (Medium/Hard)
+### Pattern 7: Stock Trading / State Machine (Medium/Hard) — IMP
 
 **Model states as a finite state machine with transitions.**
 

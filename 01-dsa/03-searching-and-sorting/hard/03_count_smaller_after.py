@@ -32,6 +32,7 @@ Hint: Use merge sort on index-value pairs. During the merge step, when an elemen
       Alternative: Use a Binary Indexed Tree (BIT / Fenwick Tree) with coordinate
       compression.
 Pattern: Merge Sort / Binary Indexed Tree
+Priority: VV IMP
 """
 
 from typing import List

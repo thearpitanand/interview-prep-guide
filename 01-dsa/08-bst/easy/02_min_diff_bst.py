@@ -2,6 +2,7 @@
 Minimum Absolute Difference in BST (LC 530)
 
 Day: 26 | Difficulty: Easy | Pattern: Inorder Traversal
+Priority: VV IMP
 
 Given the root of a BST, return the minimum absolute difference between the
 values of any two different nodes in the tree.

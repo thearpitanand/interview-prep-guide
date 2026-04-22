@@ -14,6 +14,7 @@ Constraints:
 
 Hint: Use a write pointer for non-zero elements.
 Pattern: Two Pointers
+Priority: VV IMP
 """
 
 

@@ -31,6 +31,7 @@ Hint:
 
 Pattern: Grid DP. Similar to Unique Paths but with minimum sum instead of
     count. Can modify the grid in-place to use O(1) extra space.
+Priority: IMP
 """
 
 from typing import List

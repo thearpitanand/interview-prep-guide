@@ -30,6 +30,7 @@ Hint: If nums[mid] < nums[mid+1], a peak must exist on the right side.
       If nums[mid] > nums[mid+1], a peak must exist on the left side (including mid).
       Use binary search with left < right variant.
 Pattern: Binary Search on Unsorted Array
+Priority: VV IMP
 """
 
 from typing import List

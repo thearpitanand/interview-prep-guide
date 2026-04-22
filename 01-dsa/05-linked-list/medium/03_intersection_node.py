@@ -3,6 +3,7 @@ Intersection of Two Linked Lists - Day 18 | Medium | LC 160
 https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 Pattern: Two Pointers
+Priority: VV IMP
 
 Given the heads of two singly linked lists, return the node at which
 the two lists intersect. If they don't intersect, return None.

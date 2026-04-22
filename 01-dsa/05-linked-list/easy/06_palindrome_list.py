@@ -3,6 +3,7 @@ Palindrome Linked List - Day 17 | Easy | LC 234
 https://leetcode.com/problems/palindrome-linked-list/
 
 Pattern: Fast & Slow Pointers + Reversal
+Priority: VV IMP
 
 Given the head of a singly linked list, return True if it is a
 palindrome, False otherwise.

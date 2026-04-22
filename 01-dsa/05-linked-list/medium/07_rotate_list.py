@@ -3,6 +3,7 @@ Rotate List - Day 19 | Medium | LC 61
 https://leetcode.com/problems/rotate-list/
 
 Pattern: Two Pointers / Cycle then Cut
+Priority: VV IMP
 
 Rotate the list to the right by k places.
 

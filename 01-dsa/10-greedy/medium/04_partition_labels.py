@@ -31,6 +31,7 @@ Hint:
 
 Pattern: Greedy - extend the current partition to include the last occurrence
     of every character encountered. Cut when current index reaches the boundary.
+Priority: IMP
 """
 
 

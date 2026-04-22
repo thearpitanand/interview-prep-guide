@@ -34,6 +34,7 @@ Hint:
 
 Pattern: 1D DP on string. dp[i] depends on all dp[j] where j < i and
     s[j:i] is a valid word. O(n^2 * k) where k is max word length.
+Priority: IMP
 """
 
 from typing import List

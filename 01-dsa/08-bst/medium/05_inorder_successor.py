@@ -2,6 +2,7 @@
 Inorder Successor in BST (LC 285 variant)
 
 Day: 27 | Difficulty: Medium | Pattern: BST Property
+Priority: VV IMP
 
 Given a BST and a target node value, find the inorder successor of that node.
 The inorder successor is the node with the smallest key greater than the

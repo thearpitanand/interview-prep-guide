@@ -30,6 +30,7 @@ Hint:
 
 Pattern: Sort both arrays, then use two pointers to greedily match smallest
     cookie to least greedy child.
+Priority: IMP
 """
 
 from typing import List

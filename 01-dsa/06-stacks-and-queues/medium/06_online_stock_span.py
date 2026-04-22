@@ -2,6 +2,7 @@
 Online Stock Span
 
 Day: 22 | Difficulty: Medium | Pattern: Monotonic Stack
+Priority: VV IMP
 LeetCode 901: https://leetcode.com/problems/online-stock-span/
 
 Problem:

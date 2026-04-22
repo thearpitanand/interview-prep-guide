@@ -15,6 +15,7 @@ Constraints:
 
 Hint: dp[i][w] = max value using first i items with capacity w. dp[i][w] = max(dp[i-1][w], val[i]+dp[i-1][w-wt[i]]).
 Pattern: 2D DP / Space-Optimized 1D DP
+Priority: IMP
 """
 
 

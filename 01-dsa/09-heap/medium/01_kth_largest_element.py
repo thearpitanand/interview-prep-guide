@@ -6,6 +6,7 @@ Difficulty: Medium
 Topic: Min Heap
 Link: https://leetcode.com/problems/kth-largest-element-in-an-array/
 Pattern: Top-K Elements (Min Heap of size K)
+Priority: VV IMP
 
 Description:
     Given an integer array nums and an integer k, return the kth largest

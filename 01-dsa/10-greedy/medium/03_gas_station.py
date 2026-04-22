@@ -37,6 +37,7 @@ Hint:
 
 Pattern: Greedy - if the cumulative tank goes negative at station i, then no
     station from current start to i can be the answer. Start fresh from i+1.
+Priority: IMP
 """
 
 from typing import List

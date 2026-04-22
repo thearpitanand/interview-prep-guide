@@ -28,6 +28,7 @@ Hint: During merge sort, when you pick an element from the right half over
       the left half, ALL remaining elements in the left half form inversions
       with that right element. Count inversions += len(left) - i.
 Pattern: Merge Sort Application
+Priority: VV IMP
 """
 
 from typing import List

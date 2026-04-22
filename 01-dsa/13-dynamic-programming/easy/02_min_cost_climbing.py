@@ -30,6 +30,7 @@ Hint:
 
 Pattern: 1D DP where dp[i] depends on dp[i-1] and dp[i-2]. Can optimize
     to O(1) space with two variables.
+Priority: IMP
 """
 
 from typing import List

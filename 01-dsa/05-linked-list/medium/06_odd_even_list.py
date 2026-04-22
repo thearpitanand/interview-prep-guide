@@ -3,6 +3,7 @@ Odd Even Linked List - Day 18 | Medium | LC 328
 https://leetcode.com/problems/odd-even-linked-list/
 
 Pattern: Pointer Manipulation
+Priority: VV IMP
 
 Group all odd-indexed nodes together followed by even-indexed nodes.
 The first node is considered odd (index 1), second is even, etc.

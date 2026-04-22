@@ -19,6 +19,7 @@ Constraints:
 
 Hint: BFS with horizontal distance. Use ordered dict. Top view = first at each HD, Bottom = last.
 Pattern: BFS + Horizontal Distance
+Priority: VV IMP
 """
 
 

@@ -3,6 +3,7 @@ Reorder List - Day 18 | Medium | LC 143
 https://leetcode.com/problems/reorder-list/
 
 Pattern: Fast & Slow + Reversal + Merge
+Priority: VV IMP
 
 Reorder the list: L0 -> Ln -> L1 -> Ln-1 -> L2 -> Ln-2 -> ...
 Do it in-place without modifying node values.

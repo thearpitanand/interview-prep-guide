@@ -17,6 +17,7 @@ Constraints:
 
 Hint: XOR all elements. a ^ a = 0, a ^ 0 = a.
 Pattern: XOR
+Priority: VV IMP
 """
 
 

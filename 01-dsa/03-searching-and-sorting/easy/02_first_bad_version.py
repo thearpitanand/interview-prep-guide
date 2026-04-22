@@ -26,6 +26,7 @@ Constraints:
 Hint: Binary search for the boundary between good and bad versions.
       Use the left < right variant to find the leftmost true.
 Pattern: Binary Search (Boundary Finding)
+Priority: VV IMP
 """
 
 

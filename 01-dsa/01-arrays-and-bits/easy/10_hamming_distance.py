@@ -11,6 +11,7 @@ Example:
 
 Hint: XOR gives 1 where bits differ. Count the 1s.
 Pattern: XOR + Count Bits
+Priority: VV IMP
 """
 
 

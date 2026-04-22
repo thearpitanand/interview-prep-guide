@@ -2,6 +2,7 @@
 Daily Temperatures
 
 Day: 21 | Difficulty: Medium | Pattern: Monotonic Stack
+Priority: VV IMP
 LeetCode 739: https://leetcode.com/problems/daily-temperatures/
 
 Problem:

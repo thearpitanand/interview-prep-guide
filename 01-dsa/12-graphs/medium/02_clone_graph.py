@@ -2,6 +2,7 @@
 Clone Graph (LC 133)
 
 Day: 33 | Difficulty: Medium | Pattern: BFS/DFS + HashMap
+Priority: IMP
 
 Given a reference of a node in a connected undirected graph, return a deep copy
 (clone) of the graph. Each node in the graph contains a value (int) and a list

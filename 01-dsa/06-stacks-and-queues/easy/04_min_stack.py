@@ -2,6 +2,7 @@
 Min Stack
 
 Day: 20 | Difficulty: Easy | Pattern: Stack
+Priority: VV IMP
 LeetCode 155: https://leetcode.com/problems/min-stack/
 
 Problem:

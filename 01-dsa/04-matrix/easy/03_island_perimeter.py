@@ -36,6 +36,7 @@ Hint:
     grid boundary.
 
 Pattern: Grid Traversal
+Priority: IMP
     - For each land cell, check all 4 neighbors
     - If neighbor is water or out of bounds, that edge contributes
       to perimeter

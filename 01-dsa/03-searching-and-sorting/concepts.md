@@ -495,7 +495,7 @@ sorted(arr, key=cmp_to_key(compare))
 
 ## 4. Key Patterns
 
-### Pattern 1: Standard Binary Search (Easy)
+### Pattern 1: Standard Binary Search (Easy) — VV IMP
 
 > **When**: Sorted array, find exact target.
 
@@ -514,7 +514,7 @@ graph TD
 
 **Problems**: LC 704, LC 35, LC 278, LC 69
 
-### Pattern 2: Binary Search on Answer (Medium)
+### Pattern 2: Binary Search on Answer (Medium) — VV IMP
 
 > **When**: Find minimum/maximum value that satisfies a condition. The answer has a monotonic property (if X works, then X+1 also works, or vice versa).
 
@@ -550,7 +550,7 @@ def binary_search_on_answer(lo, hi):
 
 **Problems**: Aggressive Cows, LC 875 (Koko Eating Bananas), LC 1011
 
-### Pattern 3: Merge Sort Applications (Medium)
+### Pattern 3: Merge Sort Applications (Medium) — VV IMP
 
 > **When**: Problems that need to count relationships between elements during sorting (inversions, smaller elements after self).
 
@@ -596,7 +596,7 @@ def merge_sort_with_count(arr):
 
 **Problems**: Count Inversions, LC 315 (Count of Smaller Numbers After Self)
 
-### Pattern 4: Quick Select (Medium)
+### Pattern 4: Quick Select (Medium) — VV IMP
 
 > **When**: Find kth smallest/largest element in O(n) average time.
 
@@ -636,7 +636,7 @@ def quick_select(arr, k):
 
 **Problems**: LC 215 (Kth Largest Element)
 
-### Pattern 5: Custom Comparators (Medium)
+### Pattern 5: Custom Comparators (Medium) — VV IMP
 
 > **When**: Sorting with non-trivial ordering rules.
 

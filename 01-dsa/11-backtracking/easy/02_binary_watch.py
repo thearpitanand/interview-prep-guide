@@ -31,6 +31,7 @@ Hint:
 
 Pattern: Backtracking - choose which LEDs to turn on, or enumerate all valid
 hour/minute combinations and filter by bit count.
+Priority: IMP
 """
 
 from typing import List

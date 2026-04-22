@@ -13,6 +13,7 @@ Constraints:
 
 Hint: Sort by start time, then merge overlapping.
 Pattern: Merge Intervals
+Priority: VV IMP
 """
 
 
